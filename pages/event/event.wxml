@@ -1,2 +1,2 @@
 <!--pages/event/event.wxml-->
-<text>pages/event/event.wxml</text>
+<text bindtap="tapDetail">eventDetail</text>

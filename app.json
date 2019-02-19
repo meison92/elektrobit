@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/mine/mine",
-    "pages/event/event"
+    "pages/event/event",
+    "pages/eventDetail/eventDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
