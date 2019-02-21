@@ -1,4 +1,5 @@
 // pages/eventDetail/eventDetail.js
+import { getEventDetail } from '../../wxApi/request'
 Page({
 
   /**
@@ -12,7 +13,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let params = { id: 5 }
+    getEventDetail(params).then(res => {
+      console.log(res)
+    })
   },
 
   /**

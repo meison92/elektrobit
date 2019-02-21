@@ -1,10 +1,10 @@
 const API_BASE_URL = 'https://eb.d.dminorstudio.com'
-const request = (url, data,method) => {
+const request = (url, data, method) => {
   let _url = API_BASE_URL + url
   return new Promise((resolve, reject) => {
     wx.request({
       url: _url,
-      method: method || 'post',
+      method: method || 'get',
       data: data,
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -45,4 +45,12 @@ Promise.prototype.finally = function (callback) {
   );
 }
 
-module.exports = request
+module.exports = {
+  request,
+  getEvents: (data) => { // 获取活动列表
+    return request('/json/events', data)
+  },
+  getEventDetail: (data) =>{
+    return request(`/json/event/${data.id}`)
+  }
+}
