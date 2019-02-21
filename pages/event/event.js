@@ -1,4 +1,5 @@
 // pages/event/event.js
+const request = require('../../wxApi/request')
 Page({
 
   /**
@@ -28,7 +29,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(request)
+    request('/json/events')
   },
 
   /**
