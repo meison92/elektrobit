@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    eventList:[]
   },
 
   /**
@@ -29,8 +29,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    getEvents().then(res=>{
+    getEvents().then(res => {
       console.log(res)
+      this.setData({
+        eventList: res || []
+      })
     })
   },
 

@@ -1,0 +1,3 @@
+<template name="eventItem">
+	<view>{{title}}</view>
+</template>
