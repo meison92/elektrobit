@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    host: getApp().globalData.host
+    host: getApp().globalData.host,
+    data: {}
   },
 
   /**
@@ -16,6 +17,9 @@ Page({
     let params = { id: options.id }
     getEventDetail(params).then(res => {
       console.log(res)
+      this.setData({
+        data: res.length > 0 ? res[0] : {}
+      })
     })
   },
 

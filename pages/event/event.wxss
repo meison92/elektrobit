@@ -1,1 +1,10 @@
 /* pages/event/event.wxss */
+page{
+    background-color: lightgrey;
+  }
+
+.selection {
+    display: flex;
+    flex-direction: row;
+    background: white;
+}

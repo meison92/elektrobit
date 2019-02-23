@@ -1,12 +1,13 @@
-<view bindtap="tapDetail">
-	<view>
-		<image src="{{host}}{{data.image.url}}" />
+<view bindtap="tapDetail" class="container">
+	<view class="left-container">
+		<image src="{{host}}{{data.image.url}}" mode="aspectFit"/>
 	</view>
-	<view>
+	<view class="right-container">
 		<text>{{data.title}}</text>
-		<text>{{data.venue}}</text>
-		<text>{{data.date.start}}-{{data.date.end}}</text>
-		<view catchtap="signUp">我要报名</view>
+		<text>地址：{{data.venue}}</text>
+		<text>时间：{{data.date.start}}至{{data.date.end}}</text>
+		<text>状态：</text>
+		<view class="button" catchtap="signUp">我要报名</view>
 	</view>
 </view>
 

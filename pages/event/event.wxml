@@ -1,7 +1,7 @@
 <!--pages/event/event.wxml-->
-<view>
-	<view bindtap="tapDetail">活动列表</view>
-	<view>我的活动</view>
+<view class="selection">
+	<view bindtap="tapSelection" data-index="0">活动列表</view>
+	<view bindtap="tapSelection" data-index="1">我的活动</view>
 </view>
 <view>
 	<block wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">

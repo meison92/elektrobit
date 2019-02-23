@@ -1,2 +1,2 @@
 <!--pages/eventDetail/eventDetail.wxml-->
-<text>pages/eventDetail/eventDetail.wxml</text>
+<image src="{{host}}{{data.image.url}}" mode="aspectFit"/>
