@@ -3,9 +3,11 @@
 	<view bindtap="tapSelection" data-index="0">活动列表</view>
 	<view bindtap="tapSelection" data-index="1">我的活动</view>
 </view>
-<view>
+<view wx:if="{{selectIndex==0}}">
 	<block wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
 		<event-item data="{{item}}" />
 	</block>
 </view>
-
+<view wx:else>
+    我的活动
+</view>

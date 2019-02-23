@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    eventList:[]
+    eventList: [],
+    selectIndex: 0
   },
 
   /**
@@ -71,6 +72,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  tapSelection(event) {
+    let index = event.currentTarget.dataset.index;
+    
+    console.log(index)
+    this.setData({
+      selectIndex: index
+    })
   },
 
   tapDetail() {
