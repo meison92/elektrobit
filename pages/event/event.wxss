@@ -8,3 +8,14 @@ page{
     flex-direction: row;
     background: white;
 }
+
+.select{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-container {
+    margin-top: 40rpx;
+}
