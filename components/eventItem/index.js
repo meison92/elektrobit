@@ -29,7 +29,8 @@ Component({
                 url: `/pages/eventDetail/eventDetail?id=${this.data.data.id}`
             })
         },
-        signUp(){
+        signUp(event){
+            console.log(event)
             console.log('报名')
         }
     }

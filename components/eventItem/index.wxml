@@ -1,8 +1,12 @@
 <view bindtap="tapDetail">
-	<image src="{{host}}{{data.image.url}}" />
-	<text>{{data.title}}</text>
-	<text>{{data.venue}}</text>
-	<text>{{data.date.start}}-{{data.date.end}}</text>
-	<view bindtap="signUp">我要报名</view>
+	<view>
+		<image src="{{host}}{{data.image.url}}" />
+	</view>
+	<view>
+		<text>{{data.title}}</text>
+		<text>{{data.venue}}</text>
+		<text>{{data.date.start}}-{{data.date.end}}</text>
+		<view catchtap="signUp">我要报名</view>
+	</view>
 </view>
 
