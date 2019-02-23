@@ -15,9 +15,9 @@ Component({
         data: {}
     },
 
-ready(){
-    console.log(this.data)
-},
+    ready() {
+        console.log(this.data)
+    },
 
     /**
     * 组件的方法列表
@@ -25,6 +25,11 @@ ready(){
     methods: {
         click: function () {
             console.log("component!");
+        },
+        tapDetail() {
+            wx.navigateTo({
+                url: `/pages/eventDetail/eventDetail?id=${this.data.data.id}`
+            })
         }
     }
 })

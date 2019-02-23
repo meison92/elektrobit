@@ -1,4 +1,4 @@
-<view >
+<view bindtap="tapDetail">
 	<image src="https://eb.d.dminorstudio.com{{data.image.url}}" />
 	<text>{{data.title}}</text>
 	<text>{{data.venue}}</text>

@@ -75,11 +75,7 @@ Page({
 
   tapDetail() {
     wx.navigateTo({
-      url: '../eventDetail/eventDetail'
+      url: '/pages/eventDetail/eventDetail'
     })
-  },
-
-  itemclick(event) {
-    console.log(event)
   }
 })
