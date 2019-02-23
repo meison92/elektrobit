@@ -1,5 +1,6 @@
 // pages/event/event.js
 const { getEvents } = require('../../wxApi/request')
+const app = getApp();
 Page({
 
   /**
@@ -76,5 +77,9 @@ Page({
     wx.navigateTo({
       url: '../eventDetail/eventDetail'
     })
+  },
+
+  itemclick(event) {
+    console.log(event)
   }
 })

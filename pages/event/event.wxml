@@ -6,7 +6,7 @@
 </view>
 <view>
 	<block wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
-		<template is="eventItem" data="{{...item}}" />
+		<event-item data="{{item}}" />
 	</block>
 </view>
 

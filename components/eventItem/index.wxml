@@ -1,0 +1,7 @@
+<view >
+	<image src="https://eb.d.dminorstudio.com{{data.image.url}}" />
+	<text>{{data.title}}</text>
+	<text>{{data.venue}}</text>
+	<text>{{data.date.start}}-{{data.date.end}}</text>
+</view>
+
