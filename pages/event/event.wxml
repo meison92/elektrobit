@@ -1,5 +1,4 @@
 <!--pages/event/event.wxml-->
-<import src="../../template/eventItem/eventItem.wxml" />
 <view>
 	<view bindtap="tapDetail">活动列表</view>
 	<view>我的活动</view>

@@ -1,7 +1,8 @@
 <view bindtap="tapDetail">
-	<image src="https://eb.d.dminorstudio.com{{data.image.url}}" />
+	<image src="{{host}}{{data.image.url}}" />
 	<text>{{data.title}}</text>
 	<text>{{data.venue}}</text>
 	<text>{{data.date.start}}-{{data.date.end}}</text>
+	<view bindtap="signUp">我要报名</view>
 </view>
 

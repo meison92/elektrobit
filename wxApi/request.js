@@ -1,6 +1,6 @@
-const API_BASE_URL = 'https://eb.d.dminorstudio.com'
+const app = getApp()
 const request = (url, data, method) => {
-  let _url = API_BASE_URL + url
+  let _url = app.globalData.host + url
   return new Promise((resolve, reject) => {
     wx.request({
       url: _url,
@@ -50,7 +50,7 @@ module.exports = {
   getEvents: (data) => { // 获取活动列表
     return request('/json/events', data)
   },
-  getEventDetail: (data) =>{
+  getEventDetail: (data) => {
     return request(`/json/event/${data.id}`)
   }
 }

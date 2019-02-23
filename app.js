@@ -10,6 +10,7 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log('登录成功:' + res)
       }
     })
     // 获取用户信息
@@ -34,6 +35,7 @@ App({
     })
   },
   globalData: {
+    host: 'https://eb.d.dminorstudio.com',
     userInfo: null
   }
 })
