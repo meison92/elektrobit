@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/mine/mine",
     "pages/event/event",
-    "pages/eventDetail/eventDetail"
+    "pages/eventDetail/eventDetail",
+    "pages/mineEdit/mineEdit"
   ],
   "window": {
     "backgroundTextStyle": "light",

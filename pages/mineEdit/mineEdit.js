@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+// pages/mineEdit/mineEdit.js
 Page({
 
   /**
@@ -12,9 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '我的'
-    })
+
   },
 
   /**
@@ -64,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  tapEdit() {
-    wx.navigateTo({
-      url: '/pages/mineEdit/mineEdit'
-    })
   }
 })

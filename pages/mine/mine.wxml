@@ -1,2 +1,4 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view>
+    <view bindtap="tapEdit">编辑个人信息</view>
+</view>
