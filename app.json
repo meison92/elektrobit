@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
+    "pages/school/school",
     "pages/mine/mine",
     "pages/event/event",
     "pages/eventDetail/eventDetail",
@@ -21,6 +22,11 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
+        "iconPath": ""
+      },
+      {
+        "pagePath": "pages/school/school",
+        "text": "伊必课堂",
         "iconPath": ""
       },
       {
