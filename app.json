@@ -23,22 +23,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "活动",
-        "iconPath": ""
+        "iconPath": "./asset/menu-icon-events-gray_03.png",
+        "selectedIconPath":"./asset/menu-icon-events-green_03.png"
       },
       {
         "pagePath": "pages/technic/technic",
         "text": "技术",
-        "iconPath": ""
+        "iconPath": "./asset/menu-icon-tech-gray_03.png",
+        "selectedIconPath":"./asset/menu-icon-tech-green_03.png"
       },
       {
         "pagePath": "pages/product/product",
         "text": "产品",
-        "iconPath": ""
+        "iconPath": "./asset/menu-icon-pro-gray_03.png",
+        "selectedIconPath":"./asset/menu-icon-pro-green_03.png"
       },
       {
         "pagePath": "pages/mine/mine",
         "text": "个人中心",
-        "iconPath": ""
+        "iconPath": "./asset/menu-icon-personal-gray_03.png",
+        "selectedIconPath":"./asset/menu-icon-personal-green_03.png"
       }
     ]
   }
