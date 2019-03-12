@@ -1,13 +1,26 @@
 <!--index.wxml-->
+<swiper
+ indicator-dots="{{indicatorDots}}"
+ indicator-color="white"
+ indicator-active-color="#00eb00"
+ autoplay="{{autoplay}}"
+ interval="{{interval}}"
+ duration="{{duration}}"
+ circular="true"
+>
+	<block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+		<swiper-item>
+			<image src="{{item}}" class="slide-image" mode="scaleToFill" />
+		</swiper-item>
+	</block>
+</swiper>
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+	<block>
+		<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" class="slide-image" style="height:146px;" mode="scaleToFill" />
+    <text>时间：待定</text>
+    <text>地点：待定</text>
+    <text>状态：活动未开始</text>
+    <view>详情</view>
+	</block>
 </view>
+

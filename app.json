@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/school/school",
+    "pages/technic/technic",
+    "pages/product/product",
     "pages/mine/mine",
     "pages/event/event",
     "pages/eventDetail/eventDetail",
@@ -10,7 +11,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#50BB1D",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "white"
   },
@@ -21,22 +22,22 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
+        "text": "活动",
         "iconPath": ""
       },
       {
-        "pagePath": "pages/school/school",
-        "text": "伊必课堂",
+        "pagePath": "pages/technic/technic",
+        "text": "技术",
         "iconPath": ""
       },
       {
-        "pagePath": "pages/event/event",
-        "text": "精彩活动",
+        "pagePath": "pages/product/product",
+        "text": "产品",
         "iconPath": ""
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "我的",
+        "text": "个人中心",
         "iconPath": ""
       }
     ]
