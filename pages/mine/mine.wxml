@@ -22,7 +22,7 @@
 		<text>6253423@qq.com</text>
 	</view>
 </view>
-<view>
-	<view bindtap="tapEdit">编辑个人信息</view>
+<view class="btn-span">
+	<view class="submit-btn" bindtap="tapEdit">编辑个人信息</view>
 </view>
 
