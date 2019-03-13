@@ -1,4 +1,20 @@
 /* pages/mine/mine.wxss */
-page{
-    background-color: lightgrey;
+.mine-container {
+    padding-left:20px;
+    padding-right:20px;
+}
+.input-span {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    height: 35px;
+    margin-bottom: 10px;
+    background: #eeeeee;
+    border-radius: 3px;
+}
+.input-icon {
+    width: 20px;
+    height:20px;
+    margin-left:20px;
+    margin-right:20px;
 }

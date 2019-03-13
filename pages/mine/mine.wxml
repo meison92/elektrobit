@@ -1,4 +1,28 @@
 <!--pages/mine/mine.wxml-->
-<view>
-    <view bindtap="tapEdit">编辑个人信息</view>
+<image src="../../asset/personal-back-pic.png" mode="aspectFit" style="width:100%;height:130px;" />
+<view class="mine-container">
+	<view class="input-span">
+		<image src="../../asset/personal-icon-1.png" mode="aspectFit" class="input-icon" />
+		<text>HZR</text>
+	</view>
+	<view class="input-span">
+		<image src="../../asset/personal-icon-2.png" mode="aspectFit" class="input-icon" />
+		<text>13512345678</text>
+	</view>
+	<view class="input-span">
+		<image src="../../asset/personal-icon-3.png" mode="aspectFit" class="input-icon" />
+		<text>公司名称</text>
+	</view>
+	<view class="input-span">
+		<image src="../../asset/personal-icon-4.png" mode="aspectFit" class="input-icon" />
+		<text>部门与职务</text>
+	</view>
+	<view class="input-span">
+		<image src="../../asset/personal-icon-5.png" mode="aspectFit" class="input-icon" />
+		<text>6253423@qq.com</text>
+	</view>
 </view>
+<view>
+	<view bindtap="tapEdit">编辑个人信息</view>
+</view>
+
