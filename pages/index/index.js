@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const { getEvents } = require('../../wxApi/request')
 Page({
   data: {
     imgUrls: [
@@ -64,6 +64,20 @@ Page({
   tapDetail: function () {
     wx.navigateTo({
       url: '/pages/eventDetail/eventDetail'
+    })
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+  _getEvents() {
+    getEvents().then(res => {
+      console.log(res)
+      this.setData({
+        eventList: res || []
+      })
     })
   }
 })

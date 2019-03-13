@@ -5,39 +5,3 @@
 .event-container {
   padding:20px;
 }
-.text1 {
-  font-size: 14px;
-  text-align: left;
-  line-height: 18px;
-}
-
-.detail-btn{
-  background: #F19827;
-  color:white;
-  width: 55px;
-  height: 24px;
-  font-size: 12px;
-  text-align: center;
-  line-height: 22px;
-  border-radius: 3px;
-  position: absolute;
-  right:10px;
-  bottom: 0;
-}
-
-.detail-span {
-  position: relative;
-}
-
-.detail-span .title{
-  color:white;
-  position: absolute;
-  top:-40px;
-  left:10px;
-  font-size: 14px;
-  font-weight: 900;
-}
-
-.event-item{
-  margin-bottom: 20px;
-}

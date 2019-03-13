@@ -1,13 +1,16 @@
-<view bindtap="tapDetail" class="container">
-	<view class="left-container">
-		<image src="{{host}}{{data.image.url}}" mode="aspectFit"/>
-	</view>
-	<view class="right-container">
-		<text>{{data.title}}</text>
-		<text>地址：{{data.venue}}</text>
-		<text>时间：{{data.date.start}}至{{data.date.end}}</text>
-		<text>状态：</text>
-		<view class="button" catchtap="signUp">我要报名</view>
+<view class="event-item">
+	<image
+	 src="{{host}}{{data.image.url}}"
+	 class="slide-image"
+	 style="height:146px;"
+	 mode="aspectFit"
+	/>
+	<view class="detail-span">
+		<view class="title">{{data.title}}</view>
+		<view class="text1">时间：{{data.date.start}}至{{data.date.end}}</view>
+		<view class="text1">地点：{{data.venue}}</view>
+		<view class="text1">状态：活动未开始</view>
+		<view class="detail-btn" bindtap="tapDetail">详情</view>
 	</view>
 </view>
 

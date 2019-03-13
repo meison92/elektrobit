@@ -15,22 +15,8 @@
 	</block>
 </swiper>
 <view class="event-container">
-	<block wx:for="{{eventList}}">
-		<view class="event-item">
-			<image
-			 src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690"
-			 class="slide-image"
-			 style="height:146px;"
-			 mode="scaleToFill"
-			/>
-			<view class="detail-span">
-				<view class="title">标题标题标题</view>
-				<view class="text1">时间：待定</view>
-				<view class="text1">地点：待定</view>
-				<view class="text1">状态：活动未开始</view>
-				<view class="detail-btn" bindtap="tapDetail">详情</view>
-			</view>
-		</view>
+	<block wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
+		<event-item data="{{item}}" />
 	</block>
 </view>
 
