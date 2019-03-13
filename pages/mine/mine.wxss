@@ -42,3 +42,16 @@
     display: flex;
     justify-content: center;
 }
+.avatar-span{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.avatar {
+    width:72px;
+    height: 72px;
+    border-radius: 36px;
+    position: absolute;
+    background: red;
+    bottom: -30px;
+}

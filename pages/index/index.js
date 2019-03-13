@@ -13,6 +13,7 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
+    eventList: [1, 2, 3],
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -58,6 +59,11 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  tapDetail: function () {
+    wx.navigateTo({
+      url: '/pages/eventDetail/eventDetail'
     })
   }
 })
