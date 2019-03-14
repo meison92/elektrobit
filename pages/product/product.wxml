@@ -1,9 +1,12 @@
 <!--pages/product/product.wxml-->
 <view class="product-container">
-<view>
-<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit"/>
-<view>FR123</view>
-<view>辅助驾驶软件</view>
-<view>用于打造智能、安全和舒适的发简历到件物品鸡尾酒分配微积分女生吕</view>
+	<block wx:for="{{productList}}">
+		<view class="product-item">
+			<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit" />
+			<view>FR123</view>
+			<view>辅助驾驶软件</view>
+			<view>用于打造智能、安全和舒适的发简历到件物品鸡尾酒分配微积分女生吕</view>
+		</view>
+	</block>
 </view>
-</view>
+
