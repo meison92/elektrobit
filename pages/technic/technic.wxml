@@ -1,2 +1,10 @@
 <!--pages/technic/technic.wxml-->
-<text>pages/technic/technic.wxml</text>
+<view>
+	<view class="tech-nav">
+		<view>Webinar</view>
+		<view>技术文章</view>
+		<view>白皮书</view>
+	</view>
+    <view class="tech-container"></view>
+</view>
+

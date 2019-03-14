@@ -1,1 +1,4 @@
 /* pages/product/product.wxss */
+.product-container {
+    padding:20px 10px;
+}

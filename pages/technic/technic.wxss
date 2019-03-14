@@ -1,1 +1,9 @@
 /* pages/technic/technic.wxss */
+.tech-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+}
