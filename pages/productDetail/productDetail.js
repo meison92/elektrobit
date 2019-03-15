@@ -1,11 +1,11 @@
-// pages/product/product.js
+// pages/productDetail/productDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    productList: [1, 2, 3]
+
   },
 
   /**
@@ -62,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  tapDetail: function() {
-    wx.navigateTo({
-      url: '/pages/productDetail/productDetail'
-    })
   }
 })

@@ -8,3 +8,19 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.green {
+  color: #01bc00;
+}
+.grey1 {
+  color:#3f3f3f;
+}
+.grey2{
+  color:#858585;
+}
+.f12{
+  font-size: 12px;
+}
+.f14{
+  font-size: 14px;
+}

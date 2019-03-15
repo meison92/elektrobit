@@ -1,11 +1,11 @@
 <!--pages/product/product.wxml-->
 <view class="product-container">
 	<block wx:for="{{productList}}">
-		<view class="product-item">
+		<view class="product-item" bindtap="tapDetail">
 			<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit" />
-			<view>FR123</view>
-			<view>辅助驾驶软件</view>
-			<view>用于打造智能、安全和舒适的发简历到件物品鸡尾酒分配微积分女生吕</view>
+			<view class="green f14">FR123</view>
+			<view class="grey1 f14">辅助驾驶软件</view>
+			<view class="grey2 f12">用于打造智能、安全和舒适的发简历到件物品鸡尾酒分配微积分女生吕</view>
 		</view>
 	</block>
 </view>

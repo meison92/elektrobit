@@ -4,6 +4,7 @@
     "pages/logs/logs",
     "pages/technic/technic",
     "pages/product/product",
+    "pages/productDetail/productDetail",
     "pages/mine/mine",
     "pages/event/event",
     "pages/eventDetail/eventDetail",
