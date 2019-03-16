@@ -1,4 +1,15 @@
 <!--pages/eventDetail/eventDetail.wxml-->
-<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit"/>
+<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit" />
 <view class="event-detail-contianer">
+	<view>
+		<view class="f14">EB中国技术日</view>
+		<view class="f12 grey1">时间：待定</view>
+		<view class="f12 grey1">地点：待定</view>
+		<view class="f12 grey1">状态：待定</view>
+	</view>
+	<view>
+		<view class="f14">活动介绍</view>
+        <view class="f12 grey1">房间风格防风网平均分颇为批发网服务发票未开发票违法发没发外面吃问你问你访问访问分为崇明我发没发评委们颇尔我问</view>
+	</view>
 </view>
+
