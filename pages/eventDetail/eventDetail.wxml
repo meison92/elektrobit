@@ -7,9 +7,22 @@
 		<view class="f12 grey1">地点：待定</view>
 		<view class="f12 grey1">状态：待定</view>
 	</view>
+	<view class="line" />
 	<view>
 		<view class="f14">活动介绍</view>
-        <view class="f12 grey1">房间风格防风网平均分颇为批发网服务发票未开发票违法发没发外面吃问你问你访问访问分为崇明我发没发评委们颇尔我问</view>
+		<view class="f12 grey1">房间风格防风网平均分颇为批发网服务发票未开发票违法发没发外面吃问你问你访问访问分为崇明我发没发评委们颇尔我问房间风格防风网平均分颇为批发网服务发票未开发票违法发没发外面吃问你问你访问访问分为崇明我发没发评委们颇尔我问</view>
+	</view>
+	<view>
+		<view>活动日程</view>
+		<view>
+			<view>第一天 YYYY/MM/DD</view>
+			<view class="line" />
+			<view>8:00~11:00 活动内容描述</view>
+		</view>
+	</view>
+	<view class="btn-group">
+		<view class="btn" bindtap="tapEdit">我要报名</view>
+		<view class="btn" bindtap="tapEdit">在线调研</view>
 	</view>
 </view>
 
