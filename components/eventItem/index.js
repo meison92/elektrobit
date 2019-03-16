@@ -34,7 +34,8 @@ Component({
     methods: {
         tapDetail() {
             wx.navigateTo({
-                url: `/pages/eventDetail/eventDetail?id=${this.data.data.id}`
+                // url: `/pages/eventDetail/eventDetail?id=${this.data.data.id}`
+                url: '/pages/eventDetail/eventDetail'
             })
         },
         signUp(event) {

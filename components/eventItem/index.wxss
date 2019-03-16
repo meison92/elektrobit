@@ -1,21 +1,21 @@
 
 .text1 {
-    font-size: 14px;
+    font-size: 28rpx;
     text-align: left;
-    line-height: 18px;
+    line-height: 36rpx;
   }
   
   .detail-btn{
     background: #F19827;
     color:white;
-    width: 55px;
-    height: 24px;
-    font-size: 12px;
+    width: 110rpx;
+    height: 48rpx;
+    font-size: 24rpx;
     text-align: center;
-    line-height: 22px;
-    border-radius: 3px;
+    line-height: 44rpx;
+    border-radius: 6rpx;
     position: absolute;
-    right:10px;
+    right:20rpx;
     bottom: 0;
   }
   
@@ -26,12 +26,12 @@
   .detail-span .title{
     color:white;
     position: absolute;
-    top:-40px;
-    left:10px;
-    font-size: 14px;
+    top:-80rpx;
+    left:20rpx;
+    font-size: 28rpx;
     font-weight: 900;
   }
   
   .event-item{
-    margin-bottom: 20px;
+    margin-bottom: 40rpx;
   }

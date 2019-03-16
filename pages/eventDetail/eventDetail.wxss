@@ -1,1 +1,4 @@
 /* pages/eventDetail/eventDetail.wxss */
+.event-detail-contianer{
+    padding:40rpx;
+}

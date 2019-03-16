@@ -14,13 +14,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let params = { id: options.id }
-    getEventDetail(params).then(res => {
-      console.log(res)
-      this.setData({
-        data: res.length > 0 ? res[0] : {}
-      })
-    })
+    // let params = { id: options.id }
+    // getEventDetail(params).then(res => {
+    //   console.log(res)
+    //   this.setData({
+    //     data: res.length > 0 ? res[0] : {}
+    //   })
+    // })
   },
 
   /**

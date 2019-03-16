@@ -19,8 +19,8 @@
   color:#858585;
 }
 .f12{
-  font-size: 12px;
+  font-size: 24rpx;
 }
 .f14{
-  font-size: 14px;
+  font-size: 28rpx;
 }

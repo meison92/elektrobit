@@ -1,12 +1,12 @@
 /* pages/product/product.wxss */
 .product-container {
-    padding:20px 10px;
+    padding:40rpx 20rpx;
 }
 
 .product-item {
     width:50%;
     float: left;
-    padding:0 10px;
+    padding:0 20rpx;
     box-sizing: border-box
 }
 

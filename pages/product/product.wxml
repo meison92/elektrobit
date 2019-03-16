@@ -1,7 +1,7 @@
 <!--pages/product/product.wxml-->
 <view class="product-container">
 	<block wx:for="{{productList}}">
-		<view class="product-item" bindtap="tapDetail">
+		<view class="product-item" bindtap="tapProductDetail">
 			<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit" />
 			<view class="green f14">FR123</view>
 			<view class="grey1 f14">辅助驾驶软件</view>

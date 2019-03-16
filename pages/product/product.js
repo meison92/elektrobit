@@ -64,7 +64,7 @@ Page({
 
   },
 
-  tapDetail: function() {
+  tapProductDetail: function() {
     wx.navigateTo({
       url: '/pages/productDetail/productDetail'
     })

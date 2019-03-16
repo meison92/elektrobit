@@ -1,44 +1,44 @@
 /* pages/mine/mine.wxss */
 .mine-container {
-    padding-left:20px;
-    padding-right:20px;
-    margin-top: 50px;
+    padding-left:40rpx;
+    padding-right:40rpx;
+    margin-top: 100rpx;
 }
 .input-span {
     display:flex;
     flex-direction:row;
     align-items:center;
-    height: 35px;
-    margin-bottom: 10px;
+    height: 70rpx;
+    margin-bottom: 20rpx;
     background: #eeeeee;
-    border-radius: 3px;
+    border-radius: 6rpx;
 }
 .input-icon {
-    width: 20px;
-    height:20px;
-    margin-left:20px;
-    margin-right:20px;
+    width: 40rpx;
+    height:40rpx;
+    margin-left:40rpx;
+    margin-right:40rpx;
 }
 
 .input-span text{
     color:#3f3f3f;
-    font-size: 14px;
+    font-size: 28rpx;
 }
 
 .submit-btn {
-    width:160px;
-    height:30px;
+    width:320rpx;
+    height:60rpx;
     background: #F19827;
-    border-radius: 15px;
+    border-radius: 30rpx;
     color:white;
-    font-size: 16px;
+    font-size: 32rpx;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .btn-span{
-    margin-top: 20px;
+    margin-top: 40rpx;
     display: flex;
     justify-content: center;
 }
@@ -48,10 +48,10 @@
     justify-content: center;
 }
 .avatar {
-    width:72px;
-    height: 72px;
-    border-radius: 36px;
+    width:144rpx;
+    height: 144rpx;
+    border-radius: 72rpx;
     position: absolute;
     background: red;
-    bottom: -30px;
+    bottom: -60rpx;
 }
