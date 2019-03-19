@@ -28,6 +28,17 @@
   font-size: 28rpx;
 }
 
+.fl6 {
+  font-size: 32rpx;
+}
+
+.pos-r{
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}
 .line {
   width:100%;
   height: 2rpx;

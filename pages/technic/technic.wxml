@@ -1,21 +1,37 @@
 <!--pages/technic/technic.wxml-->
 <view>
 	<view class="tech-nav">
-		<view>Webinar</view>
-		<view>技术文章</view>
-		<view>白皮书</view>
+		<view bindtap="tapNav" data-index="0" class="f16 {{techIndex==0?'green':''}}">Webinar</view>
+		<view bindtap="tapNav" data-index="1" class="f16 {{techIndex==1?'green':''}}">技术文章</view>
+		<view bindtap="tapNav" data-index="2" class="f16 {{techIndex==2?'green':''}}">白皮书</view>
 	</view>
+	<view class="line" />
 	<view class="tech-container">
-		<view>
-        <view>
-			<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit" style="width:260rpx;height:180rpx;" />
-
+		<view wx:if="{{techIndex==0}}" class="webinar-item">
+			<view>
+				<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit" style="width:260rpx;height:180rpx;" />
+				<view>
+					<image src="../../asset/tech-icon-2.png" mode="aspectFit" style="width:30rpx;height:20rpx;" />
+					<image src="../../asset/tech-icon-1.png" mode="aspectFit" style="width:30rpx;height:20rpx;" />
+				</view>
+			</view>
+			<view>
+				<view class="green f14">范围广微积分v模式密封胶而网购骗局我没玩；方可为</view>
+				<view class="grey1 f12">产品：Vsdwe343</view>
 			</view>
 		</view>
+		<view wx:if="{{techIndex==1}}">
 			<view>
-            <view>范围广微积分v模式密封胶而网购骗局我没玩；方可为</view>
-            <view>产品：Vsdwe343</view>
-            </view>
+				<view class="green f14">范围广微积分v模式密封胶而网购骗局我没玩；方可为</view>
+				<view class="grey1 f12">产品：Vsdwe343</view>
+				<view class="grey1 f12">产品：Vsdwe343</view>
+			</view>
+		</view>
+		<view wx:if="{{techIndex==2}}">
+			<view>
+				<view>白皮书</view>
+			</view>
+		</view>
 	</view>
 </view>
 

@@ -7,3 +7,12 @@
     height: 80rpx;
     padding: 0 40rpx;
 }
+
+.tech-container {
+    padding: 40rpx;
+}
+
+.webinar-item {
+    display: flex;
+    flex-direction: row;
+}

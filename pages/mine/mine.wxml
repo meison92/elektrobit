@@ -30,5 +30,32 @@
 <view class="btn-span">
 	<view class="submit-btn" bindtap="tapEdit">编辑个人信息</view>
 </view>
-<official-account></official-account>
+<official-account/>
+
+<view
+ class="modal-mask"
+ bindtap="hideModal"
+ catchtouchmove="preventTouchMove"
+ wx:if="{{showModal}}"
+/>
+<view class="modal-dialog" wx:if="{{showModal}}">
+	<image src="../../asset/personal-back-pic.png" mode="aspectFit" />
+	<view class="modal-title">注册登录</view>
+	<view class="modal-content">
+		<view class="modal-input">
+			<input
+			 placeholder-class="input-holder"
+			 type="number"
+			 maxlength="10"
+			 bindinput="inputChange"
+			 class="input"
+			 placeholder="请输入数量"
+			/>
+		</view>
+	</view>
+	<view class="modal-footer">
+		<view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+		<view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+	</view>
+</view>
 

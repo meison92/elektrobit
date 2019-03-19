@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    techIndex: 0
   },
 
   /**
@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  tapNav: function (event) {
+    console.log(event)
+    let index = event.target.dataset.index;
+    this.setData({
+      techIndex: index
+    })
   }
 })
