@@ -10,7 +10,7 @@
 >
 	<block wx:for="{{bannerList}}" wx:key="{{imgUrls}}">
 		<swiper-item>
-			<image src="{{host}}{{item.image.url}}" class="slide-image" mode="aspectFit" />
+			<image src="{{item.image.url}}" class="slide-image" mode="aspectFit" />
 		</swiper-item>
 	</block>
 </swiper>

@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    productList: [1, 2, 3]
+    productList: []
   },
 
   /**
@@ -70,14 +70,15 @@ Page({
     getProducts(params).then(res => {
       console.log(res)
       this.setData({
-        productList: res.length > 0 ? res[0] : {}
+        productList: res || []
       })
     })
   },
 
-  tapProductDetail: function() {
+  tapProductDetail: function(e) {
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/productDetail/productDetail'
+      url: `/pages/productDetail/productDetail?id=${id}`
     })
   }
 })

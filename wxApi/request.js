@@ -7,7 +7,7 @@ const request = (url, data, method) => {
       method: method || 'get',
       data: data,
       header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
       success(request) {
         resolve(request.data)
@@ -72,10 +72,10 @@ module.exports = {
     return request('/json/products', data);
   },
   getProductDetail: (data) => { // 获取产品详情
-    return request(`/json/products/${data.id}`)
+    return request(`/json/product/${data.id}`)
   },
   getUser: (data) => { // 获取用户信息
-    return request('/json/user', data);
+    return request('/json/user', data, 'post');
   },
   getBackgrounds: (data) => {
     return request('/json/backgrounds', data);

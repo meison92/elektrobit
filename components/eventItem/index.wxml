@@ -1,6 +1,6 @@
 <view class="event-item">
 	<image
-	 src="{{host}}{{data.image.url}}"
+	 src="{{data.image.url}}"
 	 class="slide-image"
 	 style="height:146px;"
 	 mode="aspectFit"

@@ -1,11 +1,13 @@
 // pages/mine/mine.js
+const { getUser } = require('../../wxApi/request')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showModal: false
+    showModal: false,
+    data: {}
   },
 
   /**
@@ -15,6 +17,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的'
     })
+    this._getUser();
   },
 
   /**
@@ -82,4 +85,16 @@ Page({
       showModal: false
     });
   },
+
+  _getUser() {
+    let params = {
+      openid: '111'
+    }
+    getUser(params).then(res => {
+      console.log(res)
+      this.setData({
+        data: res
+      })
+    })
+  }
 })

@@ -8,15 +8,15 @@
 <view class="mine-container">
 	<view class="input-span">
 		<image src="../../asset/personal-icon-1.png" mode="aspectFit" class="input-icon" />
-		<text>HZR</text>
+		<text>{{data.name}}</text>
 	</view>
 	<view class="input-span">
 		<image src="../../asset/personal-icon-2.png" mode="aspectFit" class="input-icon" />
-		<text>13512345678</text>
+		<text>{{data.phone}}</text>
 	</view>
 	<view class="input-span">
 		<image src="../../asset/personal-icon-3.png" mode="aspectFit" class="input-icon" />
-		<text>公司名称</text>
+		<text>{{data.company}}</text>
 	</view>
 	<view class="input-span">
 		<image src="../../asset/personal-icon-4.png" mode="aspectFit" class="input-icon" />

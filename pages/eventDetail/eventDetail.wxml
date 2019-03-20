@@ -1,5 +1,5 @@
 <!--pages/eventDetail/eventDetail.wxml-->
-<image src="{{host}}{{data.image.url}}" mode="aspectFit" />
+<image src="{{data.image.url}}" mode="aspectFit" />
 <view class="event-detail-contianer">
 	<view>
 		<view class="f14">{{data.title}}</view>
