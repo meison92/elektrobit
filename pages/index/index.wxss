@@ -1,6 +1,7 @@
 /**index.wxss**/
 .slide-image{
   width: 100%;
+  height: 360rpx;
 }
 .event-container {
   padding:40rpx;

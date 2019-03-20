@@ -1,4 +1,5 @@
 // pages/product/product.js
+import { getProducts } from '../../wxApi/request'
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getProducts();
   },
 
   /**
@@ -62,6 +63,16 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  _getProducts() {
+    let params = {}
+    getProducts(params).then(res => {
+      console.log(res)
+      this.setData({
+        productList: res.length > 0 ? res[0] : {}
+      })
+    })
   },
 
   tapProductDetail: function() {

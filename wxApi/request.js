@@ -77,4 +77,10 @@ module.exports = {
   getUser: (data) => { // 获取用户信息
     return request('/json/user', data);
   },
+  getBackgrounds: (data) => {
+    return request('/json/backgrounds', data);
+  },
+  getFeaturedEvents: (data) => {
+    return request('/json/featured-events', data);
+  }
 }

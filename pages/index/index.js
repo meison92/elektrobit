@@ -1,14 +1,11 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const { getEvents } = require('../../wxApi/request')
+const { getEvents, getBackgrounds, getFeaturedEvents } = require('../../wxApi/request')
 Page({
   data: {
-    imgUrls: [
-      'http://hbimg.b0.upaiyun.com/c2ba7d736ddbb2a96dab9fe9b610bbd130950a4915fca-F6dK0D_fw658',
-      'http://hbimg.b0.upaiyun.com/5ef2dd45c01ee0396da790bd4258be91bc39b7e5809e3-YwDAAJ_fw658',
-      'http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690'
-    ],
+    bannerList: [],
+    host: getApp().globalData.host,
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -52,6 +49,8 @@ Page({
         }
       })
     }
+    this._getBackgrounds();
+    this._getFeaturedEvents();
     this._getEvents();
   },
   getUserInfo: function (e) {
@@ -73,6 +72,22 @@ Page({
       console.log(res)
       this.setData({
         eventList: res || []
+      })
+    })
+  },
+  _getBackgrounds() {
+    getBackgrounds().then(res => {
+      console.log(res)
+      // this.setData({
+      //   eventList: res || []
+      // })
+    })
+  },
+  _getFeaturedEvents() {
+    getFeaturedEvents().then(res => {
+      console.log(res)
+      this.setData({
+        bannerList: res || []
       })
     })
   }
