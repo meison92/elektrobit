@@ -1,10 +1,10 @@
 <!--pages/eventDetail/eventDetail.wxml-->
-<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit" />
+<image src="{{host}}{{data.image.url}}" mode="aspectFit" />
 <view class="event-detail-contianer">
 	<view>
-		<view class="f14">EB中国技术日</view>
-		<view class="f12 grey1">时间：待定</view>
-		<view class="f12 grey1">地点：待定</view>
+		<view class="f14">{{data.title}}</view>
+		<view class="f12 grey1">时间：{{data.date.start}}至{{data.date.end}}</view>
+		<view class="f12 grey1">地点：{{data.venue}}</view>
 		<view class="f12 grey1">状态：待定</view>
 	</view>
 	<view class="line" />

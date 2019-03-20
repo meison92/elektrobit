@@ -52,6 +52,7 @@ Page({
         }
       })
     }
+    this._getEvents();
   },
   getUserInfo: function (e) {
     console.log(e)
@@ -59,11 +60,6 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
-    })
-  },
-  tapDetail: function () {
-    wx.navigateTo({
-      url: '/pages/eventDetail/eventDetail'
     })
   },
   /**

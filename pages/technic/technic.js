@@ -1,10 +1,13 @@
 // pages/technic/technic.js
+
+import { getWebinar, getDocuments, getWhitePaper } from '../../wxApi/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    host: getApp().globalData.host,
     techIndex: 0
   },
 
@@ -12,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getWebinar();
   },
 
   /**
@@ -64,9 +67,46 @@ Page({
 
   },
 
+  _getWebinar: function () {
+    let params = {}
+    getWebinar(params).then(res => {
+      console.log(res)
+      this.setData({
+        data: res.length > 0 ? res[0] : {}
+      })
+    })
+  },
+
+  _getDocuments: function () {
+    let params = {}
+    getDocuments(params).then(res => {
+      console.log(res)
+      this.setData({
+        data: res.length > 0 ? res[0] : {}
+      })
+    })
+  },
+
+  _getWhitePaper: function () {
+    let params = {}
+    getWhitePaper(params).then(res => {
+      console.log(res)
+      this.setData({
+        data: res.length > 0 ? res[0] : {}
+      })
+    })
+  },
+
   tapNav: function (event) {
     console.log(event)
     let index = event.target.dataset.index;
+    if (index == 0) {
+      this._getWebinar();
+    } else if (index == 1) {
+      this._getDocuments();
+    } else if (index == 2) {
+      this._getWhitePaper();
+    }
     this.setData({
       techIndex: index
     })
