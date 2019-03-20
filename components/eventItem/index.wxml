@@ -9,7 +9,7 @@
 		<view class="title">{{data.title}}</view>
 		<view class="text1">时间：{{data.date.start}}至{{data.date.end}}</view>
 		<view class="text1">地点：{{data.venue}}</view>
-		<view class="text1">状态：活动未开始</view>
+		<view class="text1">状态：{{data.status}}</view>
 		<view class="detail-btn" bindtap="tapDetail">详情</view>
 	</view>
 </view>

@@ -5,7 +5,7 @@
 		<view class="f14">{{data.title}}</view>
 		<view class="f12 grey1">时间：{{data.date.start}}至{{data.date.end}}</view>
 		<view class="f12 grey1">地点：{{data.venue}}</view>
-		<view class="f12 grey1">状态：待定</view>
+		<view class="f12 grey1">状态：{{data.status}}</view>
 	</view>
 	<view class="line" />
 	<view>
