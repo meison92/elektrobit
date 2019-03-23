@@ -10,7 +10,8 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log('登录成功:' + res)
+        console.log('登录成功:' + res.code)
+        this.globalData.code = res.code;
       }
     })
     // 获取用户信息

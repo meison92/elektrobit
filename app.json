@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/technic/technic",
+    "pages/technicDetail/technicDetail",
     "pages/product/product",
     "pages/productDetail/productDetail",
     "pages/mine/mine",
