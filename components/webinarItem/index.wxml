@@ -1,0 +1,20 @@
+<view class="webinar-item">
+	<view bindtap="tapDetail" class="pos-r">
+		<image src="{{data.image.url}}" mode="aspectFit" style="width:260rpx;height:180rpx;" />
+		<view class="pos-a icon-span">
+			<view>
+				<image src="../../asset/tech-icon-2.png" mode="aspectFit" style="width:40rpx;height:32rpx;" />
+				<text>{{data.played}}</text>
+			</view>
+			<view>
+				<image src="../../asset/tech-icon-1.png" mode="aspectFit" style="width:40rpx;height:32rpx;" />
+				<text>{{data.commented}}</text>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="green f14">{{data.title}}</view>
+		<view class="grey1 f12">{{data.related_products[0].title}}</view>
+	</view>
+</view>
+

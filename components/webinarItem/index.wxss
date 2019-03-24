@@ -1,0 +1,30 @@
+
+.webinar-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.webinar-item .icon-span {
+  display: flex;
+  flex-direction: row;
+  bottom: 10rpx;
+  left: 0;
+  width:100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.webinar-item .icon-span view{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.pos-r{
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}

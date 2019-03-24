@@ -8,7 +8,10 @@ Page({
    */
   data: {
     host: getApp().globalData.host,
-    techIndex: 0
+    techIndex: 0,
+    webinarList: [],
+    documentList: [],
+    paperList: []
   },
 
   /**
@@ -72,7 +75,7 @@ Page({
     getWebinar(params).then(res => {
       console.log(res)
       this.setData({
-        data: res.length > 0 ? res[0] : {}
+        webinarList: res || []
       })
     })
   },
@@ -82,7 +85,7 @@ Page({
     getDocuments(params).then(res => {
       console.log(res)
       this.setData({
-        data: res.length > 0 ? res[0] : {}
+        documentList: res || []
       })
     })
   },
@@ -92,7 +95,7 @@ Page({
     getWhitePaper(params).then(res => {
       console.log(res)
       this.setData({
-        data: res.length > 0 ? res[0] : {}
+        paperList: res || []
       })
     })
   },

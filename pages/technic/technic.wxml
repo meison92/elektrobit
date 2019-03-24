@@ -7,19 +7,14 @@
 	</view>
 	<view class="line" />
 	<view class="tech-container">
-		<view wx:if="{{techIndex==0}}" class="webinar-item">
-			<view>
-				<image src="http://s9.sinaimg.cn/mw690/006hikKrzy7pzDEQbFe68&690" mode="aspectFit" style="width:260rpx;height:180rpx;" />
-				<view>
-					<image src="../../asset/tech-icon-2.png" mode="aspectFit" style="width:30rpx;height:20rpx;" />
-					<image src="../../asset/tech-icon-1.png" mode="aspectFit" style="width:30rpx;height:20rpx;" />
-				</view>
-			</view>
-			<view>
-				<view class="green f14">范围广微积分v模式密封胶而网购骗局我没玩；方可为</view>
-				<view class="grey1 f12">产品：Vsdwe343</view>
-			</view>
-		</view>
+		<block
+		 wx:if="{{techIndex==0}}"
+		 wx:for="{{webinarList}}"
+		 wx:for-item="item"
+		 wx:key="item.id"
+		>
+			<webinar-item data="{{item}}" />
+		</block>
 		<view wx:if="{{techIndex==1}}">
 			<view>
 				<view class="green f14">范围广微积分v模式密封胶而网购骗局我没玩；方可为</view>
