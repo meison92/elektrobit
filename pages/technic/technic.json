@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "webinar-item":"/components/webinarItem/index"
+    "webinar-item":"/components/webinarItem/index",
+    "document-item":"/components/documentItem/index",
+    "paper-item":"/components/paperItem/index"
   }
 }

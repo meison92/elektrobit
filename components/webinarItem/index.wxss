@@ -1,13 +1,15 @@
+@import "../../app.wxss";
 
 .webinar-item {
   display: flex;
   flex-direction: row;
+  height: 180rpx;
 }
 
 .webinar-item .icon-span {
   display: flex;
   flex-direction: row;
-  bottom: 10rpx;
+  bottom: 0;
   left: 0;
   width:100%;
   background: rgba(0, 0, 0, 0.5);
@@ -19,12 +21,11 @@
   justify-content: center;
   align-items: center;
   font-size: 24rpx;
+  color: white;
 }
 
-.pos-r{
-  position: relative;
-}
-
-.pos-a {
-  position: absolute;
+.webinar-item .webinar-content{
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
 }

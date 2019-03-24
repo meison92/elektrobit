@@ -1,5 +1,5 @@
-<view class="webinar-item">
-	<view bindtap="tapDetail" class="pos-r">
+<view class="webinar-item" bindtap="tapDetail">
+	<view class="pos-r">
 		<image src="{{data.image.url}}" mode="aspectFit" style="width:260rpx;height:180rpx;" />
 		<view class="pos-a icon-span">
 			<view>
@@ -12,9 +12,9 @@
 			</view>
 		</view>
 	</view>
-	<view>
-		<view class="green f14">{{data.title}}</view>
-		<view class="grey1 f12">{{data.related_products[0].title}}</view>
+	<view class="webinar-content">
+		<view class="green f16">{{data.title}}</view>
+		<view class="grey2 f14">{{data.related_products[0].title}}</view>
 	</view>
 </view>
 
