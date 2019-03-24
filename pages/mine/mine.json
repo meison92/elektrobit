@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "edit-modal": "/components/editModal/index"
+  }
 }

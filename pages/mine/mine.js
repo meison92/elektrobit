@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showModal: false,
     data: {}
   },
 
@@ -70,20 +69,7 @@ Page({
   },
 
   tapEdit() {
-    // wx.navigateTo({
-    //   url: '/pages/mineEdit/mineEdit'
-    // })
-    this.setData({
-      showModal: true
-    })
-  },
-  /**
-     * 隐藏模态对话框
-     */
-  hideModal: function () {
-    this.setData({
-      showModal: false
-    });
+    this.selectComponent("#editModal").showModal();
   },
 
   _getUser() {
