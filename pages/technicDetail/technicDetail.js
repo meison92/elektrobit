@@ -1,18 +1,21 @@
 // pages/technicDetail/technicDetail.js
+import { getTechnologyDetail, getTechnologyComment } from '../../wxApi/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    data: {},
+    commentList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getTechnologyDetail();
+    this._getTechnologyComment();
   },
 
   /**
@@ -62,5 +65,26 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  _getTechnologyDetail: function () {
+    let id = this.options.id;
+    let params = { id: id }
+    getTechnologyDetail(params).then(res => {
+      console.log(res)
+      this.setData({
+        data: res.length > 0 ? res[0] : {}
+      })
+    })
+  },
+  _getTechnologyComment: function () {
+    let id = this.options.id;
+    let params = { id: id }
+    getTechnologyComment(params).then(res => {
+      console.log(res)
+      this.setData({
+        commentList: res || []
+      })
+    })
+  },
 })

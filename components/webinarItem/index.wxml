@@ -1,13 +1,13 @@
-<view class="webinar-item" bindtap="tapDetail">
+<view class="webinar-item" bindtap="tapDetail" data-id="{{data.id}}">
 	<view class="pos-r">
-		<image src="{{data.image.url}}" mode="aspectFit" style="width:260rpx;height:180rpx;" />
+		<image src="{{data.image.url}}" mode="scaleToFill" style="width:260rpx;height:180rpx;" />
 		<view class="pos-a icon-span">
 			<view>
-				<image src="../../asset/tech-icon-2.png" mode="aspectFit" style="width:40rpx;height:32rpx;" />
+				<image src="../../asset/tech-icon-2.png" mode="scaleToFill" style="width:40rpx;height:32rpx;" />
 				<text>{{data.played}}</text>
 			</view>
 			<view>
-				<image src="../../asset/tech-icon-1.png" mode="aspectFit" style="width:40rpx;height:32rpx;" />
+				<image src="../../asset/tech-icon-1.png" mode="scaleToFill" style="width:40rpx;height:32rpx;" />
 				<text>{{data.commented}}</text>
 			</view>
 		</view>

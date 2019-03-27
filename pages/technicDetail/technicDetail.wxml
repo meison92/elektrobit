@@ -1,2 +1,24 @@
 <!--pages/technicDetail/technicDetail.wxml-->
-<text>pages/technicDetail/technicDetail.wxml</text>
+<view class="tech-detail">
+	<video id="myVideo" src="{{data.video_url}}" controls></video>
+	<view class="tech-container">
+		<view>{{data.title}}</view>
+		<view class="icon-span">
+			<view>
+				<image src="../../asset/tech-icon-2.png" mode="scaleToFill" style="width:40rpx;height:32rpx;" />
+				<text>{{data.played}}</text>
+			</view>
+			<view>
+				<image src="../../asset/tech-icon-1.png" mode="scaleToFill" style="width:40rpx;height:32rpx;" />
+				<text>{{data.commented}}</text>
+			</view>
+		</view>
+        <view class="line"></view>
+        <view>产品：</view>
+        <view>类别：</view>
+        <view>资源类型：</view>
+        <view>评论</view>
+        <view></view>
+	</view>
+</view>
+

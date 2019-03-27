@@ -53,8 +53,33 @@ Component({
             });
         },
         bindChange: function (event) {
-
-            console.log(event.detail.value)
+            let id = event.currentTarget.dataset.id;
+            let value = event.detail.value;
+            if (id == 'name') {
+                this.setData({
+                    name: value
+                })
+            } else if (id == 'phone') {
+                this.setData({
+                    phone: value
+                })
+            } else if (id == 'company') {
+                this.setData({
+                    company: value
+                })
+            } else if (id == 'email') {
+                this.setData({
+                    email: value
+                })
+            } else if (id == 'job') {
+                this.setData({
+                    job: value
+                })
+            } else if (id == 'verifyCode') {
+                this.setData({
+                    verifyCode: value
+                })
+            }
         }
     }
 })

@@ -1,11 +1,13 @@
 <!--pages/technic/technic.wxml-->
 <view>
-	<view class="tech-nav">
-		<view bindtap="tapNav" data-index="0" class="f16 {{techIndex==0?'green':''}}">Webinar</view>
-		<view bindtap="tapNav" data-index="1" class="f16 {{techIndex==1?'green':''}}">技术文章</view>
-		<view bindtap="tapNav" data-index="2" class="f16 {{techIndex==2?'green':''}}">白皮书</view>
+	<view class="tech-top">
+		<view class="tech-nav">
+			<view bindtap="tapNav" data-index="0" class="f16 {{techIndex==0?'green':''}}">Webinar</view>
+			<view bindtap="tapNav" data-index="1" class="f16 {{techIndex==1?'green':''}}">技术文章</view>
+			<view bindtap="tapNav" data-index="2" class="f16 {{techIndex==2?'green':''}}">白皮书</view>
+		</view>
+		<view class="line" />
 	</view>
-	<view class="line" />
 	<view class="tech-container">
 		<block
 		 wx:if="{{techIndex==0}}"

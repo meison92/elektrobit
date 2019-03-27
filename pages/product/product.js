@@ -73,12 +73,5 @@ Page({
         productList: res || []
       })
     })
-  },
-
-  tapProductDetail: function(e) {
-    let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: `/pages/productDetail/productDetail?id=${id}`
-    })
   }
 })

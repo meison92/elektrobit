@@ -1,1 +1,13 @@
 /* pages/technicDetail/technicDetail.wxss */
+.tech-detail video {
+    width:100%;
+
+}
+.tech-detail .tech-container{
+    padding: 40rpx;
+}
+
+.icon-span {
+    display: flex;
+    flex-direction: row;
+}

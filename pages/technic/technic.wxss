@@ -1,11 +1,15 @@
 /* pages/technic/technic.wxss */
+.tech-top{
+    display: flex;
+    flex-direction: column;
+    padding: 0 40rpx;
+}
 .tech-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 80rpx;
-    padding: 0 40rpx;
 }
 
 .tech-container {

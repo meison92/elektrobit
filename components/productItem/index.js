@@ -23,10 +23,10 @@ Component({
     * 组件的方法列表
     */
     methods: {
-        tapDetail: function (event) {
-            let id = event.currentTarget.dataset.id;
+        tapProductDetail: function (e) {
+            let id = e.currentTarget.dataset.id;
             wx.navigateTo({
-                url: `/pages/technicDetail/technicDetail?id=${id}`
+                url: `/pages/productDetail/productDetail?id=${id}`
             })
         }
     }

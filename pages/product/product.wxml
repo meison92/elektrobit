@@ -1,12 +1,7 @@
 <!--pages/product/product.wxml-->
 <view class="product-container">
 	<block wx:for="{{productList}}" wx:key="item.id">
-		<view class="product-item" bindtap="tapProductDetail" data-id="{{item.id}}">
-			<image src="{{item.image.url}}" mode="aspectFit" />
-			<view class="green f14">{{item.title}}</view>
-			<view class="grey1 f14">{{item.category}}</view>
-			<view class="grey2 f12">{{item.body}}</view>
-		</view>
+		<product-item data="{{item}}"/>
 	</block>
 </view>
 

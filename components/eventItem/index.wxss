@@ -35,3 +35,7 @@
   .event-item{
     margin-bottom: 40rpx;
   }
+
+  .event-item image {
+    width:100%;
+  }
