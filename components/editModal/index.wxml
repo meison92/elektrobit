@@ -7,64 +7,70 @@
 	<view class="modal-dialog" catchtap="catchtap">
 		<image src="../../asset/personal-back-pic.png" mode="scaleToFill" />
 		<view class="modal-title">注册登录</view>
-		<input
-		 class="modal-input"
-		 type="text"
-		 placeholder="输入姓名"
-		 bindinput="bindChange"
-		 data-id="name"
-		 value="{{name}}"
-		 placeholder-class="input-holder"
-		/>
-		<input
-		 class="modal-input"
-		 type="text"
-		 placeholder="输入公司"
-		 bindinput="bindChange"
-		 data-id="company"
-		 value="{{company}}"
-		 placeholder-class="input-holder"
-		/>
-		<input
-		 class="modal-input"
-		 type="text"
-		 placeholder="输入职位"
-		 bindinput="bindChange"
-		 data-id="job"
-		 value="{{job}}"
-		 placeholder-class="input-holder"
-		/>
-		<input
-		 class="modal-input"
-		 type="text"
-		 placeholder="输入邮箱"
-		 bindinput="bindChange"
-		 data-id="email"
-		 value="{{email}}"
-		 placeholder-class="input-holder"
-		/>
-		<input
-		 class="modal-input"
-		 type="number"
-		 maxlength="11"
-		 placeholder="输入手机"
-		 bindinput="bindChange"
-		 data-id="phone"
-		 value="{{phone}}"
-		 placeholder-class="input-holder"
-		/>
-		<input
-		 class="modal-input"
-		 type="number"
-		 placeholder="输入手机验证码"
-		 bindinput="bindChange"
-		 data-id="verifyCode"
-		 value="{{verifyCode}}"
-		 placeholder-class="input-holder"
-		/>
+		<view class="modal-content">
+			<input
+			 class="modal-input"
+			 type="text"
+			 placeholder="输入姓名"
+			 bindinput="bindChange"
+			 data-id="name"
+			 value="{{name}}"
+			 placeholder-class="input-holder"
+			/>
+			<input
+			 class="modal-input"
+			 type="text"
+			 placeholder="输入公司"
+			 bindinput="bindChange"
+			 data-id="company"
+			 value="{{company}}"
+			 placeholder-class="input-holder"
+			/>
+			<input
+			 class="modal-input"
+			 type="text"
+			 placeholder="输入职位"
+			 bindinput="bindChange"
+			 data-id="job"
+			 value="{{job}}"
+			 placeholder-class="input-holder"
+			/>
+			<input
+			 class="modal-input"
+			 type="text"
+			 placeholder="输入邮箱"
+			 bindinput="bindChange"
+			 data-id="email"
+			 value="{{email}}"
+			 placeholder-class="input-holder"
+			/>
+			<view class="phone-span">
+				<input
+				 class="modal-input"
+				 type="number"
+				 maxlength="11"
+				 placeholder="输入手机"
+				 bindinput="bindChange"
+				 data-id="phone"
+				 value="{{phone}}"
+				 placeholder-class="input-holder"
+				/>
+				<view class="btn-verify" bindtap="getVerify">获取验证码</view>
+			</view>
+
+			<input
+			 class="modal-input"
+			 type="number"
+			 placeholder="输入手机验证码"
+			 bindinput="bindChange"
+			 data-id="verifyCode"
+			 value="{{verifyCode}}"
+			 placeholder-class="input-holder"
+			/>
+		</view>
 		<view class="btn-group">
-			<view class="btn-confirm">确定</view>
-			<view class="btn-cancel">取消</view>
+			<view class="btn-confirm" bindtap="confirm">确定</view>
+			<view class="btn-cancel" bindtap="cancel">取消</view>
 		</view>
 	</view>
 </view>

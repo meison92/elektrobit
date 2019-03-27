@@ -7,8 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    eventList: [],
-    selectIndex: 0
+    eventList: []
   },
 
   /**
@@ -16,8 +15,9 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '精彩活动'
+      title: '我的活动'
     })
+    this._getEvents();
   },
 
   /**
@@ -25,18 +25,13 @@ Page({
    */
   onReady: function () {
 
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    getEvents().then(res => {
-      console.log(res)
-      this.setData({
-        eventList: res || []
-      })
-    })
   },
 
   /**
@@ -74,18 +69,12 @@ Page({
 
   },
 
-  tapSelection(event) {
-    let index = event.currentTarget.dataset.index;
-    
-    console.log(index)
-    this.setData({
-      selectIndex: index
-    })
-  },
-
-  tapDetail() {
-    wx.navigateTo({
-      url: '/pages/eventDetail/eventDetail'
+  _getEvents: function () {
+    getEvents().then(res => {
+      console.log(res)
+      this.setData({
+        eventList: res || []
+      })
     })
   }
 })

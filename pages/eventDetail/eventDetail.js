@@ -70,7 +70,7 @@ Page({
   },
 
   _getEventDetail: function () {
-    let params = { id: options.id }
+    let params = { id: this.options.id }
     getEventDetail(params).then(res => {
       console.log(res)
       this.setData({

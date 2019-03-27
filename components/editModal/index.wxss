@@ -38,7 +38,7 @@
   }
   
   .modal-content {
-    padding: 50rpx 32rpx;
+    padding: 0 70rpx;
   }
   
   .modal-input {
@@ -70,17 +70,55 @@
   .btn-group{
       display: flex;
       flex-direction: row;
+      margin-top: 70rpx;
   }
   
-  .btn-cancel {
-    width: 50%;
-    color: #666;
-    text-align: center;
-    border-right: 1px solid #dedede;
-  }
+.btn-cancel {
+  width:240rpx;
+  height:60rpx;
+  background: grey;
+  border-radius: 30rpx;
+  color:white;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20rpx;
+}
   
-  .btn-confirm {
-    width: 50%;
-    color: #ec5300;
-    text-align: center;
-  }
+.btn-confirm {
+    width:240rpx;
+    height:60rpx;
+    background: #F19827;
+    border-radius: 30rpx;
+    color:white;
+    font-size: 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20rpx;
+}
+
+.btn-verify {
+  width:180rpx;
+  height:60rpx;
+  background: #F19827;
+  border-radius: 10rpx;
+  color:white;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20rpx;
+}
+
+.phone-span{
+  display: flex;
+  flex-direction: row;
+}
+
+.phone-span input{
+  display: flex;
+  flex: 1;
+  width:100%;
+}

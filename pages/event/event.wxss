@@ -1,21 +1,4 @@
 /* pages/event/event.wxss */
-page{
-    background-color: lightgrey;
-  }
-
-.selection {
-    display: flex;
-    flex-direction: row;
-    background: white;
-}
-
-.select{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-}
-
 .list-container {
-    margin-top: 40rpx;
+    padding:0 40rpx;
 }

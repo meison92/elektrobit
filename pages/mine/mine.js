@@ -84,5 +84,10 @@ Page({
         data: res
       })
     })
+  },
+  tapEvent() {
+    wx.navigateTo({
+      url: '/pages/event/event'
+    })
   }
 })

@@ -80,6 +80,15 @@ Component({
                     verifyCode: value
                 })
             }
+        },
+        cancel: function () {
+            this.hideModal();
+        },
+        confirm: function () {
+            this.hideModal();
+        },
+        getVerify: function () {
+            console.log("获取验证码")
         }
     }
 })
