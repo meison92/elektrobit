@@ -1,1 +1,4 @@
 @import "../../app.wxss";
+.paper-item{
+    margin-bottom: 40rpx;
+}

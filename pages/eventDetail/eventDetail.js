@@ -77,5 +77,17 @@ Page({
         data: res.length > 0 ? res[0] : {}
       })
     })
+  },
+
+  submit: function () {
+    this.selectComponent("#editModal").showModal();
+  },
+
+  onlineSearch: function () {
+    wx.showToast({
+      title: '在线调研',
+      icon: 'success',
+      duration: 2000
+    })
   }
 })

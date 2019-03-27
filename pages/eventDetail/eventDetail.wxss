@@ -1,4 +1,7 @@
 /* pages/eventDetail/eventDetail.wxss */
+.event-detail image {
+    width:100%;
+}
 .event-detail-contianer{
     padding:40rpx;
 }

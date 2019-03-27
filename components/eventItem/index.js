@@ -17,15 +17,7 @@ Component({
     },
 
     ready() {
-        console.log(this.data);
-        // let start = this.data.data.date.start;
-        // let end = this.data.data.date.end;
-        // this.data.data.date.start = this.sliceDate(start);
-        // this.data.data.date.end = this.sliceDate(end);
-        // console.log(this.data.data)
-        // this.setData({
-        //     data: this.data.data
-        // })
+
     },
 
     /**
@@ -40,10 +32,6 @@ Component({
         signUp(event) {
             console.log(event)
             console.log('报名')
-        },
-        sliceDate(date) {
-            console.log(date)
-            return date;
         }
     }
 })

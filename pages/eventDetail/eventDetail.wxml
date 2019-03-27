@@ -1,28 +1,31 @@
 <!--pages/eventDetail/eventDetail.wxml-->
-<image src="{{data.image.url}}" mode="aspectFit" />
-<view class="event-detail-contianer">
-	<view>
-		<view class="f14">{{data.title}}</view>
-		<view class="f12 grey1">时间：{{data.date.start}}至{{data.date.end}}</view>
-		<view class="f12 grey1">地点：{{data.venue}}</view>
-		<view class="f12 grey1">状态：{{data.status}}</view>
-	</view>
-	<view class="line" />
-	<view>
-		<view class="f14">活动介绍</view>
-		<view class="f12 grey1">房间风格防风网平均分颇为批发网服务发票未开发票违法发没发外面吃问你问你访问访问分为崇明我发没发评委们颇尔我问房间风格防风网平均分颇为批发网服务发票未开发票违法发没发外面吃问你问你访问访问分为崇明我发没发评委们颇尔我问</view>
-	</view>
-	<view>
-		<view>活动日程</view>
+<view class="event-detail">
+	<image src="{{data.image.url}}" mode="scaleToFill" />
+	<view class="event-detail-contianer">
 		<view>
-			<view>第一天 YYYY/MM/DD</view>
-			<view class="line" />
-			<view>8:00~11:00 活动内容描述</view>
+			<view class="f16">{{data.title}}</view>
+			<view class="f12 grey1">时间：{{data.date.start}}至{{data.date.end}}</view>
+			<view class="f12 grey1">地点：{{data.venue}}</view>
+			<view class="f12 grey1">状态：{{data.status}}</view>
 		</view>
-	</view>
-	<view class="btn-group">
-		<view class="btn" bindtap="tapEdit">我要报名</view>
-		<view class="btn" bindtap="tapEdit">在线调研</view>
+		<view class="line" style="margin-top:40rpx;margin-bottom:40rpx;"/>
+		<view>
+			<view class="f16" style="margin-bottom:40rpx;">活动介绍</view>
+			<view class="f12 grey1">{{data.body}}</view>
+		</view>
+		<view style="margin-top:40rpx;margin-bottom:40rpx;">
+			<view class="f16" style="margin-bottom:40rpx;">活动日程</view>
+			<view>
+				<view class="f12">第一天 YYYY/MM/DD</view>
+				<view class="line" style="margin-top:20rpx;margin-bottom:20rpx;"/>
+				<view class="f12 grey2">8:00~11:00 活动内容描述</view>
+			</view>
+		</view>
+		<view class="btn-group">
+			<view class="btn" bindtap="submit">我要报名</view>
+			<view class="btn" bindtap="onlineSearch">在线调研</view>
+		</view>
 	</view>
 </view>
 
+<edit-modal id="editModal" data="{{data}}"/>

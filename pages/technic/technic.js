@@ -103,13 +103,21 @@ Page({
   },
 
   tapNav: function (event) {
-    console.log(event)
     let index = event.target.dataset.index;
     if (index == 0) {
+      if (this.data.webinarList.length > 0) {
+        return;
+      }
       this._getWebinar();
     } else if (index == 1) {
+      if (this.data.documentList.length > 0) {
+        return;
+      }
       this._getDocuments();
     } else if (index == 2) {
+      if (this.data.paperList.length > 0) {
+        return;
+      }
       this._getWhitePaper();
     }
     this.setData({

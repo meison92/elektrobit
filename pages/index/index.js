@@ -92,5 +92,11 @@ Page({
         bannerList: res || []
       })
     })
+  },
+  tapDetail: function (event) {
+    let id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/eventDetail/eventDetail?id=${id}`
+    })
   }
 })
