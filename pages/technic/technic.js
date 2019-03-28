@@ -105,20 +105,17 @@ Page({
   tapNav: function (event) {
     let index = event.target.dataset.index;
     if (index == 0) {
-      if (this.data.webinarList.length > 0) {
-        return;
+      if (this.data.webinarList.length < 1) {
+        this._getWebinar();
       }
-      this._getWebinar();
     } else if (index == 1) {
-      if (this.data.documentList.length > 0) {
-        return;
+      if (this.data.documentList.length < 1) {
+        this._getDocuments();
       }
-      this._getDocuments();
     } else if (index == 2) {
-      if (this.data.paperList.length > 0) {
-        return;
+      if (this.data.paperList.length < 1) {
+        this._getWhitePaper();
       }
-      this._getWhitePaper();
     }
     this.setData({
       techIndex: index

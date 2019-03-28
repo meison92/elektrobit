@@ -65,7 +65,7 @@ module.exports = {
   getTechnologyDetail: (data) => { // 获取技术详情
     return request(`/json/technology/${data.id}`)
   },
-  getTechnologyComment: (data) => { // 获取技术评论
+  submitComment: (data) => { // 获取技术评论
     return request(`/json/technology/${data.id}/comment`)
   },
   getProducts: (data) => { // 获取产品列表

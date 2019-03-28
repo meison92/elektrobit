@@ -1,5 +1,5 @@
 // pages/technicDetail/technicDetail.js
-import { getTechnologyDetail, getTechnologyComment } from '../../wxApi/request'
+import { getTechnologyDetail, submitComment } from '../../wxApi/request'
 Page({
 
   /**
@@ -7,7 +7,7 @@ Page({
    */
   data: {
     data: {},
-    commentList: []
+    comments: []
   },
 
   /**
@@ -18,7 +18,6 @@ Page({
       title: '技术详情'
     })
     this._getTechnologyDetail();
-    this._getTechnologyComment();
   },
 
   /**
@@ -80,10 +79,10 @@ Page({
       })
     })
   },
-  _getTechnologyComment: function () {
+  _submitComment: function () {
     let id = this.options.id;
     let params = { id: id }
-    getTechnologyComment(params).then(res => {
+    submitComment(params).then(res => {
       console.log(res)
       this.setData({
         commentList: res || []
