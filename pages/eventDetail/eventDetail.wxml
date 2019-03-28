@@ -28,4 +28,4 @@
 	</view>
 </view>
 
-<edit-modal id="editModal" data="{{data}}"/>
+<edit-modal id="editModal" data="{{data}}" title="我的报名信息"/>

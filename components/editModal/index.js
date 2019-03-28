@@ -5,6 +5,9 @@ Component({
     properties: {
         data: {
             type: Object
+        },
+        title: {
+            type: String
         }
     },
 
@@ -20,7 +23,8 @@ Component({
         company: "",
         job: "",
         verifyCode: "",
-        email: ""
+        email: "",
+        title: ""
     },
 
     ready() {

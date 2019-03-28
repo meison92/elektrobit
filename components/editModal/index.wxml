@@ -6,7 +6,7 @@
 >
 	<view class="modal-dialog" catchtap="catchtap">
 		<image src="../../asset/personal-back-pic.png" mode="scaleToFill" />
-		<view class="modal-title">注册登录</view>
+		<view class="modal-title">{{title}}</view>
 		<view class="modal-content">
 			<input
 			 class="modal-input"

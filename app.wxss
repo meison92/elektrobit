@@ -44,3 +44,19 @@
   height: 2rpx;
   background: #858585;
 }
+
+.mt10 {
+  margin-top: 20rpx;
+}
+
+.mb10{
+  margin-bottom: 20rpx;
+}
+
+.mt20{
+  margin-top: 40rpx;
+}
+
+.mb20{
+  margin-bottom: 40rpx;
+}
