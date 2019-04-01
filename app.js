@@ -12,6 +12,15 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log('登录成功:' + res.code)
         this.globalData.code = res.code;
+        const userInfo = wx.getStorageSync('userInfo');
+        console.log(userInfo)
+        if (userInfo) {
+          this.globalData.userInfo = JSON.parse(userInfo)
+        } else {
+          this.reLaunch({
+            url: 'pages/login/login'
+          })
+        }
       }
     })
 

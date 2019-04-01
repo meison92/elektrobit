@@ -1,12 +1,14 @@
 // pages/mine/mine.js
 const { getUser } = require('../../wxApi/request')
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    data: {}
+    data: {},
+    userInfo: {}
   },
 
   /**
@@ -17,6 +19,10 @@ Page({
       title: '我的'
     })
     this._getUser();
+    const userInfo = app.globalData.userInfo;
+    this.setData({
+      userInfo: userInfo
+    })
   },
 
   /**

@@ -70,6 +70,9 @@ Page({
     console.log(result);
     const detail = result.detail;
     const userInfo = detail.userInfo;
-    wx.setStorageSync('userInfo', userInfo);
+    wx.setStorageSync('userInfo', JSON.stringify(userInfo));
+    wx.reLaunch({
+      url: `/pages/index/index`
+    })
   },
 })
