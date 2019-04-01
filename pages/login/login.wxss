@@ -1,0 +1,39 @@
+page {
+    background: #fff;
+    display: flex;
+    color: #737373;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+}
+.image {
+  margin-top: 80rpx;
+  width: 134rpx;
+  height: 134rpx;
+}
+.info {
+  font-size: 28rpx;
+  margin-top: 40rpx;
+  margin-bottom: 60rpx;
+}
+.tip {
+    margin-top: 10rpx;
+    color: red;
+    font-size: 22rpx;
+    text-align: center;
+}
+.hovering {
+  opacity: 0.5;
+}
+.login-btn {
+    margin: auto;
+    margin-top: 16rpx;
+    border-radius: 80rpx;
+    width: 686rpx;
+    height: 80rpx;
+    color: #fff;
+    border: 2rpx solid #EAEAEA;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    background: #01bc00;
+}

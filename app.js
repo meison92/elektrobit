@@ -14,7 +14,15 @@ App({
         this.globalData.code = res.code;
       }
     })
-    // 获取用户信息
+
+  },
+  globalData: {
+    host: 'https://eb.d.dminorstudio.com',
+    userInfo: null
+  },
+
+  // 获取用户信息
+  getSetting() {
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -34,9 +42,5 @@ App({
         }
       }
     })
-  },
-  globalData: {
-    host: 'https://eb.d.dminorstudio.com',
-    userInfo: null
   }
 })

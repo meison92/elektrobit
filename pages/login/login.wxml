@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+	<!-- 用户登录测试 -->
+	<image class="image" src="../../asset/events-book-pic.png" />
+	<view class="info">
+		欢迎来到elektrobit
+	</view>
+	<button
+	 hover-class="hovering"
+	 class="login-btn"
+	 open-type="getUserInfo"
+	 bindgetuserinfo="bindLogin"
+	>微信登录
+	</button>
+</view>
+
