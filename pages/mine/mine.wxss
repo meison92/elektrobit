@@ -52,6 +52,5 @@
     height: 144rpx;
     border-radius: 72rpx;
     position: absolute;
-    background: red;
     bottom: -60rpx;
 }

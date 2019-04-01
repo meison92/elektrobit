@@ -17,8 +17,8 @@ App({
         if (userInfo) {
           this.globalData.userInfo = JSON.parse(userInfo)
         } else {
-          this.reLaunch({
-            url: 'pages/login/login'
+          wx.reLaunch({
+            url: '/pages/login/login'
           })
         }
       }
