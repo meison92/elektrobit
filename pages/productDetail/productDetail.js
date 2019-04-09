@@ -1,4 +1,6 @@
 // pages/productDetail/productDetail.js
+
+var WxParse = require('../../wxParse/wxParse.js');
 import { getProductDetail } from '../../wxApi/request'
 Page({
 
@@ -76,6 +78,9 @@ Page({
       this.setData({
         data: res.length > 0 ? res[0] : {}
       })
+      var article = '<div style="color:red">我是HTML代码</div>';
+      var that = this;
+      WxParse.wxParse('article', 'html', article, that, 5);
     })
   }
 })
