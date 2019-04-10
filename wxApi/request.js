@@ -1,4 +1,5 @@
-const app = getApp()
+import { base64encode } from '../utils/util'
+const app = getApp();
 const request = (url, data, method) => {
   let _url = app.globalData.host + url
   return new Promise((resolve, reject) => {
@@ -8,6 +9,30 @@ const request = (url, data, method) => {
       data: data,
       header: {
         'Content-Type': 'application/json'
+      },
+      success(request) {
+        resolve(request.data)
+      },
+      fail(error) {
+        reject(error)
+      },
+      complete(aaa) {
+        // 加载完成
+      }
+    })
+  })
+}
+
+const requestWithAuth = (url, data, method) => {
+  let _url = app.globalData.host + url
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: _url,
+      method: method || 'get',
+      data: data,
+      header: {
+        'Content-Type': 'application/json',
+        'Authorization': 'basic ' + base64encode(app.globalData.openid + '123456')
       },
       success(request) {
         resolve(request.data)
@@ -45,6 +70,13 @@ Promise.prototype.finally = function (callback) {
   );
 }
 
+function b64EncodeUnicode(str) {
+  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+    function (match, p1) {
+      return String.fromCharCode('0x' + p1);
+    }));
+}
+
 module.exports = {
   request,
   getEvents: (data) => { // 获取活动列表
@@ -65,9 +97,6 @@ module.exports = {
   getTechnologyDetail: (data) => { // 获取技术详情
     return request(`/json/technology/${data.id}`)
   },
-  submitComment: (data) => { // 获取技术评论
-    return request(`/json/technology/${data.id}/comment`)
-  },
   getProducts: (data) => { // 获取产品列表
     return request('/json/products', data);
   },
@@ -84,6 +113,12 @@ module.exports = {
     return request('/json/featured-events', data);
   },
   registrations: (data) => {
-    return request('/json/registrations', data, 'post');
+    return requestWithAuth('/json/registrations', data);
+  },
+  register: (data) => {
+    return requestWithAuth(`/json/event/${data.id}/register`, data, 'post');
+  },
+  submitComment: (data) => { // 提交评论
+    return requestWithAuth(`/json/technology/${data.id}/comment`)
   },
 }

@@ -1,5 +1,5 @@
 const app = getApp();
-const { getUser } = require('../../wxApi/request')
+const { getUser, register } = require('../../wxApi/request')
 Component({
     /**
      * 组件的属性列表
@@ -134,7 +134,7 @@ Component({
                 })
                 return;
             }
-            this._getUser();
+            this._register();
         },
         getVerify: function () {
             if (!this.data.phone) {
@@ -149,6 +149,25 @@ Component({
                 title: '获取验证码成功',
                 icon: 'success',
                 duration: 2000
+            })
+        },
+        _register: function () {
+            let params = {
+                id: '10',
+                openid: app.globalData.openid,
+                data: {
+                    name: this.data.name,
+                    company: this.data.company,
+                    phone: this.data.phone,
+                    email: this.data.email,
+                    title: this.data.job
+                }
+            }
+            register(params).then(res => {
+                console.log(res)
+                this.setData({
+                    data: res
+                })
             })
         },
         _getUser() {

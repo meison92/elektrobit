@@ -1,5 +1,5 @@
 // pages/event/event.js
-const { getEvents } = require('../../wxApi/request')
+const { registrations } = require('../../wxApi/request')
 const app = getApp();
 Page({
 
@@ -70,7 +70,7 @@ Page({
   },
 
   _getEvents: function () {
-    getEvents().then(res => {
+    registrations().then(res => {
       console.log(res)
       this.setData({
         eventList: res || []
