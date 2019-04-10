@@ -1,4 +1,6 @@
 // pages/login/login.js
+const app = getApp();
+const { getUser } = require('../../wxApi/request')
 Page({
 
   /**
@@ -70,9 +72,17 @@ Page({
     console.log(result);
     const detail = result.detail;
     const userInfo = detail.userInfo;
-    wx.setStorageSync('userInfo', JSON.stringify(userInfo));
-    wx.reLaunch({
-      url: `/pages/index/index`
+    let params = {
+      code: app.globalData.code,
+      encrypted_data: detail.encryptedData,
+      iv: detail.iv
+    }
+    getUser(params).then(res => {
+      console.log(res)
+      wx.setStorageSync('openid', res.openid);
+      wx.reLaunch({
+        url: `/pages/index/index`
+      })
     })
   },
 })

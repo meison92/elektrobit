@@ -12,10 +12,10 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log('登录成功:' + res.code)
         this.globalData.code = res.code;
-        const userInfo = wx.getStorageSync('userInfo');
-        console.log(userInfo)
-        if (userInfo) {
-          this.globalData.userInfo = JSON.parse(userInfo)
+        const openid = wx.getStorageSync('openid');
+        console.log(openid)
+        if (openid) {
+          this.globalData.openid = openid
         } else {
           wx.reLaunch({
             url: '/pages/login/login'
@@ -27,7 +27,8 @@ App({
   },
   globalData: {
     host: 'https://eb.d.dminorstudio.com',
-    userInfo: null
+    userInfo: null,
+    openid:null
   },
 
   // 获取用户信息

@@ -1,3 +1,5 @@
+const app = getApp();
+const { getUser } = require('../../wxApi/request')
 Component({
     /**
      * 组件的属性列表
@@ -132,7 +134,7 @@ Component({
                 })
                 return;
             }
-            this.hideModal();
+            this._getUser();
         },
         getVerify: function () {
             if (!this.data.phone) {
@@ -148,6 +150,24 @@ Component({
                 icon: 'success',
                 duration: 2000
             })
-        }
+        },
+        _getUser() {
+            let params = {
+                openid: app.globalData.openid,
+                data: {
+                    name: this.data.name,
+                    company: this.data.company,
+                    phone: this.data.phone,
+                    email: this.data.email,
+                    title: this.data.job
+                }
+            }
+            getUser(params).then(res => {
+                console.log(res)
+                this.setData({
+                    data: res
+                })
+            })
+        },
     }
 })

@@ -20,11 +20,11 @@
 	</view>
 	<view class="input-span">
 		<image src="../../asset/personal-icon-4.png" mode="aspectFit" class="input-icon" />
-		<text>部门与职务</text>
+		<text>{{data.title}}</text>
 	</view>
 	<view class="input-span">
 		<image src="../../asset/personal-icon-5.png" mode="aspectFit" class="input-icon" />
-		<text>6253423@qq.com</text>
+		<text>{{data.email}}</text>
 	</view>
 </view>
 <view class="btn-span">

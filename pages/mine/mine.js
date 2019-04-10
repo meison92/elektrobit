@@ -81,8 +81,9 @@ Page({
   },
 
   _getUser() {
+    console.log(app.globalData.openid)
     let params = {
-      openid: '111'
+      openid: app.globalData.openid
     }
     getUser(params).then(res => {
       console.log(res)

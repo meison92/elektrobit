@@ -82,5 +82,8 @@ module.exports = {
   },
   getFeaturedEvents: (data) => {
     return request('/json/featured-events', data);
-  }
+  },
+  registrations: (data) => {
+    return request('/json/registrations', data, 'post');
+  },
 }
