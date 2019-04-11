@@ -1,6 +1,6 @@
 <!--pages/event/event.wxml-->
 <view class="list-container">
-	<block wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
-		<event-item data="{{item}}" />
+	<block wx:for="{{eventList}}" wx:for-item="item" wx:key="item.event.id">
+		<event-item data="{{item.event}}" />
 	</block>
 </view>

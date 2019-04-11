@@ -42,15 +42,11 @@
     display: flex;
     justify-content: center;
 }
-.avatar-span{
-    display: flex;
-    position: relative;
-    justify-content: center;
-}
 .avatar {
     width:144rpx;
     height: 144rpx;
     border-radius: 72rpx;
     position: absolute;
-    bottom: -60rpx;
+    top: 180rpx;
+    left: 40%;
 }

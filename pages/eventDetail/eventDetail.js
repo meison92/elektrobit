@@ -7,7 +7,8 @@ Page({
    */
   data: {
     host: getApp().globalData.host,
-    data: {}
+    data: {},
+    id: 0
   },
 
   /**
@@ -18,6 +19,9 @@ Page({
       title: '活动详情'
     })
     this._getEventDetail();
+    this.setData({
+      id: options.id
+    })
   },
 
   /**

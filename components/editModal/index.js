@@ -10,6 +10,14 @@ Component({
         },
         title: {
             type: String
+        },
+        type: {
+            type: String,
+            value: 'update'
+        },
+        id: {
+            type: String,
+            value: '0'
         }
     },
 
@@ -134,7 +142,11 @@ Component({
                 })
                 return;
             }
-            this._register();
+            if (this.data.type == "update") {
+                this._updateUser();
+            } else if (this.data.type = "submit") {
+                this._register();
+            }
         },
         getVerify: function () {
             if (!this.data.phone) {
@@ -170,7 +182,7 @@ Component({
                 })
             })
         },
-        _getUser() {
+        _updateUser() {
             let params = {
                 openid: app.globalData.openid,
                 data: {

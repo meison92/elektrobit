@@ -2,9 +2,7 @@
 <view>
 	<image src="../../asset/personal-back-pic.png" mode="aspectFit" style="width:100%;height:130px;" />
 </view>
-<view class="avatar-span">
-	<image class="avatar" src="{{data.picture}}" mode="aspectFit" />
-</view>
+<image class="avatar" src="{{data.picture}}" mode="aspectFit" />
 <view class="mine-container">
 	<view class="input-span">
 		<image src="../../asset/personal-icon-1.png" mode="aspectFit" class="input-icon" />
@@ -35,5 +33,5 @@
 </view>
 <official-account/>
 
-<edit-modal id="editModal" data="{{data}}"/>
+<edit-modal id="editModal" data="{{data}}" type="update"/>
 
