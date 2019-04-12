@@ -19,10 +19,6 @@ Page({
       title: '我的'
     })
     this._getUser();
-    const userInfo = app.globalData.userInfo;
-    this.setData({
-      userInfo: userInfo
-    })
   },
 
   /**
@@ -87,8 +83,10 @@ Page({
     }
     getUser(params).then(res => {
       console.log(res)
+
+      wx.setStorageSync('userInfo', res)
       this.setData({
-        data: res
+        data: res || {}
       })
     })
   },

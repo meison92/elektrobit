@@ -30,8 +30,8 @@
 			 type="text"
 			 placeholder="输入职位"
 			 bindinput="bindChange"
-			 data-id="job"
-			 value="{{job}}"
+			 data-id="position"
+			 value="{{position}}"
 			 placeholder-class="input-holder"
 			/>
 			<input

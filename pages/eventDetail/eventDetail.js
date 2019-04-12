@@ -8,6 +8,7 @@ Page({
   data: {
     host: getApp().globalData.host,
     data: {},
+    userInfo: {},
     id: 0
   },
 
@@ -19,8 +20,11 @@ Page({
       title: '活动详情'
     })
     this._getEventDetail();
+
+    const userInfo = wx.getStorageSync('userInfo');
     this.setData({
-      id: options.id
+      id: options.id,
+      userInfo: userInfo
     })
   },
 

@@ -6,7 +6,21 @@ Component({
      */
     properties: {
         data: {
-            type: Object
+            type: Object,
+            value: {},
+            observer: function (newVal, oldVal) {
+                console.log(newVal)
+                if(!newVal.name) {
+                    return;
+                }
+                this.setData({
+                    name: newVal.name,
+                    phone: newVal.phone,
+                    company: newVal.company,
+                    position: newVal.position,
+                    email: newVal.email,
+                })
+            }
         },
         title: {
             type: String
@@ -14,10 +28,6 @@ Component({
         type: {
             type: String,
             value: 'update'
-        },
-        id: {
-            type: String,
-            value: '0'
         }
     },
 
@@ -31,7 +41,7 @@ Component({
         name: "",
         phone: "",
         company: "",
-        job: "",
+        position: "",
         verifyCode: "",
         email: "",
         title: ""
@@ -39,13 +49,6 @@ Component({
 
     ready() {
         console.log(this.data)
-        this.setData({
-            name: this.data.name,
-            phone: this.data.phone,
-            company: this.data.company,
-            email: this.data.email,
-            job: this.data.job,
-        })
     },
 
     /**
@@ -85,9 +88,9 @@ Component({
                 this.setData({
                     email: value
                 })
-            } else if (id == 'job') {
+            } else if (id == 'position') {
                 this.setData({
-                    job: value
+                    position: value
                 })
             } else if (id == 'verifyCode') {
                 this.setData({
@@ -113,7 +116,7 @@ Component({
                     duration: 2000
                 })
                 return;
-            } else if (!this.data.job) {
+            } else if (!this.data.position) {
                 wx.showToast({
                     title: '请输入职位！',
                     icon: 'none',
@@ -172,7 +175,7 @@ Component({
                     company: this.data.company,
                     phone: this.data.phone,
                     email: this.data.email,
-                    title: this.data.job
+                    position: this.data.position
                 }
             }
             register(params).then(res => {
@@ -190,7 +193,7 @@ Component({
                     company: this.data.company,
                     phone: this.data.phone,
                     email: this.data.email,
-                    title: this.data.job
+                    position: this.data.position
                 }
             }
             getUser(params).then(res => {

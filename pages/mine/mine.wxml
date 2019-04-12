@@ -18,7 +18,7 @@
 	</view>
 	<view class="input-span">
 		<image src="../../asset/personal-icon-4.png" mode="aspectFit" class="input-icon" />
-		<text>{{data.title}}</text>
+		<text>{{data.position}}</text>
 	</view>
 	<view class="input-span">
 		<image src="../../asset/personal-icon-5.png" mode="aspectFit" class="input-icon" />
@@ -33,5 +33,5 @@
 </view>
 <official-account/>
 
-<edit-modal id="editModal" data="{{data}}" type="update"/>
+<edit-modal id="editModal" data="{{data}}" type="update" title="更新信息" />
 
