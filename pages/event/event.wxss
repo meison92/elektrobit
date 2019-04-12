@@ -1,4 +1,5 @@
 /* pages/event/event.wxss */
 .list-container {
     padding:0 40rpx;
+    margin-top: 20rpx;
 }

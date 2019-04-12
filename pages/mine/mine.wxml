@@ -33,5 +33,5 @@
 </view>
 <official-account/>
 
-<edit-modal id="editModal" data="{{data}}" type="update" title="更新信息" />
+<edit-modal id="editModal" data="{{data}}" type="update" title="更新信息" bind:parentEvent='_getUser'/>
 

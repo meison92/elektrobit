@@ -10,7 +10,7 @@ Component({
             value: {},
             observer: function (newVal, oldVal) {
                 console.log(newVal)
-                if(!newVal.name) {
+                if (!newVal.name) {
                     return;
                 }
                 this.setData({
@@ -22,8 +22,14 @@ Component({
                 })
             }
         },
-        title: {
-            type: String
+        eventid: {
+            type: String,
+            value: 0,
+            observer: function (newVal, oldVal) {
+                this.setData({
+                    eventid: newVal
+                })
+            }
         },
         type: {
             type: String,
@@ -44,7 +50,7 @@ Component({
         position: "",
         verifyCode: "",
         email: "",
-        title: ""
+        eventid: 0
     },
 
     ready() {
@@ -168,7 +174,7 @@ Component({
         },
         _register: function () {
             let params = {
-                id: '10',
+                id: this.data.eventid,
                 openid: app.globalData.openid,
                 data: {
                     name: this.data.name,
@@ -180,9 +186,14 @@ Component({
             }
             register(params).then(res => {
                 console.log(res)
-                this.setData({
-                    data: res
-                })
+                if (res.message == 'success') {
+                    wx.showToast({
+                        title: '报名成功',
+                        icon: 'success',
+                        duration: 2000
+                    })
+                    this.cancel();
+                }
             })
         },
         _updateUser() {
@@ -201,6 +212,13 @@ Component({
                 this.setData({
                     data: res
                 })
+                wx.showToast({
+                    title: '更新成功',
+                    icon: 'success',
+                    duration: 2000
+                })
+                this.cancel();
+                this.triggerEvent('parentEvent')
             })
         },
     }
