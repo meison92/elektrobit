@@ -1,5 +1,5 @@
 // pages/eventDetail/eventDetail.js
-import { getEventDetail, register } from '../../wxApi/request'
+import { getEventDetail } from '../../wxApi/request'
 Page({
 
   /**

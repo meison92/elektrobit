@@ -119,6 +119,6 @@ module.exports = {
     return requestWithAuth(`/json/event/${data.id}/register`, data, 'post');
   },
   submitComment: (data) => { // 提交评论
-    return requestWithAuth(`/json/technology/${data.id}/comment`)
+    return requestWithAuth(`/json/technology/${data.id}/comment`, data, 'post')
   },
 }

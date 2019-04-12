@@ -1,5 +1,6 @@
 // pages/technicDetail/technicDetail.js
 import { getTechnologyDetail, submitComment } from '../../wxApi/request'
+const app = getApp();
 Page({
 
   /**
@@ -79,14 +80,17 @@ Page({
       })
     })
   },
-  _submitComment: function () {
+  comment: function () {
     let id = this.options.id;
-    let params = { id: id }
+    let params = {
+      id: id,
+      openid: app.globalData.openid,
+      data: {
+        comment: '我是评论我是评论'
+      }
+    }
     submitComment(params).then(res => {
       console.log(res)
-      this.setData({
-        commentList: res || []
-      })
     })
   },
 })
