@@ -8,7 +8,8 @@ Page({
    */
   data: {
     data: {},
-    comments: []
+    comments: [],
+    comment: ""
   },
 
   /**
@@ -81,16 +82,28 @@ Page({
     })
   },
   comment: function () {
+    if (this.data.comment.length < 1) {
+      return;
+    }
     let id = this.options.id;
     let params = {
       id: id,
       openid: app.globalData.openid,
       data: {
-        comment: '我是评论我是评论'
+        comment: this.data.comment
       }
     }
     submitComment(params).then(res => {
       console.log(res)
+      this._getTechnologyDetail();
+      this.setData({
+        comment: ''
+      })
     })
   },
+  bindChange: function (event) {
+    this.setData({
+      comment: event.detail.value
+    })
+  }
 })

@@ -26,7 +26,7 @@ Component({
         tapDetail: function (event) {
             let id = event.currentTarget.dataset.id;
             wx.navigateTo({
-                url: `/pages/technicDetail/technicDetail=${id}`
+                url: `/pages/technicDetail/technicDetail?id=${id}`
             })
         }
     }

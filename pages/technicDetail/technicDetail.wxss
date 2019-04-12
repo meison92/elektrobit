@@ -5,6 +5,7 @@
 }
 .tech-detail .tech-container{
     padding: 40rpx;
+    margin-bottom: 100rpx;
 }
 
 .icon-span {
@@ -41,7 +42,7 @@
 .comment-item .comment-top .name{
     display:inline-block;
     margin-left: 10rpx;
-    margin-bottom: 10rpx;
+    margin-bottom: 20rpx;
 }
 
 .comment-item .comment-top .time {
@@ -52,4 +53,31 @@
 .comment-item .comment-bottom {
     margin-top: 20rpx;
     padding-left: 70rpx;
+}
+
+.tech-detail .input-container {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #858585;
+}
+
+.tech-detail .input-container input {
+    width:100%;
+    padding-left: 20rpx;
+    height: 100%;
+}
+
+.tech-detail .input-container view {
+    width:200rpx;
+    background: #ffa800;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
