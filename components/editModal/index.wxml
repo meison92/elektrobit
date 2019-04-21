@@ -53,19 +53,10 @@
 				 data-id="phone"
 				 value="{{phone}}"
 				 placeholder-class="input-holder"
+				 disabled
 				/>
-				<view class="btn-verify" bindtap="getVerify">获取验证码</view>
+				<button class="btn-verify" open-type="getPhoneNumber" bindgetphonenumber="getVerify">获取手机号</button>
 			</view>
-
-			<input
-			 class="modal-input"
-			 type="number"
-			 placeholder="输入手机验证码"
-			 bindinput="bindChange"
-			 data-id="verifyCode"
-			 value="{{verifyCode}}"
-			 placeholder-class="input-holder"
-			/>
 		</view>
 		<view class="btn-group">
 			<view class="btn-confirm" bindtap="confirm">确定</view>

@@ -88,6 +88,9 @@ Page({
   },
 
   submit: function () {
+    if (this.data.registered == 1) {
+      return;
+    }
     this.selectComponent("#editModal").showModal();
   },
 

@@ -80,6 +80,7 @@ Page({
     getUser(params).then(res => {
       console.log(res)
       wx.setStorageSync('openid', res.openid);
+      app.globalData.openid = res.openid
       wx.reLaunch({
         url: `/pages/index/index`
       })

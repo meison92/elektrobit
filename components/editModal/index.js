@@ -48,7 +48,6 @@ Component({
         phone: "",
         company: "",
         position: "",
-        verifyCode: "",
         email: "",
         eventid: 0
     },
@@ -98,10 +97,6 @@ Component({
                 this.setData({
                     position: value
                 })
-            } else if (id == 'verifyCode') {
-                this.setData({
-                    verifyCode: value
-                })
             }
         },
         cancel: function () {
@@ -143,13 +138,6 @@ Component({
                     duration: 2000
                 })
                 return;
-            } else if (!this.data.verifyCode) {
-                wx.showToast({
-                    title: '请输入验证码！',
-                    icon: 'none',
-                    duration: 2000
-                })
-                return;
             }
             if (this.data.type == "update") {
                 this._updateUser();
@@ -157,7 +145,8 @@ Component({
                 this._register();
             }
         },
-        getVerify: function () {
+        getVerify: function (e) {
+            console.log(e)
             if (!this.data.phone) {
                 wx.showToast({
                     title: '请输入正确的手机号！',
