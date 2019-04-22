@@ -121,4 +121,7 @@ module.exports = {
   submitComment: (data) => { // 提交评论
     return requestWithAuth(`/json/technology/${data.id}/comment`, data, 'post')
   },
+  getPhone: (data) => { // 提交评论
+    return request(`/json/user/phone`, data, 'post')
+  },
 }

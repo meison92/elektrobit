@@ -80,10 +80,26 @@ Page({
     getUser(params).then(res => {
       console.log(res)
       wx.setStorageSync('openid', res.openid);
-      app.globalData.openid = res.openid
+      wx.setStorageSync('session_key', res.session_key);
+      app.globalData.openid = res.openid;
+      app.globalData.session_key = res.session_key;
+      this._getUserData();
+    })
+  },
+
+  _getUserData() {
+    console.log(app.globalData.openid)
+    let params = {
+      openid: app.globalData.openid
+    }
+    getUser(params).then(res => {
+      console.log(res)
+
+      wx.setStorageSync('userInfo', res)
+
       wx.reLaunch({
         url: `/pages/index/index`
       })
     })
-  },
+  }
 })

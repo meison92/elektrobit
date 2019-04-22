@@ -86,11 +86,13 @@ Page({
       return;
     }
     let id = this.options.id;
+    const userInfo = wx.getStorageSync('userInfo');
     let params = {
       id: id,
       openid: app.globalData.openid,
       data: {
-        comment: this.data.comment
+        comment: this.data.comment,
+        uid: userInfo.id
       }
     }
     submitComment(params).then(res => {

@@ -1,5 +1,5 @@
 const app = getApp();
-const { getUser, register } = require('../../wxApi/request')
+const { getUser, register, getPhone } = require('../../wxApi/request')
 Component({
     /**
      * 组件的属性列表
@@ -19,6 +19,7 @@ Component({
                     company: newVal.company,
                     position: newVal.position,
                     email: newVal.email,
+                    uid: newVal.id
                 })
             }
         },
@@ -146,19 +147,22 @@ Component({
             }
         },
         getVerify: function (e) {
-            console.log(e)
-            if (!this.data.phone) {
+            let params = {
+                session_key: app.globalData.session_key,
+                encrypted_data: e.detail.encryptedData,
+                iv: e.detail.iv
+            }
+            getPhone(params).then(res => {
+                console.log(res.phone_number)
+                this.setData({
+                    phone: res.phone_number
+                })
+
                 wx.showToast({
-                    title: '请输入正确的手机号！',
-                    icon: 'none',
+                    title: '获取手机号成功',
+                    icon: 'success',
                     duration: 2000
                 })
-                return;
-            }
-            wx.showToast({
-                title: '获取验证码成功',
-                icon: 'success',
-                duration: 2000
             })
         },
         _register: function () {
@@ -170,11 +174,21 @@ Component({
                     company: this.data.company,
                     phone: this.data.phone,
                     email: this.data.email,
-                    position: this.data.position
+                    position: this.data.position,
+                    uid: this.data.uid
                 }
             }
             register(params).then(res => {
                 console.log(res)
+                if(res.error=='50001') {
+                    wx.showToast({
+                        title: '该活动已报名',
+                        icon: 'none',
+                        duration: 2000
+                    })
+                    this.cancel();
+                    return;
+                }
                 if (res.message == 'success') {
                     wx.showToast({
                         title: '报名成功',
@@ -193,7 +207,8 @@ Component({
                     company: this.data.company,
                     phone: this.data.phone,
                     email: this.data.email,
-                    position: this.data.position
+                    position: this.data.position,
+                    uid: this.data.uid
                 }
             }
             getUser(params).then(res => {
