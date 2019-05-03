@@ -13,9 +13,16 @@ App({
         console.log('登录成功:' + res.code)
         this.globalData.code = res.code;
         const openid = wx.getStorageSync('openid');
-        console.log(openid)
-        if (openid) {
-          this.globalData.openid = openid
+        const updateTime = wx.getStorageSync('updateTime');
+        if ((new Date().getTime()) - Number(updateTime) <= 86400000) {
+          console.log(openid)
+          if (openid) {
+            this.globalData.openid = openid
+          } else {
+            wx.reLaunch({
+              url: '/pages/login/login'
+            })
+          }
         } else {
           wx.reLaunch({
             url: '/pages/login/login'
@@ -28,7 +35,7 @@ App({
   globalData: {
     host: 'https://eb.d.dminorstudio.com',
     userInfo: null,
-    openid:null
+    openid: null
   },
 
   // 获取用户信息

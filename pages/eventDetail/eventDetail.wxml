@@ -15,10 +15,10 @@
 		</view>
 		<view style="margin-top:40rpx;margin-bottom:40rpx;">
 			<view class="f16" style="margin-bottom:40rpx;">活动日程</view>
-			<view>
-				<view class="f12">第一天 YYYY/MM/DD</view>
+			<view wx:for="{{data.sessions}}" style="margin-bottom:20rpx;">
+				<view class="f12">第{{index}}天</view>
 				<view class="line" style="margin-top:20rpx;margin-bottom:20rpx;"/>
-				<view class="f12 grey2">8:00~11:00 活动内容描述</view>
+				<view class="f12 grey2">{{item}}</view>
 			</view>
 		</view>
 		<view class="btn-group">

@@ -79,6 +79,7 @@ Page({
     }
     getUser(params).then(res => {
       console.log(res)
+      wx.setStorageSync('updateTime', new Date().getTime());
       wx.setStorageSync('openid', res.openid);
       wx.setStorageSync('session_key', res.session_key);
       app.globalData.openid = res.openid;
