@@ -2,8 +2,8 @@
 
 <!--pages/productDetail/productDetail.wxml-->
 <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-<view>
-	<text>资料下载</text>
+<view style="padding:20rpx;">
+	<text style="margin-bottom:20rpx;">资料下载</text>
 	<view wx:for="{{data.file_downloads}}" wx:key="{{index}}" bindtap="download" data-url="{{item.url}}">
 		{{item.name}}
 	</view>
