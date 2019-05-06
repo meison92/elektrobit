@@ -82,5 +82,20 @@ Page({
       var that = this;
       WxParse.wxParse('article', 'html', that.data.data, that, 5);
     })
+  },
+
+  download: function (e) {
+    let url = e.target.dataset.url;
+    wx.downloadFile({
+      url: url, // 仅为示例，并非真实的资源
+      success(res) {
+        // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+        wx.showToast({
+          title: '下载成功！',
+          icon: 'success',
+          duration: 2000
+      })
+      }
+    })
   }
 })
