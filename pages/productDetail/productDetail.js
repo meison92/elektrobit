@@ -76,11 +76,11 @@ Page({
     getProductDetail(params).then(res => {
       console.log(res)
       this.setData({
-        data: res.length > 0 ? res[0] : {}
+        data: res.length > 0 ? res[0].body : {}
       })
       var article = '<div style="color:red">我是HTML代码</div>';
       var that = this;
-      WxParse.wxParse('article', 'html', article, that, 5);
+      WxParse.wxParse('article', 'html', that.data.data, that, 5);
     })
   }
 })

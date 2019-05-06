@@ -1,6 +1,4 @@
 <import src="../../wxParse/wxParse.wxml"/>
 
 <!--pages/productDetail/productDetail.wxml-->
-<image src="{{data.image.url}}" mode="aspectFit" />
-
 <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
