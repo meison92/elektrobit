@@ -3,7 +3,7 @@
 	 src="{{data.image.url}}"
 	 class="slide-image"
 	 style="height:146px;"
-	 mode="scaleToFill"
+	 mode="widthFix"
 	/>
 	<view class="detail-span">
 		<view class="title">{{data.title}}</view>

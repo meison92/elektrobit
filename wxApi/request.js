@@ -113,7 +113,7 @@ module.exports = {
     return request('/json/featured-events', data);
   },
   registrations: (data) => {
-    return requestWithAuth('/json/registrations', data);
+    return requestWithAuth(`/json/registrations/${data.uid}`);
   },
   register: (data) => {
     return requestWithAuth(`/json/event/${data.id}/register`, data, 'post');

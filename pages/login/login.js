@@ -97,7 +97,7 @@ Page({
       console.log(res)
 
       wx.setStorageSync('userInfo', res)
-
+      app.globalData.userInfo = res || {};
       wx.reLaunch({
         url: `/pages/index/index`
       })

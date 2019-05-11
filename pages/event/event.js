@@ -70,7 +70,8 @@ Page({
   },
 
   _getEvents: function () {
-    registrations().then(res => {
+    let uid = app.globalData.userInfo.id;
+    registrations({uid:uid}).then(res => {
       console.log(res)
       this.setData({
         eventList: res || []
