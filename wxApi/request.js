@@ -1,16 +1,23 @@
 import { base64encode } from '../utils/util'
 const app = getApp();
 const request = (url, data, method) => {
-  let _url = app.globalData.host + url
+  let _url = app.globalData.host + url;
+  const session_key = wx.getStorageSync('session_key');
   return new Promise((resolve, reject) => {
     wx.request({
       url: _url,
       method: method || 'get',
-      data: data,
+      data: { ...data, session_key },
       header: {
         'Content-Type': 'application/json'
       },
       success(request) {
+        if (request.data.error == -41003) {
+          wx.reLaunch({
+            url: '/pages/login/login'
+          })
+          return;
+        }
         resolve(request.data)
       },
       fail(error) {
@@ -24,17 +31,24 @@ const request = (url, data, method) => {
 }
 
 const requestWithAuth = (url, data, method) => {
-  let _url = app.globalData.host + url
+  let _url = app.globalData.host + url;
+  const session_key = wx.getStorageSync('session_key');
   return new Promise((resolve, reject) => {
     wx.request({
       url: _url,
       method: method || 'get',
-      data: data,
+      data: { ...data, session_key },
       header: {
         'Content-Type': 'application/json',
         'Authorization': 'basic ' + base64encode(app.globalData.openid + '123456')
       },
       success(request) {
+        if (request.data.error == -41003) {
+          wx.reLaunch({
+            url: '/pages/login/login'
+          })
+          return;
+        }
         resolve(request.data)
       },
       fail(error) {
