@@ -4,7 +4,7 @@
  wx:if="{{showModal}}"
 >
 	<view class="modal-dialog" catchtap="catchtap">
-		<image src="../../asset/personal-back-pic.png" mode="scaleToFill" />
+		<image src="../../asset/personal-back-pic.png" mode="widthFix" />
 		<view class="modal-title">{{title}}</view>
 		<view class="modal-content">
 			<input
