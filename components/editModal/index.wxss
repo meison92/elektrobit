@@ -17,7 +17,7 @@
   
   .modal-dialog {
     width: 680rpx;
-    height: 820rpx;
+    height: 880rpx;
     background: white;
     display:flex;
     flex-direction:column;

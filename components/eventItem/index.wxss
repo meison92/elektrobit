@@ -19,17 +19,21 @@
     bottom: 0;
   }
   
-  .detail-span {
+  .detail-img {
     position: relative;
   }
   
-  .detail-span .title{
+  .detail-img .title{
     color:white;
     position: absolute;
-    top:-80rpx;
+    bottom:30rpx;
     left:20rpx;
     font-size: 28rpx;
     font-weight: 900;
+  }
+
+  .detail-span{
+    position: relative;
   }
   
   .event-item{

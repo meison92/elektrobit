@@ -1,12 +1,14 @@
 <view class="event-item" bindtap="tapDetail">
-	<image
-	 src="{{data.image.url}}"
-	 class="slide-image"
-	 style="height:146px;"
-	 mode="widthFix"
-	/>
+	<view class="detail-img">
+		<image
+		 src="{{data.image.url}}"
+		 class="slide-image"
+		 style="height:146px;"
+		 mode="widthFix"
+		/>
+		<text class="title">{{data.title}}</text>
+	</view>
 	<view class="detail-span">
-		<view class="title">{{data.title}}</view>
 		<view class="text1">时间：{{data.date.start}}至{{data.date.end}}</view>
 		<view class="text1">地点：{{data.venue}}</view>
 		<view class="text1">状态：{{data.status}}</view>

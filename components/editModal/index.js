@@ -35,6 +35,10 @@ Component({
         type: {
             type: String,
             value: 'update'
+        },
+        title: {
+            type: String,
+            value: ''
         }
     },
 
@@ -180,7 +184,7 @@ Component({
             }
             register(params).then(res => {
                 console.log(res)
-                if(res.error=='50001') {
+                if (res.error == '50001') {
                     wx.showToast({
                         title: '该活动已报名',
                         icon: 'none',
