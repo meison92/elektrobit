@@ -1,4 +1,4 @@
-<view class="event-item">
+<view class="event-item" bindtap="tapDetail">
 	<image
 	 src="{{data.image.url}}"
 	 class="slide-image"
