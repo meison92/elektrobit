@@ -76,25 +76,37 @@ Page({
     getProductDetail(params).then(res => {
       console.log(res)
       this.setData({
-        data: res.length > 0 ? res[0].body : {}
+        data: res.length > 0 ? res[0] : {}
       })
+      console.log(res)
       var article = '<div style="color:red">我是HTML代码</div>';
       var that = this;
-      WxParse.wxParse('article', 'html', that.data.data, that, 5);
+      WxParse.wxParse('article', 'html', that.data.data.body, that, 5);
     })
   },
 
   download: function (e) {
+    wx.showLoading({
+      title: '下载中',
+    })
     let url = e.target.dataset.url;
     wx.downloadFile({
       url: url, // 仅为示例，并非真实的资源
       success(res) {
+        console.log(res)
+        let filePath = res.tempFilePath;
         // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
         wx.showToast({
           title: '下载成功！',
           icon: 'success',
           duration: 2000
-      })
+        })
+        wx.openDocument({
+          filePath: filePath,
+          success: function (res) {
+            console.log('打开文档成功')
+          }
+        })
       }
     })
   }

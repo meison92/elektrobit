@@ -1,1 +1,6 @@
 /* pages/productDetail/productDetail.wxss */
+.down-text {
+    color:#3B829E;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}

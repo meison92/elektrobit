@@ -14,8 +14,8 @@
 			</view>
 		</view>
 		<view class="line mt20 mb20" />
-		<view class="f12 grey2">产品：</view>
-		<view class="f12 grey2 mt10 mb10">类别：</view>
+		<view class="f12 grey2">产品：{{data.related_products[0].title}}</view>
+		<view class="f12 grey2 mt10 mb10">类别：{{data.category}}</view>
 		<view class="f12 grey2">资源类型：</view>
 		<view class="comment mt20 f14">评论</view>
 		<view>
