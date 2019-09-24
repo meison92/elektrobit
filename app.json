@@ -10,7 +10,9 @@
     "pages/event/event",
     "pages/eventDetail/eventDetail",
     "pages/mineEdit/mineEdit",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/webview",
+    "pages/webview/webview"
   ],
   "window": {
     "backgroundTextStyle": "light",

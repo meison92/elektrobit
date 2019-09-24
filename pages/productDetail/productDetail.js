@@ -109,5 +109,15 @@ Page({
         })
       }
     })
+  },
+
+  wxParseTagATap: function (e) {
+    let src = e.currentTarget.dataset.src;
+    console.log(src)
+    if (src) {
+      wx.navigateTo({
+        url: `/pages/webview/webview?link=${src}`
+      })
+    }
   }
 })

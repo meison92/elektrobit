@@ -13,12 +13,12 @@
 			<view class="f16" style="margin-bottom:40rpx;">活动介绍</view>
 			<text class="f12 grey1">{{data.body}}</text>
 		</view>
-		<view style="margin-top:40rpx;margin-bottom:40rpx;">
+		<view wx:if="{{data.sessions.length>0}}" style="margin-top:40rpx;margin-bottom:40rpx;">
 			<view class="f16" style="margin-bottom:40rpx;">活动日程</view>
 			<view wx:for="{{data.sessions}}" wx:key="{{index}}" style="margin-bottom:20rpx;">
-				<view class="f12">{{index+1}}</view>
+				<view class="f12">{{index+1}}  {{item.session.title}}</view>
 				<view class="line" style="margin-top:20rpx;margin-bottom:20rpx;"/>
-				<view class="f12 grey2">{{item}}</view>
+				<view class="f12 grey2">{{item.session.content}}</view>
 			</view>
 		</view>
 		<view class="btn-group">
