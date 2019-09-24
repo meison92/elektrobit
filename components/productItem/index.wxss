@@ -7,6 +7,8 @@
     padding:0 20rpx;
     box-sizing: border-box;
     margin-bottom: 40rpx;
+    height: 320rpx;
+    overflow: hidden;
 }
 
 .product-item image {

@@ -3,7 +3,7 @@
 <!--pages/productDetail/productDetail.wxml-->
 <view style="padding:20rpx;">
 	<template is="wxParse" data="{{wxParseData:article.nodes}}" />
-	<text style="margin-bottom:20rpx;">资料下载</text>
+	<text wx:if="{{data.file_downloads.length>0}}" style="margin-bottom:20rpx;">资料下载</text>
 	<view
 	 class="down-text"
 	 wx:for="{{data.file_downloads}}"

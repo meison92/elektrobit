@@ -1,5 +1,5 @@
 <view class="webinar-item" bindtap="tapDetail" data-id="{{data.id}}">
-	<view class="pos-r">
+	<view class="pos-r" style="width:260rpx;">
 		<image src="{{data.image.url}}" mode="scaleToFill" style="width:260rpx;height:180rpx;" />
 		<view class="pos-a icon-span">
 			<view>
