@@ -105,6 +105,14 @@ Page({
           filePath: filePath,
           success: function (res) {
             console.log('打开文档成功')
+          },
+          fail: function (res) {
+            console.log('打开文档失败')
+            wx.showToast({
+              title: '打开文档失败！',
+              icon: 'error',
+              duration: 2000
+            })
           }
         })
       }
