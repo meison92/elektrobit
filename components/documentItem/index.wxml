@@ -1,7 +1,7 @@
 <view class="document-item" bindtap="tapDetail" data-id="{{data.id}}" data-file="{{data.file_downloads}}">
 	<view class="green f16">{{data.title}}</view>
 	<view class="grey1 f14">产品：{{data.related_products[0].title}}</view>
-	<view class="grey1 f14">类别：{{data.category}}</view>
+	<view class="grey1 f14">类别：{{data.categories[0].category}}</view>
 	<view class="line" style="margin-top:40rpx;"></view>
 </view>
 
