@@ -24,10 +24,25 @@ Component({
     */
     methods: {
         tapDetail: function (event) {
-            let id = event.currentTarget.dataset.id;
-            wx.navigateTo({
-                url: `/pages/technicDetail/technicDetail?id=${id}`
-            })
+            // let id = event.currentTarget.dataset.id;
+            // wx.navigateTo({
+            //     url: `/pages/technicDetail/technicDetail?id=${id}`
+            // })
+            let file = event.currentTarget.dataset.file;
+            console.log(file)
+
+            if (file.length > 0) {
+                let url = file[0].url;
+                wx.navigateTo({
+                    url: `/pages/webview/webview?link=${url}`
+                })
+            } else {
+                wx.showToast({
+                    title: '打开文档失败！',
+                    icon: 'error',
+                    duration: 2000
+                  })
+            }
         }
     }
 })
