@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '产品详情'
+      title: '详情'
     })
     this.setData({
       link: options.link
