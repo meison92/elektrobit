@@ -1,6 +1,6 @@
 <!--pages/technicDetail/technicDetail.wxml-->
 <view class="tech-detail">
-	<video id="myVideo" src="{{data.video_url}}" controls></video>
+	<video id="myVideo" src="{{data.video_url}}" controls autoplay="true"></video>
 	<view class="tech-container">
 		<view class="mb20 f16">{{data.title}}</view>
 		<view class="icon-span">
