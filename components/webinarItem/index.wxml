@@ -14,7 +14,7 @@
 	</view>
 	<view class="webinar-content">
 		<view class="green f16">{{data.title}}</view>
-		<view class="grey2 f14">{{data.related_products[0].title}}</view>
+		<view class="grey2 f14">产品：{{data.related_products[0].title}}</view>
 	</view>
 </view>
 

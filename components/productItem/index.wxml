@@ -1,6 +1,7 @@
 <view class="product-item" bindtap="tapProductDetail" data-id="{{data.id}}">
 	<image src="{{data.image.url}}" mode="scaleToFill" />
 	<view class="green f14">{{data.title}}</view>
+	<view class="grey1 f14">{{data.subtitle}}</view>
 	<view class="grey1 f14">{{data.category}}</view>
 	<view class="grey2 f12">{{data.body}}</view>
 </view>
