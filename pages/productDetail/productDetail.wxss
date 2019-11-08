@@ -4,3 +4,13 @@
     font-size: 28rpx;
     margin-top: 10rpx;
 }
+
+.wxParse-h1, .wxParse-h2, .wxParse-h3, .wxParse-h4, .wxParse-h5, .wxParse-h6, .wxParse-b, .wxParse-strong {
+    color:white;
+    background-color: #01bc00;
+}
+
+.wxParse-li-text  {
+    line-height:none; 
+}
+    
