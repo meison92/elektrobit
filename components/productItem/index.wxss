@@ -7,11 +7,18 @@
     padding:0 20rpx;
     box-sizing: border-box;
     margin-bottom: 40rpx;
-    height: 380rpx;
+    height: 400rpx;
     overflow: hidden;
 }
 
 .product-item image {
     width: 100%;
     height: 160rpx;
+}
+
+.product-item .content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
 }
