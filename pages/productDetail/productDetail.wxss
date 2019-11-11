@@ -1,4 +1,8 @@
 /* pages/productDetail/productDetail.wxss */
+.product-detail {
+    padding:40rpx;
+}
+
 .down-text {
     color:#3B829E;
     font-size: 28rpx;
@@ -8,6 +12,8 @@
 .wxParse-h1, .wxParse-h2, .wxParse-h3, .wxParse-h4, .wxParse-h5, .wxParse-h6, .wxParse-b, .wxParse-strong {
     color:white;
     background-color: #01bc00;
+    padding: 20rpx 10rpx;
+    font-size: 18px;
 }
 
 .wxParse-li-text  {
