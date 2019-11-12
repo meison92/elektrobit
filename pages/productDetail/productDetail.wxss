@@ -9,11 +9,19 @@
     margin-top: 10rpx;
 }
 
-.wxParse-h1, .wxParse-h2, .wxParse-h3, .wxParse-h4, .wxParse-h5, .wxParse-h6, .wxParse-b, .wxParse-strong {
+.wxParse-h1 {
     color:white;
     background-color: #01bc00;
     padding: 20rpx 10rpx;
     font-size: 18px;
+}
+
+.wxParse-h2 {
+    color: #01bc00;
+}
+
+.wxParse-h3 {
+    font-weight: 900;
 }
 
 .wxParse-li-text  {
