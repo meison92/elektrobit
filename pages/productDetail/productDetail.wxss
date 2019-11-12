@@ -25,6 +25,6 @@
 }
 
 .wxParse-li-text  {
-    line-height:none; 
+    line-height:inherit; 
 }
     
