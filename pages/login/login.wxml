@@ -12,5 +12,11 @@
 	 bindgetuserinfo="bindLogin"
 	>微信登录
 	</button>
+	<button
+	 hover-class="hovering"
+	 class="unlogin-btn"
+	 bindtap="quitLogin"
+	>暂不登录
+	</button>
 </view>
 

@@ -1,5 +1,6 @@
 // pages/mine/mine.js
 const { getUser } = require('../../wxApi/request')
+const util = require('../../utils/util.js')
 const app = getApp();
 Page({
 
@@ -18,7 +19,22 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的'
     })
-    this._getUser();
+    const openid = wx.getStorageSync('openid');
+    const updateTime = wx.getStorageSync('updateTime');
+    const userInfo = wx.getStorageSync('userInfo');
+    if ((new Date().getTime()) - Number(updateTime) <= 86400000) {
+      if (openid) {
+        this._getUser();
+      } else {
+        wx.reLaunch({
+          url: '/pages/login/login'
+        })
+      }
+    } else {
+      wx.reLaunch({
+        url: '/pages/login/login'
+      })
+    }
   },
 
   /**

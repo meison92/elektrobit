@@ -9,7 +9,8 @@ Page({
     host: getApp().globalData.host,
     data: {},
     userInfo: {},
-    id: 0
+    id: 0,
+    showModal: false
   },
 
   /**
@@ -91,7 +92,27 @@ Page({
     if (this.data.registered == 1) {
       return;
     }
-    this.selectComponent("#editModal").showModal();
+    const openid = wx.getStorageSync('openid');
+    const updateTime = wx.getStorageSync('updateTime');
+    const userInfo = wx.getStorageSync('userInfo');
+    if ((new Date().getTime()) - Number(updateTime) <= 86400000) {
+      if (openid) {
+        this.setData({
+          showModal: true
+        }, () => {
+          this.selectComponent("#editModal").showModal();
+        })
+      } else {
+        wx.reLaunch({
+          url: '/pages/login/login'
+        })
+      }
+    } else {
+      wx.reLaunch({
+        url: '/pages/login/login'
+      })
+    }
+
   },
 
   onlineSearch: function () {

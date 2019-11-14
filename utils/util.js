@@ -46,7 +46,38 @@ const base64encode = str => {
   return out;
 }
 
+const login = (that) => {
+  // 登录
+  wx.login({
+    success: res => {
+      // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      console.log('登录成功:' + res.code)
+      that.globalData = {};
+      that.globalData = res.code;
+      const openid = wx.getStorageSync('openid');
+      const updateTime = wx.getStorageSync('updateTime');
+      const userInfo = wx.getStorageSync('userInfo');
+      if ((new Date().getTime()) - Number(updateTime) <= 86400000) {
+        console.log(openid)
+        if (openid) {
+          that.globalData.openid = openid;
+          that.globalData.userInfo = userInfo;
+        } else {
+          wx.reLaunch({
+            url: '/pages/login/login'
+          })
+        }
+      } else {
+        wx.reLaunch({
+          url: '/pages/login/login'
+        })
+      }
+    }
+  })
+}
+
 module.exports = {
   formatTime: formatTime,
-  base64encode: base64encode
+  base64encode: base64encode,
+  login: login
 }

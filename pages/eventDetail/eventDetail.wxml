@@ -28,4 +28,4 @@
 	</view>
 </view>
 
-<edit-modal id="editModal" data="{{userInfo}}" title="我的报名信息" type="submit" eventid="{{id}}"/>
+<edit-modal wx:if="{{showModal}}" id="editModal" data="{{userInfo}}" title="我的报名信息" type="submit" eventid="{{id}}"/>

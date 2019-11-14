@@ -37,3 +37,16 @@ page {
     font-size: 28rpx;
     background: #01bc00;
 }
+
+.unlogin-btn {
+  margin: auto;
+  margin-top: 16rpx;
+  border-radius: 80rpx;
+  width: 686rpx;
+  height: 80rpx;
+  color: #fff;
+  border: 2rpx solid #EAEAEA;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  background: grey;
+}

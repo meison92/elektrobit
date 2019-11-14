@@ -68,23 +68,36 @@ Page({
 
   },
 
+  quitLogin: function () {
+    wx.reLaunch({
+      url: `/pages/index/index`
+    })
+  },
+
   bindLogin: function (result) {
-    console.log(result);
-    const detail = result.detail;
-    const userInfo = detail.userInfo;
-    let params = {
-      code: app.globalData.code,
-      encrypted_data: detail.encryptedData,
-      iv: detail.iv
-    }
-    getUser(params).then(res => {
-      console.log(res)
-      wx.setStorageSync('updateTime', new Date().getTime());
-      wx.setStorageSync('openid', res.openid);
-      wx.setStorageSync('session_key', res.session_key);
-      app.globalData.openid = res.openid;
-      app.globalData.session_key = res.session_key;
-      this._getUserData();
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log('登录成功:' + res.code)
+        app.globalData.code = res.code;
+        console.log(result);
+        const detail = result.detail;
+        const userInfo = detail.userInfo;
+        let params = {
+          code: app.globalData.code,
+          encrypted_data: detail.encryptedData,
+          iv: detail.iv
+        }
+        getUser(params).then(res => {
+          console.log(res)
+          wx.setStorageSync('updateTime', new Date().getTime());
+          wx.setStorageSync('openid', res.openid);
+          wx.setStorageSync('session_key', res.session_key);
+          app.globalData.openid = res.openid;
+          app.globalData.session_key = res.session_key;
+          this._getUserData();
+        })
+      }
     })
   },
 
