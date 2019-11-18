@@ -1,4 +1,5 @@
 // pages/eventDetail/eventDetail.js
+var WxParse = require('../../wxParse/wxParse.js');
 import { getEventDetail } from '../../wxApi/request'
 Page({
 
@@ -79,9 +80,11 @@ Page({
   },
 
   _getEventDetail: function () {
+    let that = this;
     let params = { id: this.options.id }
     getEventDetail(params).then(res => {
       console.log(res)
+      WxParse.wxParse('article', 'html', res[0].body, that, 5);
       this.setData({
         data: res.length > 0 ? res[0] : {}
       })
