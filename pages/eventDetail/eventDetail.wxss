@@ -26,3 +26,19 @@
     margin-left: 20rpx;
     margin-right: 20rpx;
 }
+
+.wxParse-h1 {
+    color:white;
+    background-color: #01bc00;
+    padding: 20rpx 20rpx;
+    font-size: 18px;
+}
+
+.wxParse-h2 {
+    color: #01bc00;
+    font-size: 18px;
+}
+
+.wxParse-h3 {
+    font-weight: 900;
+}
