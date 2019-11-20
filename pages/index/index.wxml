@@ -7,6 +7,7 @@
  interval="{{interval}}"
  duration="{{duration}}"
  circular="true"
+ style="height: {{swiperHeight}}px"
 >
 	<block wx:for="{{bannerList}}" wx:key="{{imgUrls}}">
 		<swiper-item>

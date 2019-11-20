@@ -14,7 +14,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: false
+    canIUse: false,
+    swiperHeight:150
   },
   //事件处理函数
   bindViewTap: function () {
@@ -23,6 +24,17 @@ Page({
     })
   },
   onLoad: function () {
+    var that = this
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res.screenWidth)
+        let swiperHeight = res.screenWidth * 240 / 335;
+        console.log(swiperHeight)
+        that.setData({
+          swiperHeight
+        })
+      }
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -90,6 +102,18 @@ Page({
       console.log(res)
       this.setData({
         bannerList: res || []
+      }, () => {
+        // const query = wx.createSelectorQuery()
+        // query.select('.class-item').boundingClientRect()
+        // query.exec(function (res) {
+        //   console.log(res)
+        //   console.log(res[0].height)
+        //   console.log(res[0].height * data.t.length)
+        //   let sumHeigth = res[0].height * data.t.length;
+        //   _this.setData({
+        //     swiperHeight: sumHeigth
+        //   })
+        // })
       })
     })
   },

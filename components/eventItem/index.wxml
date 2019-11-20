@@ -3,8 +3,7 @@
 		<image
 		 src="{{data.image.url}}"
 		 class="slide-image"
-		 style="height:146px;"
-		 mode="widthFix"
+		 mode="aspectFit"
 		/>
 		<text class="title">{{data.title}}</text>
 	</view>

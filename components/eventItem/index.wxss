@@ -28,6 +28,7 @@
     position: absolute;
     bottom:30rpx;
     left:20rpx;
+    right:20rpx;
     font-size: 28rpx;
     font-weight: 900;
   }
