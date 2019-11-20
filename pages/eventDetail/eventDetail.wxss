@@ -42,3 +42,7 @@
 .wxParse-h3 {
     font-weight: 900;
 }
+
+view {
+    word-break: normal;
+} 

@@ -11,7 +11,8 @@ Page({
     data: {},
     userInfo: {},
     id: 0,
-    showModal: false
+    showModal: false,
+    swiperHeight: 150
   },
 
   /**
@@ -20,6 +21,17 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '活动详情'
+    })
+    let that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res.screenWidth)
+        let swiperHeight = res.screenWidth * 240 / 335;
+        console.log(swiperHeight)
+        that.setData({
+          swiperHeight
+        })
+      }
     })
     this._getEventDetail();
 

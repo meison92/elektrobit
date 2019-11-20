@@ -1,7 +1,7 @@
 <!--pages/eventDetail/eventDetail.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
 <view class="event-detail">
-	<image src="{{data.image.url}}" mode="scaleToFill" />
+	<image src="{{data.image.url}}" mode="widthFit" style="height:{{swiperHeight}}px"/>
 	<view class="event-detail-contianer">
 		<view>
 			<view class="f16">{{data.title}}</view>
