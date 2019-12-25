@@ -28,6 +28,10 @@
 .wxParse-li-text  {
     line-height:inherit; 
 }
+
+.wxParse-a {
+    color: #01bc00;
+}
    
 view {
     word-break: normal;

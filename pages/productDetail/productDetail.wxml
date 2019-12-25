@@ -1,6 +1,7 @@
 <import src="../../wxParse/wxParse.wxml" />
 
 <!--pages/productDetail/productDetail.wxml-->
+<image src="../../asset/personal-back-pic.png" mode="widthFix" style="width:100%"/>
 <view class="product-detail">
 	<template is="wxParse" data="{{wxParseData:article.nodes}}" />
 	<text wx:if="{{data.file_downloads.length>0}}" style="margin-bottom:20rpx;">资料下载</text>
