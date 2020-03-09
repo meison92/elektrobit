@@ -15,7 +15,7 @@
 ---------------------
 
 该系列接口采用REST接口规范编写，通过HTTPS协议调用，请求和响应均采用JSON格式。
-接口域名：eb.d.dminorstudio.com
+接口域名：mp.elektrobit.cn
 接口协议：HTTPS
 
 
@@ -40,7 +40,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/events?page=0&sort_by=field_date_value&sort_order=ASC
+         请求：https://mp.elektrobit.cn/json/events?page=0&sort_by=field_date_value&sort_order=ASC
     
          返回结果：略
     
@@ -56,7 +56,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/event/1
+         请求：https://mp.elektrobit.cn/json/event/1
     
          返回结果：略
      
@@ -72,7 +72,7 @@
      
         举例：
         
-          请求：https://eb.d.dminorstudio.com/json/featured-events
+          请求：https://mp.elektrobit.cn/json/featured-events
      
           返回结果：略
           
@@ -88,7 +88,7 @@
         请求数据：JSON格式的活动报名数据
         
         举例：
-          请求：https://eb.d.dminorstudio.com/json/event/1/register
+          请求：https://mp.elektrobit.cn/json/event/1/register
           数据：
           
           {
@@ -128,7 +128,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/webinar?page=0&sort_by=created&sort_order=ASC
+         请求：https://mp.elektrobit.cn/json/webinar?page=0&sort_by=created&sort_order=ASC
     
          返回结果：略
     
@@ -146,7 +146,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/documents?page=0&sort_by=created&sort_order=ASC
+         请求：https://mp.elektrobit.cn/json/documents?page=0&sort_by=created&sort_order=ASC
     
          返回结果：略
     
@@ -165,7 +165,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/white-paper?page=1&sort_by=created&sort_order=ASC
+         请求：https://mp.elektrobit.cn/json/white-paper?page=1&sort_by=created&sort_order=ASC
     
          返回结果：略
     
@@ -181,7 +181,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/technology/1
+         请求：https://mp.elektrobit.cn/json/technology/1
     
          返回结果：略
         
@@ -197,7 +197,7 @@
         请求数据：JSON格式的评论数据
         
         举例：
-          请求：https://eb.d.dminorstudio.com/json/technology/1/comment
+          请求：https://mp.elektrobit.cn/json/technology/1/comment
           数据：
           
           {
@@ -234,7 +234,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/products?page=0&sort_by=created&sort_order=ASC
+         请求：https://mp.elektrobit.cn/json/products?page=0&sort_by=created&sort_order=ASC
     
          返回结果：略
     
@@ -250,7 +250,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/product/1
+         请求：https://mp.elektrobit.cn/json/product/1
     
          返回结果：略
     
@@ -275,7 +275,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/user
+         请求：https://mp.elektrobit.cn/json/user
          数据：
          
          {
@@ -305,7 +305,7 @@
        请求数据：JSON格式的用户资料数据
        
        举例：
-         请求：https://eb.d.dminorstudio.com/json/user
+         请求：https://mp.elektrobit.cn/json/user
          数据：
          
          {
@@ -344,7 +344,7 @@
     
        举例：
        
-         请求：https://eb.d.dminorstudio.com/json/backgrounds
+         请求：https://mp.elektrobit.cn/json/backgrounds
     
          返回结果：略
 

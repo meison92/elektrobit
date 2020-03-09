@@ -35,7 +35,7 @@ App({
 
   },
   globalData: {
-    host: 'https://eb.d.dminorstudio.com',
+    host: 'https://mp.elektrobit.cn',
     userInfo: null,
     openid: null
   },
