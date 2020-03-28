@@ -24,9 +24,13 @@ Component({
     */
     methods: {
         tapProductDetail: function (e) {
-            let id = e.currentTarget.dataset.id;
+            // let id = e.currentTarget.dataset.id;
+            // wx.navigateTo({
+            //     url: `/pages/productDetail/productDetail?id=${id}`
+            // })
+            let link = e.currentTarget.dataset.link;
             wx.navigateTo({
-                url: `/pages/productDetail/productDetail?id=${id}`
+                url: `/pages/webview/webview?link=${link}`
             })
         }
     }

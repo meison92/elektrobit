@@ -1,6 +1,6 @@
 <!--pages/mine/mine.wxml-->
 <view>
-	<image src="../../asset/personal-back-pic.png" mode="widthFix" style="width:100%"/>
+	<image src="../../asset/personal-back-pic.jpg" mode="widthFix" style="width:100%"/>
 </view>
 <image class="avatar" src="{{data.picture}}" mode="aspectFit" />
 <view class="mine-container">

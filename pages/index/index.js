@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const { getEvents, getBackgrounds, getFeaturedEvents } = require('../../wxApi/request')
+const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends } = require('../../wxApi/request')
 Page({
   data: {
     bannerList: [],
@@ -10,12 +10,13 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    eventList: [1, 2, 3],
-    motto: 'Hello World',
+    eventList: [],
+    news: [],
+    trends: [],
     userInfo: {},
     hasUserInfo: false,
     canIUse: false,
-    swiperHeight:150
+    swiperHeight: 150
   },
   //事件处理函数
   bindViewTap: function () {
@@ -63,7 +64,9 @@ Page({
     }
     this._getBackgrounds();
     this._getFeaturedEvents();
-    this._getEvents();
+    // this._getEvents();
+    this._getNews();
+    this._getTrends();
   },
   getUserInfo: function (e) {
     console.log(e)
@@ -87,6 +90,17 @@ Page({
       this.setData({
         eventList: res || []
       })
+    })
+  },
+
+  _getNews() {
+    getNews().then(res => {
+      console.log(res)
+    })
+  },
+  _getTrends() {
+    getTrends().then(res => {
+      console.log(res)
     })
   },
   _getBackgrounds() {

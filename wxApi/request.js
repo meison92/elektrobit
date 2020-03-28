@@ -138,4 +138,13 @@ module.exports = {
   getPhone: (data) => { // 提交评论
     return request(`/json/user/phone`, data, 'post')
   },
+  getNews: (data) => { // 获取新闻
+    return request(`/json/news`, data)
+  },
+  getTrends: (data) => { // 获取应用领域
+    return request(`/json/trends`, data)
+  },
+  sendEmail: (data) => { //发送邮件
+    return requestWithAuth(`/json/email/${data.id}`, data, 'post');
+  },
 }
