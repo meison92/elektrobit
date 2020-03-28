@@ -96,6 +96,11 @@ Page({
   _getNews() {
     getNews().then(res => {
       console.log(res)
+      res.map((item, index) => {
+        let date = item.date.split(' ');
+        item.date0 = date[0];
+        item.date1 = date[1];
+      })
       this.setData({
         news: res || []
       })
