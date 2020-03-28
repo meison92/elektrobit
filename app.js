@@ -5,6 +5,14 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    const userInfo = wx.getStorageSync('userInfo');
+    if (userInfo) {
+      this.globalData.userInfo = userInfo;
+      const openid = wx.getStorageSync('openid');
+      if (openid) {
+        this.globalData.openid = openid;
+      }
+    }
 
     // 登录
     // wx.login({

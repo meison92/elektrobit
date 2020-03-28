@@ -24,10 +24,7 @@ Component({
     */
     methods: {
         tapProductDetail: function (e) {
-            // let id = e.currentTarget.dataset.id;
-            // wx.navigateTo({
-            //     url: `/pages/productDetail/productDetail?id=${id}`
-            // })
+            console.log(this.data.data.link)
             let link = this.data.data.link;
             wx.navigateTo({
                 url: `/pages/webview/webview?link=${link}`

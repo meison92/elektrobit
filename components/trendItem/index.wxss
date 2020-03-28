@@ -1,0 +1,23 @@
+@import "../../app.wxss";
+
+
+.trend-item {
+    width:50%;
+    float: left;
+    padding:0 20rpx;
+    box-sizing: border-box;
+    margin-bottom: 40rpx;
+    overflow: hidden;
+}
+
+.trend-item image {
+    width: 100%;
+    height: 160rpx;
+}
+
+.trend-item .content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}

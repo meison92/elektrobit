@@ -1,0 +1,6 @@
+<view class="trend-item" bindtap="tapProductDetail">
+	<image src="{{data.image.url}}" mode="scaleToFill" />
+	<view class="green f14">{{data.title}}</view>
+	<view class="grey2 f12 content">{{data.body}}</view>
+</view>
+

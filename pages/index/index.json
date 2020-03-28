@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "event-item":"/components/eventItem/index"
+    "event-item": "/components/eventItem/index",
+    "trend-item": "/components/trendItem/index"
   }
 }

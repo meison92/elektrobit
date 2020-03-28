@@ -96,11 +96,17 @@ Page({
   _getNews() {
     getNews().then(res => {
       console.log(res)
+      this.setData({
+        news: res || []
+      })
     })
   },
   _getTrends() {
     getTrends().then(res => {
       console.log(res)
+      this.setData({
+        trends: res || []
+      })
     })
   },
   _getBackgrounds() {
