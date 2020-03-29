@@ -147,5 +147,11 @@ Page({
     wx.navigateTo({
       url: `/pages/eventDetail/eventDetail?id=${id}`
     })
+  },
+
+  tapMoreNews: function () {
+    wx.navigateTo({
+      url: `/pages/webview/webview?link=https://www.elektrobit.cn/newsroom/`
+    })
   }
 })

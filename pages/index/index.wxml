@@ -21,7 +21,7 @@
 <view class="news-container">
 	<view class="news-top">
 		<view>来自新闻编辑室</view>
-		<view class="green">查看更多</view>
+		<view class="green" bindtap="tapMoreNews">查看更多</view>
 	</view>
 	<block wx:for="{{news}}" wx:for-item="item" wx:key="item.id">
 		<news-item data="{{item}}" />
