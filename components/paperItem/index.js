@@ -50,6 +50,12 @@ Component({
                         }
                     } else {
                         let id = event.currentTarget.dataset.id;
+                        if (!app.globalData.userInfo) {
+                            wx.reLaunch({
+                                url: '/pages/login/login'
+                            })
+                            return;
+                        }
                         const params = {
                             id: id,
                             data: {
