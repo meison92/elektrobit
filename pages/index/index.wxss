@@ -18,3 +18,21 @@
   justify-content: space-between;
   margin-bottom  : 20rpx;
 }
+
+.banner-con {
+  color     : white;
+  width     : 400rpx;
+  top       : 150rpx;
+  right     : 20rpx;
+  background: rgba(0, 0, 0, 0.6);
+  padding   : 20rpx;
+}
+
+.banner-more {
+  color     : white;
+  background: #ffa800;
+  display   : inline-block;
+  padding   : 10rpx 5rpx;
+  margin-top: 10rpx;
+  font-size : 12px;
+}

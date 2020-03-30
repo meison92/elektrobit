@@ -63,7 +63,7 @@ Page({
       })
     }
     this._getBackgrounds();
-    this._getFeaturedEvents();
+    // this._getFeaturedEvents();
     // this._getEvents();
     this._getNews();
     this._getTrends();
@@ -117,9 +117,9 @@ Page({
   _getBackgrounds() {
     getBackgrounds().then(res => {
       console.log(res)
-      // this.setData({
-      //   eventList: res || []
-      // })
+      this.setData({
+        bannerList: res || []
+      })
     })
   },
   _getFeaturedEvents() {
@@ -143,9 +143,13 @@ Page({
     })
   },
   tapDetail: function (event) {
-    let id = event.currentTarget.dataset.id;
+    // let id = event.currentTarget.dataset.id;
+    // wx.navigateTo({
+    //   url: `/pages/eventDetail/eventDetail?id=${id}`
+    // })
+    let link = event.currentTarget.dataset.link;
     wx.navigateTo({
-      url: `/pages/eventDetail/eventDetail?id=${id}`
+      url: `/pages/webview/webview?link=${link}`
     })
   },
 

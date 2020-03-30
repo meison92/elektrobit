@@ -4,8 +4,16 @@
 	style="height: {{swiperHeight}}px">
 	<block wx:for="{{bannerList}}" wx:key="{{imgUrls}}">
 		<swiper-item>
-			<image src="{{item.image.url}}" class="slide-image" mode="scaleToFill" bindtap="tapDetail"
-				data-id="{{item.id}}" />
+			<view class="pos-r" style="height: 100%;">
+				<image src="{{item.image.url}}" class="slide-image" mode="scaleToFill" />
+				<view class="banner-con pos-a">
+					{{item.title}}
+					<view>
+						<view class="banner-more" bindtap="tapDetail" data-id="{{item.id}}" data-link="{{item.link}}">
+							了解更多</view>
+					</view>
+				</view>
+			</view>
 		</swiper-item>
 	</block>
 </swiper>
