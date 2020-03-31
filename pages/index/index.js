@@ -148,9 +148,15 @@ Page({
         url: `/pages/webview/webview?link=${link}`
       })
     } else {
-      wx.navigateTo({
-        url: link
-      })
+      if (link.indexOf('technic') > -1) {
+        wx.switchTab({
+          url: link
+        })
+      } else {
+        wx.navigateTo({
+          url: link
+        })
+      }
     }
   },
 

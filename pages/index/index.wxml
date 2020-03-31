@@ -1,7 +1,8 @@
 <!--index.wxml-->
+<image src="../../asset/EBlogo.png" mode="widthFix" style="width: 100%;"></image>
 <swiper indicator-dots="{{indicatorDots}}" indicator-color="white" indicator-active-color="#00eb00"
 	autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true"
-	style="height: {{swiperHeight}}px">
+	style="height: {{swiperHeight}}px;margin-top:-8px;">
 	<block wx:for="{{bannerList}}" wx:key="{{imgUrls}}">
 		<swiper-item>
 			<view class="pos-r" style="height: 100%;">

@@ -18,7 +18,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this._getWebinar();
+    console.log(options)
+    const { index = 0 } = options;
+    this.setData({
+      techIndex: index
+    })
+    if (index == 0) {
+
+      this._getWebinar();
+    } else if (index == 1) {
+      this._getDocuments();
+    } else if (index == 2) {
+      this._getWhitePaper();
+    }
   },
 
   /**
