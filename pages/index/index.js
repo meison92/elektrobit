@@ -29,7 +29,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         console.log(res.screenWidth)
-        let swiperHeight = res.screenWidth * 240 / 335;
+        let swiperHeight = res.screenWidth * 259 / 566;
         console.log(swiperHeight)
         that.setData({
           swiperHeight
@@ -96,11 +96,6 @@ Page({
   _getNews() {
     getNews().then(res => {
       console.log(res)
-      res.map((item, index) => {
-        let date = item.date.split(' ');
-        item.date0 = date[0];
-        item.date1 = date[1];
-      })
       this.setData({
         news: res || []
       })
@@ -148,9 +143,15 @@ Page({
     //   url: `/pages/eventDetail/eventDetail?id=${id}`
     // })
     let link = event.currentTarget.dataset.link;
-    wx.navigateTo({
-      url: `/pages/webview/webview?link=${link}`
-    })
+    if (link.indexOf('http') > -1) {
+      wx.navigateTo({
+        url: `/pages/webview/webview?link=${link}`
+      })
+    } else {
+      wx.navigateTo({
+        url: link
+      })
+    }
   },
 
   tapMoreNews: function () {

@@ -6,7 +6,7 @@
 		<swiper-item>
 			<view class="pos-r" style="height: 100%;">
 				<image src="{{item.image.url}}" class="slide-image" mode="scaleToFill" />
-				<view class="banner-con pos-a">
+				<view class="banner-con pos-a f14">
 					{{item.title}}
 					<view>
 						<view class="banner-more" bindtap="tapDetail" data-id="{{item.id}}" data-link="{{item.link}}">
@@ -28,7 +28,7 @@
 
 <view class="news-container">
 	<view class="news-top">
-		<view>来自新闻编辑室</view>
+		<view>EB新闻</view>
 		<view class="green" bindtap="tapMoreNews">查看更多</view>
 	</view>
 	<block wx:for="{{news}}" wx:for-item="item" wx:key="item.id">

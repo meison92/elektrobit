@@ -28,9 +28,9 @@
 <view class="btn-span">
 	<view class="submit-btn" bindtap="tapEdit">编辑个人信息</view>
 </view>
-<view class="btn-span">
+<!-- <view class="btn-span">
 	<view class="submit-btn" bindtap="tapEvent">查看我的活动</view>
-</view>
+</view> -->
 <official-account/>
 
 <edit-modal id="editModal" data="{{data}}" type="update" title="个人信息" bind:parentEvent='_getUser'/>

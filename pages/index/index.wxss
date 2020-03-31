@@ -22,7 +22,7 @@
 .banner-con {
   color     : white;
   width     : 400rpx;
-  top       : 150rpx;
+  top       : 60rpx;
   right     : 20rpx;
   background: rgba(0, 0, 0, 0.6);
   padding   : 20rpx;

@@ -14,7 +14,7 @@
 }
 
 .news-item .date {
-    width          : 80rpx;
+    width          : 120rpx;
     border-right   : 1rpx solid lightgray;
     display        : flex;
     flex-direction : column;

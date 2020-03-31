@@ -1,7 +1,7 @@
 <view class="news-item" bindtap="tapProductDetail">
 	<view class="f14 date">
-		<view>{{data.date0}}</view>
-		<view>{{data.date1}}</view>
+		<view>{{data.year}}年</view>
+		<view>{{data.month}}月{{data.date}}日</view>
 	</view>
 	<view class="f14 content green">{{data.title}}</view>
 </view>
