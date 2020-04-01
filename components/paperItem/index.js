@@ -55,6 +55,28 @@ Component({
                                 url: '/pages/login/login'
                             })
                             return;
+                        } 
+                        if (!app.globalData.userInfo.email) {
+                            wx.switchTab({
+                                url: '/pages/mine/mine',
+                                success: (result) => {
+                                    wx.showToast({
+                                        title: '请补充邮箱信息',
+                                        icon: 'none',
+                                        image: '',
+                                        duration: 1500,
+                                        mask: false,
+                                        success: (result) => {
+
+                                        },
+                                        fail: () => { },
+                                        complete: () => { }
+                                    });
+                                },
+                                fail: () => { },
+                                complete: () => { }
+                            });
+                            return;
                         }
                         const params = {
                             id: id,
@@ -62,6 +84,18 @@ Component({
                                 email: app.globalData.userInfo.email
                             }
                         }
+                        wx.showToast({
+                            title: '发送中',
+                            icon: 'none',
+                            image: '',
+                            duration: 10000,
+                            mask: false,
+                            success: (result)=>{
+                                
+                            },
+                            fail: ()=>{},
+                            complete: ()=>{}
+                        });
                         sendEmail(params).then(res => {
                             console.log(res)
                             wx.showToast({
