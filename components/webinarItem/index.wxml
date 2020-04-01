@@ -1,6 +1,7 @@
 <view class="webinar-item" bindtap="tapDetail" data-id="{{data.id}}">
 	<view class="pos-r" style="width:260rpx;">
-		<image class="pos-a" src="{{data.image.url}}" mode="scaleToFill" style="width:260rpx;height:180rpx;left:0;top:0;" />
+		<image class="pos-a" src="{{data.image.url}}" mode="scaleToFill"
+			style="width:260rpx;height:180rpx;left:0;top:0;" />
 		<view class="pos-a icon-span">
 			<view>
 				<image src="../../asset/tech-icon-2.png" mode="scaleToFill" style="width:40rpx;height:32rpx;" />
@@ -15,6 +16,6 @@
 	<view class="webinar-content">
 		<view class="green f16">{{data.title}}</view>
 		<view class="grey2 f14">产品：{{data.related_products[0].title}}</view>
+		<view class="grey2 f14">类别：{{data.categories[0].category}}</view>
 	</view>
 </view>
-

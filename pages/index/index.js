@@ -148,7 +148,7 @@ Page({
         url: `/pages/webview/webview?link=${link}`
       })
     } else {
-      if (link.indexOf('technic') > -1) {
+      if (link.indexOf('technic/') > -1) {
         wx.switchTab({
           url: link
         })
