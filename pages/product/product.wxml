@@ -1,5 +1,5 @@
 <!--pages/product/product.wxml-->
-<scroll-view class="product-container" scroll-y bindscrolltolower="_getProducts">
+<scroll-view class="product-container" scroll-y bindscrolltolower="_getProducts" style="height:{{scrollH}}px">
 	<block wx:for="{{productList}}" wx:key="item.id">
 		<product-item data="{{item}}" />
 	</block>

@@ -8,13 +8,23 @@ Page({
   data: {
     productList: [],
     page: 0,
-    loadMore: true
+    loadMore: true,
+    scrollH: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var self = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        let scrollH = res.windowHeight;
+        self.setData({
+          scrollH: scrollH
+        });
+      }
+    });
     this._getProducts();
   },
 
@@ -70,6 +80,7 @@ Page({
   },
 
   _getProducts() {
+    console.log('loadmore...')
     const { productList = [], loadMore, page = 0 } = this.data;
     if (!loadMore) {
       return;
