@@ -1,4 +1,5 @@
 /* pages/product/product.wxss */
 .product-container {
-    padding:40rpx 20rpx;
+    padding   : 40rpx 20rpx;
+    box-sizing: border-box;
 }

@@ -9,8 +9,14 @@ Page({
   data: {
     host: getApp().globalData.host,
     techIndex: 0,
+    webinarPage: 0,
+    webinarLoadMore: true,
     webinarList: [],
+    documentPage: 0,
+    documentLoadMore: true,
     documentList: [],
+    paperPage: 0,
+    paperLoadMore: true,
     paperList: []
   },
 
@@ -24,7 +30,6 @@ Page({
       techIndex: index
     })
     if (index == 0) {
-
       this._getWebinar();
     } else if (index == 1) {
       this._getDocuments();
@@ -85,31 +90,49 @@ Page({
   },
 
   _getWebinar: function () {
-    let params = {}
+    const { webinarPage, webinarLoadMore, webinarList } = this.data;
+    if (!webinarLoadMore) {
+      return;
+    }
+    let params = { page: webinarPage }
     getWebinar(params).then(res => {
       console.log(res)
       this.setData({
-        webinarList: res || []
+        webinarList: webinarList.concat(res.data || []),
+        webinarPage: res.current_page + 1,
+        webinarLoadMore: res.current_page + 1 < res.total_page
       })
     })
   },
 
   _getDocuments: function () {
-    let params = {}
+    const { documentPage, documentLoadMore, documentList } = this.data;
+    if (!documentLoadMore) {
+      return;
+    }
+    let params = { page: documentPage }
     getDocuments(params).then(res => {
       console.log(res)
       this.setData({
-        documentList: res || []
+        documentList: documentList.concat(res.data || []),
+        documentPage: res.current_page + 1,
+        documentLoadMore: res.current_page + 1 < res.total_page
       })
     })
   },
 
   _getWhitePaper: function () {
-    let params = {}
+    const { paperPage, paperLoadMore, paperList } = this.data;
+    if (!paperLoadMore) {
+      return;
+    }
+    let params = { page: paperPage }
     getWhitePaper(params).then(res => {
       console.log(res)
       this.setData({
-        paperList: res || []
+        paperList: paperList.concat(res.data || []),
+        paperPage: res.current_page + 1,
+        paperLoadMore: res.current_page + 1 < res.total_page
       })
     })
   },
@@ -132,5 +155,17 @@ Page({
     this.setData({
       techIndex: index
     })
+  },
+
+  _loadMore() {
+    console.log('loadmore....')
+    const { techIndex = 0 } = this.data;
+    if (techIndex == 0) {
+      this._getWebinar();
+    } else if (techIndex == 1) {
+      this._getDocuments();
+    } else if (techIndex == 2) {
+      this._getWhitePaper();
+    }
   }
 })

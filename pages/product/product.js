@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    productList: []
+    productList: [],
+    page: 0,
+    loadMore: true
   },
 
   /**
@@ -68,11 +70,19 @@ Page({
   },
 
   _getProducts() {
-    let params = {}
+    const { productList = [], loadMore, page = 0 } = this.data;
+    if (!loadMore) {
+      return;
+    }
+    let params = {
+      page: page
+    }
     getProducts(params).then(res => {
       console.log(res)
       this.setData({
-        productList: res || []
+        productList: productList.concat(res.data || []),
+        page: res.current_page + 1,
+        loadMore: res.current_page + 1 < res.total_pages
       })
     })
   }

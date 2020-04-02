@@ -8,7 +8,7 @@
 		</view>
 		<view class="line" />
 	</view>
-	<view class="tech-container">
+	<scroll-view class="tech-container" scroll-y bindscrolltolower="_loadMore">
 		<block wx:if="{{techIndex==0}}" wx:for="{{webinarList}}" wx:for-item="item" wx:key="item.id">
 			<webinar-item data="{{item}}" />
 		</block>
@@ -18,5 +18,5 @@
 		<block wx:if="{{techIndex==2}}" wx:for="{{paperList}}" wx:for-item="item" wx:key="item.id">
 			<paper-item data="{{item}}" />
 		</block>
-	</view>
+	</scroll-view>
 </view>
