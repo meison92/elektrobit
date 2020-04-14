@@ -1,33 +1,39 @@
 @import "../../app.wxss";
 
 .webinar-item {
-  display: flex;
+  display       : flex;
   flex-direction: row;
-  height: 180rpx;
-  margin-bottom: 40rpx;
+  height        : 180rpx;
+  margin-bottom : 40rpx;
 }
 
 .webinar-item .icon-span {
-  display: flex;
+  display       : flex;
   flex-direction: row;
-  bottom: 0;
-  left: 0;
-  width:100%;
-  background: rgba(0, 0, 0, 0.5);
+  bottom        : 0;
+  left          : 0;
+  width         : 100%;
+  background    : rgba(0, 0, 0, 0.5);
 }
 
-.webinar-item .icon-span view{
-  display: flex;
-  flex: 1;
+.webinar-item .icon-span view {
+  display        : flex;
+  flex           : 1;
   justify-content: center;
-  align-items: center;
-  font-size: 24rpx;
-  color: white;
+  align-items    : center;
+  font-size      : 24rpx;
+  color          : white;
 }
 
-.webinar-item .webinar-content{
-  display: flex;
-  flex:1;
+.webinar-item .webinar-content {
+  display       : flex;
+  flex          : 1;
   flex-direction: column;
-  padding-left: 30rpx;
+  padding-left  : 30rpx;
+}
+
+.webinar-content-title {
+  text-overflow: ellipsis;
+  height       : 88rpx;
+  overflow     : hidden;
 }
