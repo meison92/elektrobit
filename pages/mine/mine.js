@@ -110,5 +110,5 @@ Page({
     wx.navigateTo({
       url: '/pages/event/event'
     })
-  }
+  },
 })

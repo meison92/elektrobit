@@ -66,6 +66,12 @@
 					"pathName": "pages/technic/technic",
 					"query": "index=2",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"scene": null
 				}
 			]
 		}

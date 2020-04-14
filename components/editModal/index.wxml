@@ -1,61 +1,24 @@
-<view
- class="modal-mask"
- catchtouchmove="preventTouchMove"
- wx:if="{{showModal}}"
->
+<view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}">
 	<view class="modal-dialog" catchtap="catchtap">
 		<image src="../../asset/personal-back-pic.png" mode="widthFix" />
 		<view class="modal-title">{{title}}</view>
 		<view class="modal-content">
-			<input
-			 class="modal-input"
-			 type="text"
-			 placeholder="输入姓名"
-			 bindinput="bindChange"
-			 data-id="name"
-			 value="{{name}}"
-			 placeholder-class="input-holder"
-			/>
-			<input
-			 class="modal-input"
-			 type="text"
-			 placeholder="输入公司"
-			 bindinput="bindChange"
-			 data-id="company"
-			 value="{{company}}"
-			 placeholder-class="input-holder"
-			/>
-			<input
-			 class="modal-input"
-			 type="text"
-			 placeholder="输入职位"
-			 bindinput="bindChange"
-			 data-id="position"
-			 value="{{position}}"
-			 placeholder-class="input-holder"
-			/>
-			<input
-			 class="modal-input"
-			 type="text"
-			 placeholder="输入邮箱"
-			 bindinput="bindChange"
-			 data-id="email"
-			 value="{{email}}"
-			 placeholder-class="input-holder"
-			/>
+			<input class="modal-input" type="text" placeholder="输入姓名" bindinput="bindChange" data-id="name"
+				value="{{name}}" placeholder-class="input-holder" />
+			<input class="modal-input" type="text" placeholder="输入公司" bindinput="bindChange" data-id="company"
+				value="{{company}}" placeholder-class="input-holder" />
+			<input class="modal-input" type="text" placeholder="输入职位" bindinput="bindChange" data-id="position"
+				value="{{position}}" placeholder-class="input-holder" />
+			<input class="modal-input" type="text" placeholder="输入邮箱" bindinput="bindChange" data-id="email"
+				value="{{email}}" placeholder-class="input-holder" />
 			<view class="phone-span">
-				<input
-				 class="modal-input"
-				 type="number"
-				 maxlength="11"
-				 placeholder="输入手机"
-				 bindinput="bindChange"
-				 data-id="phone"
-				 value="{{phone}}"
-				 placeholder-class="input-holder"
-				 disabled
-				/>
+				<input class="modal-input" type="number" maxlength="11" placeholder="输入手机" bindinput="bindChange"
+					data-id="phone" value="{{phone}}" placeholder-class="input-holder" disabled />
 				<button class="btn-verify" open-type="getPhoneNumber" bindgetphonenumber="getVerify">获取手机号</button>
+			</view>
+			<view class="attention">我想要订阅 EB 电子快讯并接收有关 EB
+				产品和活动的其他信息。我同意对我的使用行为进行记录，以便进行优化。通过电子快讯邮件底部的退订链接，我可以撤回同意。更多信息，请单击此处。
+				<text class="attention-url" bindtap="goWebview">https://www.elektrobit.cn/privacy-policy/</text>
 			</view>
 		</view>
 		<view class="btn-group">
@@ -64,4 +27,3 @@
 		</view>
 	</view>
 </view>
-

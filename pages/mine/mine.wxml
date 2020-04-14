@@ -1,6 +1,6 @@
 <!--pages/mine/mine.wxml-->
 <view>
-	<image src="../../asset/personal-back-pic.jpg" mode="widthFix" style="width:100%"/>
+	<image src="../../asset/personal-back-pic.jpg" mode="widthFix" style="width:100%" />
 </view>
 <image class="avatar" src="{{data.picture}}" mode="aspectFit" />
 <view class="mine-container">
@@ -31,7 +31,6 @@
 <!-- <view class="btn-span">
 	<view class="submit-btn" bindtap="tapEvent">查看我的活动</view>
 </view> -->
-<official-account/>
+<official-account />
 
-<edit-modal id="editModal" data="{{data}}" type="update" title="个人信息" bind:parentEvent='_getUser'/>
-
+<edit-modal id="editModal" data="{{data}}" type="update" title="个人信息" bind:parentEvent='_getUser' />

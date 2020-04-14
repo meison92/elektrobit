@@ -229,5 +229,10 @@ Component({
                 this.triggerEvent('parentEvent')
             })
         },
+        goWebview() {
+            wx.navigateTo({
+                url: `/pages/webview/webview?link=https://www.elektrobit.cn/privacy-policy/`
+            })
+        }
     }
 })
