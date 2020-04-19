@@ -131,3 +131,7 @@
 .attention-url {
   color: #4fa7ff;
 }
+
+checkbox-group {
+  display: inline-block;
+}

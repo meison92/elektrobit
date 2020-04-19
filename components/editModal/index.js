@@ -54,7 +54,8 @@ Component({
         company: "",
         position: "",
         email: "",
-        eventid: 0
+        eventid: 0,
+        opt_in_email: 1
     },
 
     ready() {
@@ -179,7 +180,8 @@ Component({
                     phone: this.data.phone,
                     email: this.data.email,
                     position: this.data.position,
-                    uid: this.data.uid
+                    uid: this.data.uid,
+                    opt_in_email: this.data.opt_in_email
                 }
             }
             register(params).then(res => {
@@ -212,7 +214,8 @@ Component({
                     phone: this.data.phone,
                     email: this.data.email,
                     position: this.data.position,
-                    uid: this.data.uid
+                    uid: this.data.uid,
+                    opt_in_email: this.data.opt_in_email
                 }
             }
             getUser(params).then(res => {
@@ -233,6 +236,19 @@ Component({
             wx.navigateTo({
                 url: `/pages/webview/webview?link=https://www.elektrobit.cn/privacy-policy/`
             })
+        },
+        checkboxChange(e) {
+            console.log(e.detail.value)
+            const value = e.detail.value;
+            if (value.length > 0) {
+                this.setData({
+                    opt_in_email: 1
+                })
+            } else {
+                this.setData({
+                    opt_in_email: 0
+                })
+            }
         }
     }
 })

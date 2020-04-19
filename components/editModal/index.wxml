@@ -16,7 +16,13 @@
 					data-id="phone" value="{{phone}}" placeholder-class="input-holder" disabled />
 				<button class="btn-verify" open-type="getPhoneNumber" bindgetphonenumber="getVerify">获取手机号</button>
 			</view>
-			<view class="attention">我想要订阅 EB 电子快讯并接收有关 EB
+			<view class="attention">
+				<checkbox-group bindchange="checkboxChange">
+					<label class="checkbox">
+						<checkbox value="{{opt_in_email}}" checked="{{opt_in_email==1}}" />
+					</label>
+				</checkbox-group>
+				我想要订阅 EB 电子快讯并接收有关 EB
 				产品和活动的其他信息。我同意对我的使用行为进行记录，以便进行优化。通过电子快讯邮件底部的退订链接，我可以撤回同意。
 				<text class="attention-url" bindtap="goWebview">更多信息，请单击此处。</text>
 			</view>
