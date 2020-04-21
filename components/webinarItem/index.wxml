@@ -14,8 +14,8 @@
 		</view>
 	</view>
 	<view class="webinar-content">
-		<view class="green f16 webinar-content-title">{{data.title}}</view>
-		<view class="grey2 f14">产品：{{data.related_products[0].title}}</view>
-		<view class="grey2 f14">类别：{{data.categories[0].category}}</view>
+		<view class="green f14 webinar-content-title">{{data.title}}</view>
+		<view class="grey2 f12">产品：{{data.related_products[0].title}}</view>
+		<view class="grey2 f12">类别：{{data.categories[0].category}}</view>
 	</view>
 </view>
