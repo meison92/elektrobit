@@ -78,6 +78,14 @@
 					"id": -1,
 					"name": "pages/technic/technic",
 					"pathName": "pages/technic/technic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/technicDetail/technicDetail",
+					"pathName": "pages/technicDetail/technicDetail",
+					"query": "id=16",
 					"scene": null
 				}
 			]

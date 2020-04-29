@@ -17,6 +17,10 @@
 		<view class="f12 grey2">产品：{{data.related_products[0].title}}</view>
 		<view class="f12 grey2 mt10 mb10">类别：{{data.categories[0].category}}</view>
 		<view class="f12 grey2">资源类型：{{data.type}}</view>
+		<view wx:if="{{data.file_downloads.length>0}}" class="btn-wrapper">
+			<button class="tec-btn" bindtap="preview">在线预览</button>
+			<button class="tec-btn" bindtap="sendToEmail">发送至邮箱</button>
+		</view>
 		<view class="comment mt20 f14">评论</view>
 		<view>
 			<block wx:for="{{data.comments}}" wx:key="index">
@@ -32,8 +36,7 @@
 		</view>
 	</view>
 	<view class="input-container">
-		<input placeholder="请输入评论" bindinput="bindChange" value="{{comment}}"/>
+		<input placeholder="请输入评论" bindinput="bindChange" value="{{comment}}" />
 		<view bindtap="comment">发布</view>
 	</view>
 </view>
-
