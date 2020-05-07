@@ -18,8 +18,8 @@
 		<view class="f12 grey2 mt10 mb10">类别：{{data.categories[0].category}}</view>
 		<view class="f12 grey2">资源类型：{{data.type}}</view>
 		<view wx:if="{{data.file_downloads.length>0}}" class="btn-wrapper">
-			<button class="tec-btn" bindtap="preview">在线预览</button>
-			<button class="tec-btn" bindtap="sendToEmail">发送至邮箱</button>
+			<!-- <button class="tec-btn" bindtap="preview">在线预览</button> -->
+			<button class="tec-btn" bindtap="sendToEmail">发送演讲PPT至邮箱</button>
 		</view>
 		<view class="comment mt20 f14">评论</view>
 		<view>
