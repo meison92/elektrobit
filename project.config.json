@@ -9,7 +9,10 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -17,10 +20,11 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useCompilerModule": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.3",
+	"libVersion": "2.11.2",
 	"appid": "wxe274522d849aa535",
 	"projectname": "elektrobit",
 	"debugOptions": {
