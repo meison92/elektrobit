@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends } = require('../../wxApi/request')
+const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents } = require('../../wxApi/request')
 Page({
   data: {
     bannerList: [],
@@ -64,9 +64,10 @@ Page({
     }
     this._getBackgrounds();
     // this._getFeaturedEvents();
-    // this._getEvents();
+    this._getEvents();
     this._getNews();
-    this._getTrends();
+    // this._getTrends();
+    this._getExclusiveEvents();
   },
   getUserInfo: function (e) {
     console.log(e)
@@ -88,8 +89,17 @@ Page({
     getEvents().then(res => {
       console.log(res)
       this.setData({
-        eventList: res || []
+        eventList: res.data || []
       })
+    })
+  },
+
+  _getExclusiveEvents() {
+    getExclusiveEvents().then(res => {
+      console.log(res)
+      // this.setData({
+      //   eventList: res.data || []
+      // })
     })
   },
 

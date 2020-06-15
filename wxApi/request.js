@@ -96,6 +96,9 @@ module.exports = {
   getEvents: (data) => { // 获取活动列表
     return request('/json/events', data)
   },
+  getExclusiveEvents: (data) => { // 获取专属活动列表
+    return request('/json/exclusive-events', data)
+  },
   getEventDetail: (data) => { // 获取活动详情
     return request(`/json/event/${data.id}`)
   },

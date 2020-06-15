@@ -19,12 +19,12 @@
 	</block>
 </swiper>
 <view class="event-container">
-	<!-- <block wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
+	<block wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
 		<event-item data="{{item}}" />
-	</block> -->
-	<block wx:for="{{trends}}" wx:for-item="item" wx:key="item.id">
-		<trend-item data="{{item}}" />
 	</block>
+	<!-- <block wx:for="{{trends}}" wx:for-item="item" wx:key="item.id">
+		<trend-item data="{{item}}" />
+	</block> -->
 </view>
 
 <view class="news-container">
