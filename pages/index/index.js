@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents } = require('../../wxApi/request')
+const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents, registrations } = require('../../wxApi/request')
 Page({
   data: {
     bannerList: [],
@@ -11,12 +11,15 @@ Page({
     interval: 5000,
     duration: 1000,
     eventList: [],
+    exclusiveList: [],
+    myEventList: [],
     news: [],
     trends: [],
     userInfo: {},
     hasUserInfo: false,
     canIUse: false,
-    swiperHeight: 150
+    swiperHeight: 150,
+    homeIndex: 0
   },
   //事件处理函数
   bindViewTap: function () {
@@ -67,7 +70,7 @@ Page({
     this._getEvents();
     this._getNews();
     // this._getTrends();
-    this._getExclusiveEvents();
+    // this._getExclusiveEvents();
   },
   getUserInfo: function (e) {
     console.log(e)
@@ -97,9 +100,26 @@ Page({
   _getExclusiveEvents() {
     getExclusiveEvents().then(res => {
       console.log(res)
-      // this.setData({
-      //   eventList: res.data || []
-      // })
+      this.setData({
+        exclusiveList: res.data || []
+      })
+    })
+  },
+
+  _getMyEvents: function () {
+    let uid = app.globalData.userInfo.id;
+    registrations({ uid: uid }).then(res => {
+      console.log(res)
+      if (res.length < 1) {
+        return;
+      }
+      let myEventList = [];
+      res.map((item, index) => {
+        myEventList.push(item.event)
+      })
+      this.setData({
+        myEventList
+      })
     })
   },
 
@@ -174,5 +194,25 @@ Page({
     wx.navigateTo({
       url: `/pages/webview/webview?link=https://www.elektrobit.cn/newsroom/`
     })
-  }
+  },
+
+  tapNav: function (event) {
+    let index = event.target.dataset.index;
+    if (index == 0) {
+      if (this.data.eventList.length < 1) {
+        this._getEvents();
+      }
+    } else if (index == 1) {
+      if (this.data.exclusiveList.length < 1) {
+        this._getExclusiveEvents();
+      }
+    } else if (index == 2) {
+      if (this.data.myEventList.length < 1) {
+        this._getMyEvents();
+      }
+    }
+    this.setData({
+      homeIndex: index
+    })
+  },
 })
