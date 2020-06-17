@@ -1,11 +1,4 @@
 <!--index.wxml-->
-<view class="home-top">
-	<view class="home-nav">
-		<view bindtap="tapNav" data-index="0" class="f16 {{homeIndex==0?'green':''}}">公众活动</view>
-		<view bindtap="tapNav" data-index="1" class="f16 {{homeIndex==1?'green':''}}">专属活动</view>
-		<view bindtap="tapNav" data-index="2" class="f16 {{homeIndex==2?'green':''}}">我的活动</view>
-	</view>
-</view>
 <image src="../../asset/EBlogo.png" mode="widthFix" style="width: 100%;"></image>
 <swiper indicator-dots="{{indicatorDots}}" indicator-color="white" indicator-active-color="#00eb00"
 	autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true"
@@ -25,6 +18,13 @@
 		</swiper-item>
 	</block>
 </swiper>
+<view class="home-top">
+	<view class="home-nav">
+		<view bindtap="tapNav" data-index="0" class="f16 {{homeIndex==0?'green':''}}">公众活动</view>
+		<view bindtap="tapNav" data-index="1" class="f16 {{homeIndex==1?'green':''}}">专属活动</view>
+		<view bindtap="tapNav" data-index="2" class="f16 {{homeIndex==2?'green':''}}">我的活动</view>
+	</view>
+</view>
 <view class="event-container">
 	<block wx:if="{{homeIndex==0}}" wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
 		<event-item data="{{item}}" />
@@ -40,7 +40,7 @@
 	</block> -->
 </view>
 
-<view class="news-container">
+<!-- <view class="news-container">
 	<view class="news-top">
 		<view>EB新闻</view>
 		<view class="green" bindtap="tapMoreNews">查看更多</view>
@@ -48,4 +48,4 @@
 	<block wx:for="{{news}}" wx:for-item="item" wx:key="item.id">
 		<news-item data="{{item}}" />
 	</block>
-</view>
+</view> -->

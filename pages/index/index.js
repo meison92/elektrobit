@@ -68,7 +68,7 @@ Page({
     this._getBackgrounds();
     // this._getFeaturedEvents();
     this._getEvents();
-    this._getNews();
+    // this._getNews();
     // this._getTrends();
     // this._getExclusiveEvents();
   },

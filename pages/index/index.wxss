@@ -5,7 +5,7 @@
 }
 
 .event-container {
-  padding: 40rpx;
+  padding: 0 40rpx 40rpx 40rpx;
 }
 
 .news-container {
