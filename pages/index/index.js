@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents, registrations } = require('../../wxApi/request')
+const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents, registrations, verifyCode } = require('../../wxApi/request')
 Page({
   data: {
     bannerList: [],
@@ -19,7 +19,9 @@ Page({
     hasUserInfo: false,
     canIUse: false,
     swiperHeight: 150,
-    homeIndex: 0
+    homeIndex: 0,
+    invitation_code: null,
+    eventId: null,
   },
   //事件处理函数
   bindViewTap: function () {
@@ -27,8 +29,13 @@ Page({
       url: '../logs/logs'
     })
   },
+
+  onReady: function () {
+    this.prompt = this.selectComponent("#prompt");
+  },
+
   onLoad: function () {
-    var that = this
+    var that = this;
     wx.getSystemInfo({
       success: function (res) {
         console.log(res.screenWidth)
@@ -99,7 +106,7 @@ Page({
 
   _getExclusiveEvents() {
     getExclusiveEvents().then(res => {
-      console.log(res)
+      // console.log(res)
       this.setData({
         exclusiveList: res.data || []
       })
@@ -215,4 +222,46 @@ Page({
       homeIndex: index
     })
   },
+  showPrompt: function (e) {
+    console.log(e.detail.id)
+    this.setData({
+      eventId: e.detail.id
+    })
+    this.prompt.showPrompt();
+  },
+  getInput: function (e) {
+    this.setData({
+      invitation_code: e.detail.value
+    })
+  },
+  cancel: function () {
+    this.prompt.hidePrompt();
+  },
+  confirm: function () {
+    const { invitation_code, eventId } = this.data;
+    console.log(invitation_code)
+    if (invitation_code) {
+      const params = {
+        id: eventId,
+        invitation_code: invitation_code
+      }
+      verifyCode(params).then(res => {
+        console.log(res)
+        const { code } = res;
+        if (code == 0) {
+          this.cancel();
+          wx.navigateTo({
+            url: `/pages/eventDetail/eventDetail?id=${eventId}`
+          })
+        } else {
+          wx.showToast({
+            title: '邀请码错误',
+            icon: 'none',
+            image: '',
+            duration: 1500,
+          });
+        }
+      })
+    }
+  }
 })

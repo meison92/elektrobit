@@ -5,6 +5,9 @@ Component({
     properties: {
         data: {
             type: Object
+        },
+        type: {
+            type: Number
         }
     },
 
@@ -13,6 +16,7 @@ Component({
      */
     data: {
         data: {},
+        type: 0,
         host: getApp().globalData.host
     },
 
@@ -25,9 +29,14 @@ Component({
     */
     methods: {
         tapDetail() {
-            wx.navigateTo({
-                url: `/pages/eventDetail/eventDetail?id=${this.data.data.id}`
-            })
+            const { id } = this.data.data;
+            if (this.data.type == 1) {
+                this.triggerEvent("showPrompt", { id: id })
+            } else {
+                wx.navigateTo({
+                    url: `/pages/eventDetail/eventDetail?id=${this.data.data.id}`
+                })
+            }
         },
         signUp(event) {
             console.log(event)

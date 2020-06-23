@@ -150,4 +150,7 @@ module.exports = {
   sendEmail: (data) => { //发送邮件
     return requestWithAuth(`/json/email/${data.id}`, data, 'post');
   },
+  verifyCode: (data) => { //验证活动邀请码
+    return requestWithAuth(`/json/verify/${data.id}`, data, 'post');
+  },
 }

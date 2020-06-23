@@ -27,13 +27,13 @@
 </view>
 <view class="event-container">
 	<block wx:if="{{homeIndex==0}}" wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
-		<event-item data="{{item}}" />
+		<event-item data="{{item}}" type="0" />
 	</block>
 	<block wx:if="{{homeIndex==1}}" wx:for="{{exclusiveList}}" wx:for-item="item" wx:key="item.id">
-		<event-item data="{{item}}" />
+		<event-item data="{{item}}" type="1" bind:showPrompt="showPrompt" />
 	</block>
 	<block wx:if="{{homeIndex==2}}" wx:for="{{myEventList}}" wx:for-item="item" wx:key="item.id">
-		<event-item data="{{item}}" />
+		<event-item data="{{item}}" type="2" />
 	</block>
 	<!-- <block wx:for="{{trends}}" wx:for-item="item" wx:key="item.id">
 		<trend-item data="{{item}}" />
@@ -49,3 +49,5 @@
 		<news-item data="{{item}}" />
 	</block>
 </view> -->
+<prompt id="prompt" title='输入邀请码' btn_certain='确定' bind:getInput="getInput" bind:cancel="cancel"
+	bind:confirm="confirm" />
