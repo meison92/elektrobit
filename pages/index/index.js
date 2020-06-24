@@ -242,8 +242,10 @@ Page({
     console.log(invitation_code)
     if (invitation_code) {
       const params = {
+        data: {
+          invitation_code: invitation_code
+        },
         id: eventId,
-        invitation_code: invitation_code
       }
       verifyCode(params).then(res => {
         console.log(res)
