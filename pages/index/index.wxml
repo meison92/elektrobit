@@ -20,14 +20,14 @@
 </swiper>
 <view class="home-top">
 	<view class="home-nav">
-		<view bindtap="tapNav" data-index="0" class="f16 {{homeIndex==0?'green':''}}">公众活动</view>
-		<view bindtap="tapNav" data-index="1" class="f16 {{homeIndex==1?'green':''}}">专属活动</view>
+		<view bindtap="tapNav" data-index="0" class="f16 {{homeIndex==0?'green':''}}">培训</view>
+		<view bindtap="tapNav" data-index="1" class="f16 {{homeIndex==1?'green':''}}">市场活动</view>
 		<view bindtap="tapNav" data-index="2" class="f16 {{homeIndex==2?'green':''}}">我的活动</view>
 	</view>
 </view>
 <view class="event-container">
 	<block wx:if="{{homeIndex==0}}" wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
-		<event-item data="{{item}}" type="0" />
+		<event-item data="{{item}}" type="0" bind:showPrompt="showPrompt"/>
 	</block>
 	<block wx:if="{{homeIndex==1}}" wx:for="{{exclusiveList}}" wx:for-item="item" wx:key="item.id">
 		<event-item data="{{item}}" type="1" bind:showPrompt="showPrompt" />

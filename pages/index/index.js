@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents, registrations, verifyCode } = require('../../wxApi/request')
+const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents, registrations, verifyCode,getTrainingCourses, getMarketingActivities } = require('../../wxApi/request')
 Page({
   data: {
     bannerList: [],
@@ -74,7 +74,7 @@ Page({
     }
     this._getBackgrounds();
     // this._getFeaturedEvents();
-    this._getEvents();
+    this._getTrainingCourses();
     // this._getNews();
     // this._getTrends();
     // this._getExclusiveEvents();
@@ -100,6 +100,24 @@ Page({
       console.log(res)
       this.setData({
         eventList: res.data || []
+      })
+    })
+  },
+  
+  _getTrainingCourses() {
+    getTrainingCourses().then(res => {
+      console.log(res)
+      this.setData({
+        eventList: res || []
+      })
+    })
+  },
+
+  _getMarketingActivities() {
+    getMarketingActivities().then(res => {
+      console.log(res)
+      this.setData({
+        exclusiveList: res || []
       })
     })
   },
@@ -207,11 +225,11 @@ Page({
     let index = event.target.dataset.index;
     if (index == 0) {
       if (this.data.eventList.length < 1) {
-        this._getEvents();
+        this._getTrainingCourses();
       }
     } else if (index == 1) {
       if (this.data.exclusiveList.length < 1) {
-        this._getExclusiveEvents();
+        this._getMarketingActivities();
       }
     } else if (index == 2) {
       if (this.data.myEventList.length < 1) {

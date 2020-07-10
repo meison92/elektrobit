@@ -153,4 +153,10 @@ module.exports = {
   verifyCode: (data) => { //验证活动邀请码
     return requestWithAuth(`/json/verify/${data.id}`, data, 'post');
   },
+  getTrainingCourses: (data) => { //培训
+    return requestWithAuth(`/json/training-courses`, data, 'get');
+  },
+  getMarketingActivities: (data) => { //培训
+    return requestWithAuth(`/json/marketing-activities`, data, 'get');
+  }
 }

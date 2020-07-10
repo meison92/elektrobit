@@ -29,8 +29,8 @@ Component({
     */
     methods: {
         tapDetail() {
-            const { id } = this.data.data;
-            if (this.data.type == 1) {
+            const { id,invitation_code } = this.data.data;
+            if (invitation_code) {
                 this.triggerEvent("showPrompt", { id: id })
             } else {
                 wx.navigateTo({

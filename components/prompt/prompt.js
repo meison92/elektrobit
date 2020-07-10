@@ -31,7 +31,8 @@ Component({
     },
     showPrompt() {
       this.setData({
-        isHidden: false
+        isHidden: false,
+        cost:''
       })
     },
     /*
