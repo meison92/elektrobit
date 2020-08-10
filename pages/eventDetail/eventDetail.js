@@ -11,6 +11,7 @@ Page({
     data: {},
     userInfo: {},
     id: 0,
+    type:0,
     showModal: false,
     swiperHeight: 150
   },
@@ -38,6 +39,7 @@ Page({
     const userInfo = wx.getStorageSync('userInfo');
     this.setData({
       id: options.id,
+      type:options.type,
       userInfo: userInfo
     })
   },

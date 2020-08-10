@@ -34,7 +34,7 @@ Component({
                 this.triggerEvent("showPrompt", { id: id })
             } else {
                 wx.navigateTo({
-                    url: `/pages/eventDetail/eventDetail?id=${this.data.data.id}`
+                    url: `/pages/eventDetail/eventDetail?id=${this.data.data.id}&type=${this.data.type}`
                 })
             }
         },

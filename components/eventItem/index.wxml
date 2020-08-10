@@ -9,7 +9,7 @@
 	</view>
 	<view class="detail-span">
 		<view class="text1">时间：{{data.date.start}}至{{data.date.end}}</view>
-		<view class="text1">地点：{{data.venue}}</view>
+		<view class="text1">{{type==0?'形式':'地点'}}：{{data.venue}}</view>
 		<view class="text1">状态：{{data.status}}</view>
 		<view class="detail-btn" bindtap="tapDetail">详情</view>
 	</view>
