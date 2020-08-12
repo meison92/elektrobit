@@ -94,6 +94,13 @@
 					"pathName": "pages/technicDetail/technicDetail",
 					"query": "id=16",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/webview/webview",
+					"pathName": "pages/webview/webview",
+					"query": "link= https://mp.elektrobit.cn/sites/default/files/2020-03/Elektrobit_vehicle_infrastructure_brochure_2019_cn_0.pdf",
+					"scene": null
 				}
 			]
 		}

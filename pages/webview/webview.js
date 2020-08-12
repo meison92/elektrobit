@@ -15,9 +15,20 @@ Page({
     wx.setNavigationBarTitle({
       title: '详情'
     })
-    this.setData({
-      link: options.link
-    })
+    wx.getSystemInfo({
+      success: (res) => {
+        console.log(res)
+        let isIphone = res.model.search(/iPhone/) != -1;
+        if (isIphone) {
+          this.setData({
+            link: options.link
+          })
+        } else {
+          this.downloadFile(options.link);
+        }
+      }
+    });
+
   },
 
   /**
@@ -67,5 +78,40 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  downloadFile: function (url) {
+
+    wx.showLoading({
+      title: "下载中",
+      mask: true
+    });
+    wx.downloadFile({
+      url: url, // 仅为示例，并非真实的资源
+      success(res) {
+        console.log(res)
+        let filePath = res.tempFilePath;
+        // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+        wx.showToast({
+          title: '下载成功！',
+          icon: 'success',
+          duration: 2000
+        })
+        wx.openDocument({
+          filePath: filePath,
+          success: function (res) {
+            console.log('打开文档成功')
+          },
+          fail: function (res) {
+            console.log('打开文档失败')
+            wx.showToast({
+              title: '打开文档失败！',
+              icon: 'error',
+              duration: 2000
+            })
+          }
+        })
+      }
+    })
   }
 })
