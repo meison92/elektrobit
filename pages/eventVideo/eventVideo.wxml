@@ -1,8 +1,7 @@
 <!--pages/eventDetail/eventDetail.wxml-->
 <view class="event-video">
-    <video style="width: 100%;" id="myVideo" autoplay="{{true}}"
-        src="http://cdn.nilfiskcleaning.com/A%20heartfelt%20thank%20you%20from%20our%20CEO.mp4"
-        binderror="videoErrorCallback" show-center-play-btn='{{false}}' show-play-btn="{{true}}" controls
+    <video style="width: 100%;" id="myVideo" autoplay="{{true}}" src="{{data.video_url}}" binderror="videoErrorCallback"
+        show-center-play-btn='{{false}}' show-play-btn="{{true}}" controls
         picture-in-picture-mode="{{['push', 'pop']}}"></video>
     <view class="event-video-contianer">
         <view>
