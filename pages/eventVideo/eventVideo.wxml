@@ -1,0 +1,15 @@
+<!--pages/eventDetail/eventDetail.wxml-->
+<view class="event-video">
+    <video style="width: 100%;" id="myVideo" autoplay="{{true}}"
+        src="http://cdn.nilfiskcleaning.com/A%20heartfelt%20thank%20you%20from%20our%20CEO.mp4"
+        binderror="videoErrorCallback" show-center-play-btn='{{false}}' show-play-btn="{{true}}" controls
+        picture-in-picture-mode="{{['push', 'pop']}}"></video>
+    <view class="event-video-contianer">
+        <view>
+            <view class="f16">{{data.title}}</view>
+            <view class="f12 grey1">时间：{{data.date.start}}~{{data.date.end}}</view>
+            <view class="f12 grey1">{{type==0?'形式':'地点'}}：{{data.venue}}</view>
+            <view class="f12 grey1">状态：{{data.status}}</view>
+        </view>
+    </view>
+</view>

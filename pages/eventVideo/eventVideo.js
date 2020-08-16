@@ -13,7 +13,6 @@ Page({
     id: 0,
     type: 0,
     showModal: false,
-    swiperHeight: 150
   },
 
   /**
@@ -104,46 +103,4 @@ Page({
       })
     })
   },
-
-  submit: function () {
-    if (this.data.registered == 1) {
-      return;
-    }
-    const openid = wx.getStorageSync('openid');
-    const updateTime = wx.getStorageSync('updateTime');
-    const userInfo = wx.getStorageSync('userInfo');
-    if ((new Date().getTime()) - Number(updateTime) <= 86400000) {
-      if (openid) {
-        this.setData({
-          showModal: true
-        }, () => {
-          this.selectComponent("#editModal").showModal();
-        })
-      } else {
-        wx.reLaunch({
-          url: '/pages/login/login'
-        })
-      }
-    } else {
-      wx.reLaunch({
-        url: '/pages/login/login'
-      })
-    }
-
-  },
-
-  onlineSearch: function () {
-    wx.showToast({
-      title: '在线调研',
-      icon: 'success',
-      duration: 2000
-    })
-  },
-
-  goVideo: function () {
-    const { id, type } = this.data;
-    wx.navigateTo({
-      url: `/pages/eventVideo/eventVideo?id=${id}&type=${type}`,
-    });
-  }
 })

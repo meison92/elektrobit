@@ -11,7 +11,8 @@
     "pages/eventDetail/eventDetail",
     "pages/mineEdit/mineEdit",
     "pages/login/login",
-    "pages/webview/webview"
+    "pages/webview/webview",
+    "pages/eventVideo/eventVideo"
   ],
   "window": {
     "backgroundTextStyle": "light",

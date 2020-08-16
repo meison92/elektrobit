@@ -3,6 +3,9 @@
     display       : flex;
     flex-direction: column;
     padding       : 0 40rpx;
+    position      : fixed;
+    width         : 100%;
+    box-sizing    : border-box;
 }
 
 .tech-nav {
@@ -14,6 +17,7 @@
 }
 
 .tech-container {
-    padding   : 40rpx;
-    box-sizing: border-box;
+    padding    : 40rpx;
+    box-sizing : border-box;
+    padding-top: 100rpx;
 }

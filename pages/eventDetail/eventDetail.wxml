@@ -23,6 +23,7 @@
 		</view>
 		<view class="btn-group">
 			<view class="btn" bindtap="submit">{{data.registered=='1'?'已报名':'我要报名'}}</view>
+			<view wx-if="{{data.video_url}}" class="btn" bindtap="goVideo">在线观看</view>
 			<!-- <view class="btn" bindtap="onlineSearch">在线调研</view> -->
 		</view>
 	</view>

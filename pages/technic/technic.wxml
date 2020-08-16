@@ -1,22 +1,20 @@
 <!--pages/technic/technic.wxml-->
-<view>
-	<view class="tech-top">
-		<view class="tech-nav">
-			<view bindtap="tapNav" data-index="0" class="f16 {{techIndex==0?'green':''}}">Webinar/视频</view>
-			<view bindtap="tapNav" data-index="1" class="f16 {{techIndex==1?'green':''}}">技术文章</view>
-			<view bindtap="tapNav" data-index="2" class="f16 {{techIndex==2?'green':''}}">白皮书</view>
-		</view>
-		<view class="line" />
+<view class="tech-top">
+	<view class="tech-nav">
+		<view bindtap="tapNav" data-index="0" class="f16 {{techIndex==0?'green':''}}">Webinar/视频</view>
+		<view bindtap="tapNav" data-index="1" class="f16 {{techIndex==1?'green':''}}">技术文章</view>
+		<view bindtap="tapNav" data-index="2" class="f16 {{techIndex==2?'green':''}}">白皮书</view>
 	</view>
-	<scroll-view class="tech-container" scroll-y bindscrolltolower="_loadMore" style="height:{{scrollH}}px">
-		<block wx:if="{{techIndex==0}}" wx:for="{{webinarList}}" wx:for-item="item" wx:key="item.id">
-			<webinar-item data="{{item}}" />
-		</block>
-		<block wx:if="{{techIndex==1}}" wx:for="{{documentList}}" wx:for-item="item" wx:key="item.id">
-			<document-item data="{{item}}" />
-		</block>
-		<block wx:if="{{techIndex==2}}" wx:for="{{paperList}}" wx:for-item="item" wx:key="item.id">
-			<paper-item data="{{item}}" />
-		</block>
-	</scroll-view>
+	<view class="line" />
 </view>
+<scroll-view class="tech-container" scroll-y bindscrolltolower="_loadMore" style="height:{{scrollH}}px">
+	<block wx:if="{{techIndex==0}}" wx:for="{{webinarList}}" wx:for-item="item" wx:key="item.id">
+		<webinar-item data="{{item}}" />
+	</block>
+	<block wx:if="{{techIndex==1}}" wx:for="{{documentList}}" wx:for-item="item" wx:key="item.id">
+		<document-item data="{{item}}" />
+	</block>
+	<block wx:if="{{techIndex==2}}" wx:for="{{paperList}}" wx:for-item="item" wx:key="item.id">
+		<paper-item data="{{item}}" />
+	</block>
+</scroll-view>
