@@ -51,7 +51,7 @@ Component({
                     } else {
                         let id = event.currentTarget.dataset.id;
                         if (!app.globalData.userInfo) {
-                            wx.reLaunch({
+                            wx.navigateTo({
                                 url: '/pages/login/login'
                             })
                             return;

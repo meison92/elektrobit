@@ -34,13 +34,10 @@ Page({
         })
       }
     })
-    this._getEventDetail();
 
-    const userInfo = wx.getStorageSync('userInfo');
     this.setData({
       id: options.id,
-      type: options.type,
-      userInfo: userInfo
+      type: options.type
     })
   },
 
@@ -55,7 +52,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this._getEventDetail();
+    const userInfo = wx.getStorageSync('userInfo'); 
+    this.setData({
+      userInfo: userInfo
+    })
   },
 
   /**
@@ -120,12 +121,12 @@ Page({
           this.selectComponent("#editModal").showModal();
         })
       } else {
-        wx.reLaunch({
+        wx.navigateTo({
           url: '/pages/login/login'
         })
       }
     } else {
-      wx.reLaunch({
+      wx.navigateTo({
         url: '/pages/login/login'
       })
     }

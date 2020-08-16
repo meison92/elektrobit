@@ -118,7 +118,7 @@ Page({
   sendToEmail: function () {
     let id = this.options.id;
     if (!app.globalData.userInfo) {
-      wx.reLaunch({
+      wx.navigateTo({
         url: '/pages/login/login'
       })
       return;

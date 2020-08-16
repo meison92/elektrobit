@@ -27,12 +27,12 @@ Page({
         this._getUser();
       } else {
         wx.reLaunch({
-          url: '/pages/login/login'
+          url: '/pages/login/login?isTabbar=1&url=/pages/mine/mine'
         })
       }
     } else {
       wx.reLaunch({
-        url: '/pages/login/login'
+        url: '/pages/login/login?isTabbar=1&url=/pages/mine/mine'
       })
     }
   },

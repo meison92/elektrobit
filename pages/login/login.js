@@ -7,14 +7,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isTabbar: 0,
+    url: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      isTabbar: options.isTabbar,
+      url: options.url,
+    })
   },
 
   /**
@@ -103,6 +107,7 @@ Page({
 
   _getUserData() {
     console.log(app.globalData.openid)
+    const { isTabbar, url } = this.data;
     let params = {
       openid: app.globalData.openid
     }
@@ -111,9 +116,24 @@ Page({
 
       wx.setStorageSync('userInfo', res)
       app.globalData.userInfo = res || {};
-      wx.reLaunch({
-        url: `/pages/index/index`
-      })
+      if (isTabbar == 1) {
+        if (url) {
+          wx.switchTab({
+            url: url
+          })
+        } else {
+          wx.reLaunch({
+            url: `/pages/index/index`
+          })
+        }
+      } else {
+        // wx.reLaunch({
+        //   url: `/pages/index/index`
+        // })
+        wx.navigateBack({
+          delta: 1
+        });
+      }
     })
   }
 })
