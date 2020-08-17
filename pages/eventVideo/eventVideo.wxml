@@ -6,9 +6,14 @@
     <view class="event-video-contianer">
         <view>
             <view class="f16">{{data.title}}</view>
-            <view class="f12 grey1">时间：{{data.date.start}}~{{data.date.end}}</view>
+            <view wx:if="{{type==0}}" class="f12 grey1">时间：{{data.date.start}}</view>
+            <view wx:if="{{type!=0}}" class="f12 grey1">时间：{{data.date.start}}~{{data.date.end}}</view>
             <view class="f12 grey1">{{type==0?'形式':'地点'}}：{{data.venue}}</view>
             <view class="f12 grey1">状态：{{data.status}}</view>
+        </view>
+        <view wx:if="{{data.file_downloads.length>0}}" class="btn-wrapper">
+            <!-- <button class="tec-btn" bindtap="preview">在线预览</button> -->
+            <button class="tec-btn" bindtap="sendToEmail">发送演讲PPT至邮箱</button>
         </view>
     </view>
 </view>
