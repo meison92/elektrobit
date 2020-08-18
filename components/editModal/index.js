@@ -34,11 +34,23 @@ Component({
         },
         type: {
             type: String,
-            value: 'update'
+            value: 'update',
+            observer: function (newVal, oldVal) {
+                console.log(newVal)
+                this.setData({
+                    type: newVal
+                })
+            }
         },
         title: {
             type: String,
-            value: ''
+            value: '',
+            observer: function (newVal, oldVal) {
+                console.log(newVal)
+                this.setData({
+                    title: newVal
+                })
+            }
         }
     },
 
@@ -223,6 +235,7 @@ Component({
                 this.setData({
                     data: res
                 })
+                wx.setStorageSync('userInfo', res)
                 wx.showToast({
                     title: '更新成功',
                     icon: 'success',

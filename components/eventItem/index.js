@@ -1,3 +1,4 @@
+const app = getApp()
 Component({
     /**
      * 组件的属性列表
@@ -29,7 +30,13 @@ Component({
     */
     methods: {
         tapDetail() {
-            const { id,invitation_code } = this.data.data;
+            if (!app.globalData.userInfo) {
+                wx.navigateTo({
+                    url: '/pages/login/login'
+                })
+                return;
+            }
+            const { id, invitation_code } = this.data.data;
             if (invitation_code) {
                 this.triggerEvent("showPrompt", { id: id })
             } else {

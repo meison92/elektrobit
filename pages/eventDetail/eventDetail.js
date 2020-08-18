@@ -13,7 +13,8 @@ Page({
     id: 0,
     type: 0,
     showModal: false,
-    swiperHeight: 150
+    swiperHeight: 150,
+    editType: "submit", // submit update
   },
 
   /**
@@ -53,7 +54,7 @@ Page({
    */
   onShow: function () {
     this._getEventDetail();
-    const userInfo = wx.getStorageSync('userInfo'); 
+    const userInfo = wx.getStorageSync('userInfo');
     this.setData({
       userInfo: userInfo
     })
@@ -116,7 +117,8 @@ Page({
     if ((new Date().getTime()) - Number(updateTime) <= 86400000) {
       if (openid) {
         this.setData({
-          showModal: true
+          showModal: true,
+          editType: "submit"
         }, () => {
           this.selectComponent("#editModal").showModal();
         })
@@ -143,8 +145,19 @@ Page({
 
   goVideo: function () {
     const { id, type } = this.data;
-    wx.navigateTo({
-      url: `/pages/eventVideo/eventVideo?id=${id}&type=${type}`,
-    });
+    const userInfo = wx.getStorageSync('userInfo');
+    console.log(userInfo)
+    if (!userInfo.phone) {
+      this.setData({
+        showModal: true,
+        editType: "update"
+      }, () => {
+        this.selectComponent("#editModal").showModal();
+      })
+    } else {
+      wx.navigateTo({
+        url: `/pages/eventVideo/eventVideo?id=${id}&type=${type}`,
+      });
+    }
   }
 })
