@@ -107,13 +107,14 @@ Page({
 
   sendToEmail: function () {
     let id = this.options.id;
-    if (!app.globalData.userInfo) {
+    const userInfo = wx.getStorageSync('userInfo');
+    if (!userInfo) {
       wx.navigateTo({
         url: '/pages/login/login'
       })
       return;
     }
-    if (!app.globalData.userInfo.email) {
+    if (!userInfo.email) {
       wx.switchTab({
         url: '/pages/mine/mine',
         success: (result) => {
@@ -138,7 +139,7 @@ Page({
     const params = {
       id: id,
       data: {
-        email: app.globalData.userInfo.email
+        email: userInfo.email
       }
     }
     wx.showToast({
