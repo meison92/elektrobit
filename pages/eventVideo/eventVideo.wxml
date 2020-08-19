@@ -13,7 +13,7 @@
         </view>
         <view wx:if="{{data.file_downloads.length>0}}" class="btn-wrapper">
             <!-- <button class="tec-btn" bindtap="preview">在线预览</button> -->
-            <button class="tec-btn" bindtap="sendToEmail">发送演讲PPT至邮箱</button>
+            <button class="tec-btn" bindtap="sendToEmail">发送演讲资料至邮箱</button>
         </view>
     </view>
 </view>
