@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents, registrations, verifyCode,getTrainingCourses, getMarketingActivities } = require('../../wxApi/request')
+const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents, registrations, verifyCode, getTrainingCourses, getMarketingActivities } = require('../../wxApi/request')
 Page({
   data: {
     bannerList: [],
@@ -103,21 +103,23 @@ Page({
       })
     })
   },
-  
+
   _getTrainingCourses() {
     getTrainingCourses().then(res => {
+      const { data } = res
       console.log(res)
       this.setData({
-        eventList: res || []
+        eventList: data || []
       })
     })
   },
 
   _getMarketingActivities() {
     getMarketingActivities().then(res => {
-      console.log(res)
+      const { data } = res;
+      console.log(data)
       this.setData({
-        exclusiveList: res || []
+        exclusiveList: data || []
       })
     })
   },

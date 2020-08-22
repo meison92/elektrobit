@@ -4,13 +4,22 @@
         show-center-play-btn='{{false}}' show-play-btn="{{true}}" controls
         picture-in-picture-mode="{{['push', 'pop']}}"></video>
     <view class="event-video-contianer">
-        <view>
-            <view class="f16">{{data.title}}</view>
-            <view wx:if="{{type==0}}" class="f12 grey1">时间：{{data.date.start}}</view>
-            <view wx:if="{{type!=0}}" class="f12 grey1">时间：{{data.date.start}}~{{data.date.end}}</view>
-            <view class="f12 grey1">{{type==0?'形式':'地点'}}：{{data.venue}}</view>
-            <view class="f12 grey1">状态：{{data.status}}</view>
+        <view class="mb20 f16">{{data.title}}</view>
+        <view class="icon-span">
+            <view>
+                <image src="../../asset/tech-icon-2.png" mode="widthFix" style="width:40rpx;" />
+                <text class="f12 grey2">{{data.played || 0}}</text>
+            </view>
+            <!-- <view>
+                <image src="../../asset/tech-icon-1.png" mode="widthFix" style="width:40rpx;" />
+                <text class="f12 grey2">{{data.commented || 0}}</text>
+            </view> -->
         </view>
+        <view class="line mt20 mb20" />
+        <view wx:if="{{type==0}}" class="f12 grey1">时间：{{data.date.start}}</view>
+        <view wx:if="{{type!=0}}" class="f12 grey1">时间：{{data.date.start}}~{{data.date.end}}</view>
+        <view class="f12 grey1">{{type==0?'形式':'地点'}}：{{data.venue}}</view>
+        <view class="f12 grey1">状态：{{data.status}}</view>
         <view wx:if="{{data.file_downloads.length>0}}" class="btn-wrapper">
             <!-- <button class="tec-btn" bindtap="preview">在线预览</button> -->
             <button class="tec-btn" bindtap="sendToEmail">发送演讲资料至邮箱</button>

@@ -6,13 +6,17 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
+		"enhance": false,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -23,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -103,9 +107,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/eventDetail/eventDetail",
-					"pathName": "pages/eventDetail/eventDetail",
+					"id": 6,
+					"name": "pages/eventVideo/eventVideo",
+					"pathName": "pages/eventVideo/eventVideo",
 					"query": "id=61&type=0",
 					"scene": null
 				}

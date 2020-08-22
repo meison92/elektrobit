@@ -57,3 +57,16 @@ view {
 .tec-btn {
     font-size: 24rpx;
 }
+
+.icon-span {
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+}
+
+.icon-span view {
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    margin-right  : 10rpx;
+}
