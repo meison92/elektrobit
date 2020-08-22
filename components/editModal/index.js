@@ -165,7 +165,7 @@ Component({
         },
         getVerify: function (e) {
             let params = {
-                session_key: app.globalData.session_key,
+                session_key: wx.getStorageSync("session_key"),
                 encrypted_data: e.detail.encryptedData,
                 iv: e.detail.iv
             }
@@ -185,7 +185,7 @@ Component({
         _register: function () {
             let params = {
                 id: this.data.eventid,
-                openid: app.globalData.openid,
+                openid: wx.getStorageSync('openid'),
                 data: {
                     name: this.data.name,
                     company: this.data.company,
@@ -219,7 +219,7 @@ Component({
         },
         _updateUser() {
             let params = {
-                openid: app.globalData.openid,
+                openid: wx.getStorageSync('openid'),
                 data: {
                     name: this.data.name,
                     company: this.data.company,
