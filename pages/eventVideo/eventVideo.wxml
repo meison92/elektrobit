@@ -16,8 +16,7 @@
             </view> -->
         </view>
         <view class="line mt20 mb20" />
-        <view wx:if="{{type==0}}" class="f12 grey1">时间：{{data.date.start}}</view>
-        <view wx:if="{{type!=0}}" class="f12 grey1">时间：{{data.date.start}}~{{data.date.end}}</view>
+        <view class="f12 grey1">时间：{{data.date_formatted}}</view>
         <view class="f12 grey1">{{type==0?'形式':'地点'}}：{{data.venue}}</view>
         <view class="f12 grey1">状态：{{data.status}}</view>
         <view wx:if="{{data.file_downloads.length>0}}" class="btn-wrapper">

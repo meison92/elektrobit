@@ -1,24 +1,23 @@
 <!--pages/eventDetail/eventDetail.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
 <view class="event-detail">
-	<image src="{{data.image.url}}" mode="widthFit" style="height:{{swiperHeight}}px"/>
+	<image src="{{data.image.url}}" mode="widthFit" style="height:{{swiperHeight}}px" />
 	<view class="event-detail-contianer">
 		<view>
 			<view class="f16">{{data.title}}</view>
-			<view wx:if="{{type==0}}" class="f12 grey1">时间：{{data.date.start}}</view>
-			<view wx:if="{{type!=0}}" class="f12 grey1">时间：{{data.date.start}}~{{data.date.end}}</view>
+			<view class="f12 grey1">时间：{{data.date_formatted}}</view>
 			<view class="f12 grey1">{{type==0?'形式':'地点'}}：{{data.venue}}</view>
 			<view class="f12 grey1">状态：{{data.status}}</view>
 		</view>
-		<view class="line" style="margin-top:40rpx;margin-bottom:40rpx;"/>
+		<view class="line" style="margin-top:40rpx;margin-bottom:40rpx;" />
 		<view>
-	<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+			<template is="wxParse" data="{{wxParseData:article.nodes}}" />
 		</view>
 		<view wx:if="{{data.sessions.length>0}}" style="margin-top:40rpx;margin-bottom:40rpx;">
 			<view class="f16" style="margin-bottom:40rpx;">活动日程</view>
 			<view wx:for="{{data.sessions}}" wx:key="{{index}}" style="margin-bottom:20rpx;">
-				<view class="f12">{{index+1}}  {{item.session.title}}</view>
-				<view class="line" style="margin-top:20rpx;margin-bottom:20rpx;"/>
+				<view class="f12">{{index+1}} {{item.session.title}}</view>
+				<view class="line" style="margin-top:20rpx;margin-bottom:20rpx;" />
 				<view class="f12 grey2">{{item.session.content}}</view>
 			</view>
 		</view>
@@ -30,4 +29,5 @@
 	</view>
 </view>
 
-<edit-modal wx:if="{{showModal}}" id="editModal" data="{{userInfo}}" title="{{editType=='submit'?'我的报名信息':'个人信息'}}" type="{{editType}}" eventid="{{id}}"/>
+<edit-modal wx:if="{{showModal}}" id="editModal" data="{{userInfo}}" title="{{editType=='submit'?'我的报名信息':'个人信息'}}"
+	type="{{editType}}" eventid="{{id}}" />
