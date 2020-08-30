@@ -1,7 +1,7 @@
 // pages/eventDetail/eventDetail.js
 var WxParse = require('../../wxParse/wxParse.js');
 const app = getApp();
-import { getEventDetail, sendEmail } from '../../wxApi/request'
+import { getEventDetail, sendEmail, submitComment } from '../../wxApi/request'
 Page({
 
   /**
@@ -14,6 +14,7 @@ Page({
     id: 0,
     type: 0,
     showModal: false,
+    comment: ""
   },
 
   /**
@@ -162,5 +163,32 @@ Page({
         duration: 2000
       })
     })
-  }
+  },
+  bindChange: function (event) {
+    this.setData({
+      comment: event.detail.value
+    })
+  },
+  comment: function () {
+    if (this.data.comment.length < 1) {
+      return;
+    }
+    let id = this.options.id;
+    const userInfo = wx.getStorageSync('userInfo');
+    let params = {
+      id: id,
+      openid: app.globalData.openid,
+      data: {
+        comment: this.data.comment,
+        uid: userInfo.id
+      }
+    }
+    submitComment(params).then(res => {
+      console.log(res)
+      this._getEventDetail();
+      this.setData({
+        comment: ''
+      })
+    })
+  },
 })

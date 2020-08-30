@@ -5,6 +5,7 @@
 
 .event-video-contianer {
     padding: 40rpx;
+    margin-bottom: 120rpx;
 }
 
 .btn-group {
@@ -69,4 +70,75 @@ view {
     flex-direction: row;
     align-items   : center;
     margin-right  : 10rpx;
+}
+
+.comment {
+    height       : 70rpx;
+    line-height  : 70rpx;
+    background   : rgb(234, 234, 234);
+    padding-left : 20rpx;
+    border-radius: 5rpx;
+}
+
+.comment-item .comment-top image {
+    width        : 60rpx;
+    height       : 60rpx;
+    border-radius: 50%;
+}
+
+.comment-item {
+    margin-top: 40rpx;
+}
+
+.comment-item .comment-top .name {
+    display      : inline-block;
+    margin-left  : 10rpx;
+    margin-bottom: 20rpx;
+}
+
+.comment-item .comment-top .time {
+    float     : right;
+    margin-top: 12rpx;
+}
+
+.comment-item .comment-bottom {
+    margin-top  : 20rpx;
+    padding-left: 70rpx;
+}
+
+.event-video .input-container {
+    background    : white;
+    display       : flex;
+    flex-direction: row;
+    height        : 100rpx;
+    position      : fixed;
+    bottom        : 0;
+    left          : 0;
+    right         : 0;
+    border-top    : 1px solid #858585;
+}
+
+.event-video .input-container input {
+    width       : 100%;
+    padding-left: 20rpx;
+    height      : 100%;
+}
+
+.event-video .input-container view {
+    width          : 200rpx;
+    background     : #ffa800;
+    color          : white;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.btn-wrapper {
+    display       : flex;
+    flex-direction: row;
+    margin-top    : 10rpx;
+}
+
+.tec-btn {
+    font-size: 24rpx;
 }

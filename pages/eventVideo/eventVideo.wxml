@@ -20,8 +20,26 @@
         <view class="f12 grey1">{{type==0?'形式':'地点'}}：{{data.venue}}</view>
         <view class="f12 grey1">状态：{{data.status}}</view>
         <view wx:if="{{data.file_downloads.length>0}}" class="btn-wrapper">
-            <!-- <button class="tec-btn" bindtap="preview">在线预览</button> -->
             <button class="tec-btn" bindtap="sendToEmail">发送演讲资料至邮箱</button>
         </view>
+
+        <view class="comment mt20 f14">评论</view>
+        <view>
+            <block wx:for="{{data.comments}}" wx:key="index">
+                <view class="comment-item">
+                    <view class="comment-top">
+                        <image src="{{item.picture.url}}" />
+                        <view class="name f12 grey2">{{item.username}}</view>
+                        <view class="time f12 grey2">{{item.created}}</view>
+                    </view>
+                    <view class="comment-bottom f14 grey2">{{item.comment}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class="input-container">
+        <input placeholder="请输入评论" bindinput="bindChange" value="{{comment}}" />
+        <view bindtap="comment">发布</view>
     </view>
 </view>
