@@ -1,5 +1,5 @@
 // pages/technicDetail/technicDetail.js
-import { getTechnologyDetail, submitComment, sendEmail } from '../../wxApi/request'
+import { getTechnologyDetail, submitComment, sendEmail, statisticsAccess } from '../../wxApi/request'
 const app = getApp();
 Page({
 
@@ -133,15 +133,8 @@ Page({
             image: '',
             duration: 1500,
             mask: false,
-            success: (result) => {
-
-            },
-            fail: () => { },
-            complete: () => { }
           });
-        },
-        fail: () => { },
-        complete: () => { }
+        }
       });
       return;
     }
@@ -157,11 +150,6 @@ Page({
       image: '',
       duration: 10000,
       mask: false,
-      success: (result) => {
-
-      },
-      fail: () => { },
-      complete: () => { }
     });
     sendEmail(params).then(res => {
       console.log(res)
@@ -170,6 +158,22 @@ Page({
         icon: 'success',
         duration: 2000
       })
+      this._statisticsAccess();
     })
-  }
+  },
+  _statisticsAccess() {
+    let id = this.options.id;
+    const userInfo = wx.getStorageSync('userInfo');
+    const params = {
+      data: {
+        uid: userInfo.id,
+        entity_type: "technology",
+        type: "play",
+        entity_id: id
+      }
+    }
+    statisticsAccess(params).then(res => {
+      console.log(res)
+    })
+  },
 })

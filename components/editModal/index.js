@@ -1,5 +1,5 @@
 const app = getApp();
-const { getUser, register, getPhone } = require('../../wxApi/request')
+const { getUser, register, getPhone, statisticsAccess } = require('../../wxApi/request')
 Component({
     /**
      * 组件的属性列表
@@ -213,6 +213,8 @@ Component({
                         icon: 'success',
                         duration: 2000
                     })
+
+                    this._statisticsAccess();
                     this.cancel();
                 }
             })
@@ -243,6 +245,20 @@ Component({
                 })
                 this.cancel();
                 this.triggerEvent('parentEvent')
+            })
+        },
+        _statisticsAccess() {
+            const userInfo = wx.getStorageSync('userInfo');
+            const params = {
+                data: {
+                    uid: userInfo.id,
+                    entity_type: "event",
+                    type: "sign up",
+                    entity_id: this.data.eventid
+                }
+            }
+            statisticsAccess(params).then(res => {
+                console.log(res)
             })
         },
         goWebview() {

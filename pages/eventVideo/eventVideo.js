@@ -1,7 +1,7 @@
 // pages/eventDetail/eventDetail.js
 var WxParse = require('../../wxParse/wxParse.js');
 const app = getApp();
-import { getEventDetail, sendEmail, submitComment } from '../../wxApi/request'
+import { getEventDetail, sendEmail, submitComment, statisticsAccess } from '../../wxApi/request'
 Page({
 
   /**
@@ -35,13 +35,15 @@ Page({
         })
       }
     })
-    this._getEventDetail();
 
     const userInfo = wx.getStorageSync('userInfo');
     this.setData({
       id: options.id,
       type: options.type,
       userInfo: userInfo
+    }, () => {
+      this._getEventDetail();
+      this._statisticsAccess("play");
     })
   },
 
@@ -91,7 +93,14 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    const { id, type, data } = this.data;
+    return {
+      title: data.title,
+      path: `/pages/eventDetail/eventDetail?id=${id}&type=${type}`,
+      success: function (res) {
+        console.log('分享成功', res)
+      }
+    }
   },
 
   _getEventDetail: function () {
@@ -103,6 +112,21 @@ Page({
       this.setData({
         data: res.length > 0 ? res[0] : {}
       })
+    })
+  },
+
+  _statisticsAccess(type) {
+    const userInfo = wx.getStorageSync('userInfo');
+    const params = {
+      data: {
+        uid: userInfo.id,
+        entity_type: type === "play" ? "event" : "file",
+        type: type,
+        entity_id: this.data.id
+      }
+    }
+    statisticsAccess(params).then(res => {
+      console.log(res)
     })
   },
 
@@ -124,12 +148,7 @@ Page({
             icon: 'none',
             image: '',
             duration: 1500,
-            mask: false,
-            success: (result) => {
-
-            },
-            fail: () => { },
-            complete: () => { }
+            mask: false
           });
         },
         fail: () => { },
@@ -162,6 +181,7 @@ Page({
         icon: 'success',
         duration: 2000
       })
+      this._statisticsAccess("File download")
     })
   },
   bindChange: function (event) {

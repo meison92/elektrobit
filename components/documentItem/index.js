@@ -1,6 +1,6 @@
 
 const app = getApp()
-const { sendEmail } = require('../../wxApi/request')
+const { sendEmail, statisticsAccess } = require('../../wxApi/request')
 Component({
     /**
      * 组件的属性列表
@@ -27,6 +27,7 @@ Component({
     */
     methods: {
         tapDetail: function (event) {
+            let that = this;
             wx.showActionSheet({
                 itemList: ['在线预览', '发送至邮箱'],
                 success(res) {
@@ -90,11 +91,11 @@ Component({
                             image: '',
                             duration: 10000,
                             mask: false,
-                            success: (result)=>{
-                                
+                            success: (result) => {
+
                             },
-                            fail: ()=>{},
-                            complete: ()=>{}
+                            fail: () => { },
+                            complete: () => { }
                         });
                         sendEmail(params).then(res => {
                             console.log(res)
@@ -103,6 +104,7 @@ Component({
                                 icon: 'success',
                                 duration: 2000
                             })
+                            that._statisticsAccess(id);
                         })
                     }
                 },
@@ -110,6 +112,20 @@ Component({
                     console.log(res.errMsg)
                 }
             })
-        }
+        },
+        _statisticsAccess(id) {
+            const userInfo = wx.getStorageSync('userInfo');
+            const params = {
+                data: {
+                    uid: userInfo.id,
+                    entity_type: "technology",
+                    type: "File download",
+                    entity_id: id
+                }
+            }
+            statisticsAccess(params).then(res => {
+                console.log(res)
+            })
+        },
     }
 })

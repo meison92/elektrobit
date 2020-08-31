@@ -3,7 +3,7 @@
 <swiper indicator-dots="{{indicatorDots}}" indicator-color="white" indicator-active-color="#00eb00"
 	autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true"
 	style="height: {{swiperHeight}}px;margin-top:-8px;">
-	<block wx:for="{{bannerList}}" wx:key="{{imgUrls}}">
+	<block wx:for="{{bannerList}}" wx:key="imgUrls">
 		<swiper-item>
 			<view class="pos-r" style="height: 100%;">
 				<image src="{{item.image.url}}" class="slide-image" mode="scaleToFill" />
@@ -11,7 +11,7 @@
 					{{item.title}}
 					<view>
 						<view class="banner-more" bindtap="tapDetail" data-id="{{item.id}}" data-link="{{item.link}}">
-							了解更多</view>
+							{{item.link_text}}</view>
 					</view>
 				</view>
 			</view>
@@ -26,16 +26,16 @@
 	</view>
 </view>
 <view class="event-container">
-	<block wx:if="{{homeIndex==0}}" wx:for="{{eventList}}" wx:for-item="item" wx:key="item.id">
-		<event-item data="{{item}}" type="0" bind:showPrompt="showPrompt"/>
+	<block wx:if="{{homeIndex==0}}" wx:for="{{eventList}}" wx:for-item="item" wx:key="id">
+		<event-item data="{{item}}" type="0" bind:showPrompt="showPrompt" />
 	</block>
-	<block wx:if="{{homeIndex==1}}" wx:for="{{exclusiveList}}" wx:for-item="item" wx:key="item.id">
+	<block wx:if="{{homeIndex==1}}" wx:for="{{exclusiveList}}" wx:for-item="item" wx:key="id">
 		<event-item data="{{item}}" type="1" bind:showPrompt="showPrompt" />
 	</block>
-	<block wx:if="{{homeIndex==2}}" wx:for="{{myEventList}}" wx:for-item="item" wx:key="item.id">
+	<block wx:if="{{homeIndex==2}}" wx:for="{{myEventList}}" wx:for-item="item" wx:key="id">
 		<event-item data="{{item}}" type="2" />
 	</block>
-	<!-- <block wx:for="{{trends}}" wx:for-item="item" wx:key="item.id">
+	<!-- <block wx:for="{{trends}}" wx:for-item="item" wx:key="id">
 		<trend-item data="{{item}}" />
 	</block> -->
 </view>

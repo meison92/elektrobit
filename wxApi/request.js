@@ -3,11 +3,14 @@ const app = getApp();
 const request = (url, data, method) => {
   let _url = app.globalData.host + url;
   const session_key = wx.getStorageSync('session_key');
+  const openid = wx.getStorageSync('openid');
+  const userInfo = wx.getStorageSync('userInfo');
+  const { id: uid } = userInfo;
   return new Promise((resolve, reject) => {
     wx.request({
       url: _url,
       method: method || 'get',
-      data: { ...data, session_key },
+      data: { ...data, session_key, openid, uid },
       header: {
         'Content-Type': 'application/json'
       },
@@ -33,11 +36,14 @@ const request = (url, data, method) => {
 const requestWithAuth = (url, data, method) => {
   let _url = app.globalData.host + url;
   const session_key = wx.getStorageSync('session_key');
+  const openid = wx.getStorageSync('openid');
+  const userInfo = wx.getStorageSync('userInfo');
+  const { id: uid } = userInfo;
   return new Promise((resolve, reject) => {
     wx.request({
       url: _url,
       method: method || 'get',
-      data: { ...data, session_key },
+      data: { ...data, session_key, openid, uid },
       header: {
         'Content-Type': 'application/json',
         'Authorization': 'basic ' + base64encode(app.globalData.openid + '123456')
@@ -158,5 +164,8 @@ module.exports = {
   },
   getMarketingActivities: (data) => { //培训
     return requestWithAuth(`/json/marketing-activities`, data, 'get');
+  },
+  statisticsAccess: (data) => { // 数据打点
+    return requestWithAuth(`/json/statistics/access`, data, 'post');
   }
 }
