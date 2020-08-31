@@ -35,8 +35,10 @@ Component({
                     let tapIndex = res.tapIndex;
                     if (tapIndex == 0) {
                         let file = event.currentTarget.dataset.file;
+                        let id = event.currentTarget.dataset.id;
                         console.log(file)
 
+                        that._statisticsAccess(id, "open file");
                         if (file.length > 0) {
                             let url = file[0].url;
                             wx.navigateTo({
@@ -67,15 +69,8 @@ Component({
                                         image: '',
                                         duration: 1500,
                                         mask: false,
-                                        success: (result) => {
-
-                                        },
-                                        fail: () => { },
-                                        complete: () => { }
                                     });
                                 },
-                                fail: () => { },
-                                complete: () => { }
                             });
                             return;
                         }
@@ -91,11 +86,6 @@ Component({
                             image: '',
                             duration: 10000,
                             mask: false,
-                            success: (result) => {
-
-                            },
-                            fail: () => { },
-                            complete: () => { }
                         });
                         sendEmail(params).then(res => {
                             console.log(res)
@@ -104,7 +94,7 @@ Component({
                                 icon: 'success',
                                 duration: 2000
                             })
-                            that._statisticsAccess(id);
+                            that._statisticsAccess(id, "File download");
                         })
                     }
                 },
@@ -114,13 +104,13 @@ Component({
             })
         },
 
-        _statisticsAccess(id) {
+        _statisticsAccess(id, type) {
             const userInfo = wx.getStorageSync('userInfo');
             const params = {
                 data: {
                     uid: userInfo.id,
                     entity_type: "technology",
-                    type: "File download",
+                    type: type,
                     entity_id: id
                 }
             }
