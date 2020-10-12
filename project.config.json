@@ -28,7 +28,11 @@
 		},
 		"useIsolateContext": true,
 		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"useMultiFrameRuntime": false,
+		"useApiHook": true,
+		"packNpmManually": false,
+		"packNpmRelationList": []
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.2",
@@ -108,9 +112,16 @@
 				},
 				{
 					"id": 6,
+					"name": "pages/eventDetail/eventDetail",
+					"pathName": "pages/eventDetail/eventDetail",
+					"query": "id=61&type=0",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "pages/eventVideo/eventVideo",
 					"pathName": "pages/eventVideo/eventVideo",
-					"query": "id=68&type=0",
+					"query": "id=61&type=0",
 					"scene": null
 				}
 			]

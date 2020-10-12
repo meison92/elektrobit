@@ -198,6 +198,7 @@ Component({
             }
             register(params).then(res => {
                 console.log(res)
+                this.triggerEvent("parentEvent")
                 if (res.error == '50001') {
                     wx.showToast({
                         title: '该活动已报名',

@@ -144,7 +144,11 @@ Page({
   },
 
   goVideo: function () {
-    const { id, type } = this.data;
+    const { id, type, registered } = this.data;
+    if (registered != 1) {
+      this.submit();
+      return;
+    }
     const userInfo = wx.getStorageSync('userInfo');
     console.log(userInfo)
     if (!userInfo.phone) {

@@ -30,4 +30,4 @@
 </view>
 
 <edit-modal wx:if="{{showModal}}" id="editModal" data="{{userInfo}}" title="{{editType=='submit'?'我的报名信息':'个人信息'}}"
-	type="{{editType}}" eventid="{{id}}" />
+	type="{{editType}}" eventid="{{id}}" bind:parentEvent="_getEventDetail"/>
