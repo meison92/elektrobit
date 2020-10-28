@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "edit-modal": "/components/editModal/index",
     "txv-video": "plugin://tencentVideo/video"
   }
 }

@@ -119,6 +119,7 @@ Component({
         },
         cancel: function () {
             this.hideModal();
+            this.triggerEvent("cancelEvent")
         },
         confirm: function () {
             if (!this.data.name) {
@@ -244,7 +245,7 @@ Component({
                     icon: 'success',
                     duration: 2000
                 })
-                this.cancel();
+                this.hideModal();
                 this.triggerEvent('parentEvent')
             })
         },

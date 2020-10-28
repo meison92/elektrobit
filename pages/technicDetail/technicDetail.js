@@ -9,7 +9,9 @@ Page({
   data: {
     data: {},
     comments: [],
-    comment: ""
+    comment: "",
+    autoplay: false,
+    userInfo: {}
   },
 
   /**
@@ -19,6 +21,21 @@ Page({
     wx.setNavigationBarTitle({
       title: '技术详情'
     })
+    const userInfo = wx.getStorageSync('userInfo');
+    if (!userInfo) {
+      let url = encodeURIComponent(`/pages/technicDetail/technicDetail?id=${this.options.id}`)
+      wx.reLaunch({
+        url: `/pages/login/login?isTabbar=0&url=${url}`
+      })
+      return;
+    }
+    this.setData({
+      userInfo: userInfo
+    })
+    if (!userInfo.email) {
+      this.selectComponent("#editModal").showModal();
+      return;
+    }
     this._getTechnologyDetail();
   },
 
@@ -77,7 +94,8 @@ Page({
     getTechnologyDetail(params).then(res => {
       console.log(res)
       this.setData({
-        data: res.length > 0 ? res[0] : {}
+        data: res.length > 0 ? res[0] : {},
+        autoplay: true
       })
     })
   },
@@ -176,4 +194,11 @@ Page({
       console.log(res)
     })
   },
+
+  _cancelModal: function () {
+    console.log(111111)
+    wx.reLaunch({
+      url: '/pages/index/index',
+    });
+  }
 })

@@ -1,6 +1,6 @@
 <!--pages/technicDetail/technicDetail.wxml-->
 <view class="tech-detail">
-	<txv-video wx:if="{{data.vid}}" vid="{{data.vid}}" playerid="txv1" autoplay="{{true}}"></txv-video>
+	<txv-video wx:if="{{data.vid}}" vid="{{data.vid}}" playerid="txv1" autoplay="{{autoplay}}"></txv-video>
 	<view class="tech-container">
 		<view class="mb20 f16">{{data.title}}</view>
 		<view class="icon-span">
@@ -40,3 +40,4 @@
 		<view bindtap="comment">发布</view>
 	</view>
 </view>
+<edit-modal id="editModal" data="{{userInfo}}" type="update" title="个人信息" bind:parentEvent='_getTechnologyDetail' bind:cancelEvent='_cancelModal' />

@@ -127,12 +127,15 @@ Page({
           })
         }
       } else {
-        // wx.reLaunch({
-        //   url: `/pages/index/index`
-        // })
-        wx.navigateBack({
-          delta: 1
-        });
+        if (url) {
+          wx.reLaunch({
+            url: decodeURIComponent(url)
+          });
+        } else {
+          wx.navigateBack({
+            delta: 1
+          });
+        }
       }
     })
   }
