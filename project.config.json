@@ -1,130 +1,127 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"enhance": false,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": false,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"uglifyFileName": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useIsolateContext": true,
-		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"useMultiFrameRuntime": false,
-		"useApiHook": true,
-		"packNpmManually": false,
-		"packNpmRelationList": []
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.13.1",
-	"appid": "wxe274522d849aa535",
-	"projectname": "elektrobit",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": -1,
-					"name": "login",
-					"pathName": "pages/login/login",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/technic/technic",
-					"pathName": "pages/technic/technic",
-					"query": "index=2",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/mine/mine",
-					"pathName": "pages/mine/mine",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/technic/technic",
-					"pathName": "pages/technic/technic",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/technicDetail/technicDetail",
-					"pathName": "pages/technicDetail/technicDetail",
-					"query": "id=16",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/webview/webview",
-					"pathName": "pages/webview/webview",
-					"query": "link= https://mp.elektrobit.cn/sites/default/files/2020-03/Elektrobit_vehicle_infrastructure_brochure_2019_cn_0.pdf",
-					"scene": null
-				},
-				{
-					"id": 6,
-					"name": "pages/eventDetail/eventDetail",
-					"pathName": "pages/eventDetail/eventDetail",
-					"query": "id=61&type=0",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/eventVideo/eventVideo",
-					"pathName": "pages/eventVideo/eventVideo",
-					"query": "id=61&type=0",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.13.1",
+  "appid": "wxe274522d849aa535",
+  "projectname": "elektrobit",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/technic/technic",
+          "pathName": "pages/technic/technic",
+          "query": "index=2",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/technic/technic",
+          "pathName": "pages/technic/technic",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/technicDetail/technicDetail",
+          "pathName": "pages/technicDetail/technicDetail",
+          "query": "id=16",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/webview/webview",
+          "pathName": "pages/webview/webview",
+          "query": "link= https://mp.elektrobit.cn/sites/default/files/2020-03/Elektrobit_vehicle_infrastructure_brochure_2019_cn_0.pdf",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "pages/eventDetail/eventDetail",
+          "pathName": "pages/eventDetail/eventDetail",
+          "query": "id=61&type=0",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/eventVideo/eventVideo",
+          "pathName": "pages/eventVideo/eventVideo",
+          "query": "id=61&type=0",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

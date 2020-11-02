@@ -97,6 +97,7 @@ Page({
         data: res.length > 0 ? res[0] : {},
         autoplay: true
       })
+      this._statisticsAccess("play");
     })
   },
   comment: function () {
@@ -176,17 +177,17 @@ Page({
         icon: 'success',
         duration: 2000
       })
-      this._statisticsAccess();
+      this._statisticsAccess("File download");
     })
   },
-  _statisticsAccess() {
+  _statisticsAccess(type) {
     let id = this.options.id;
     const userInfo = wx.getStorageSync('userInfo');
     const params = {
       data: {
         uid: userInfo.id,
         entity_type: "technology",
-        type: "play",
+        type: type,
         entity_id: id
       }
     }
