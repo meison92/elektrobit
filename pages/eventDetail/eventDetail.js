@@ -108,7 +108,8 @@ Page({
   },
 
   submit: function () {
-    if (this.data.registered == 1) {
+    const { data } = this.data;
+    if (data.registered == 1) {
       return;
     }
     const openid = wx.getStorageSync('openid');
@@ -144,8 +145,8 @@ Page({
   },
 
   goVideo: function () {
-    const { id, type, registered } = this.data;
-    if (registered != 1) {
+    const { id, type, data } = this.data;
+    if (data.registered != 1) {
       this.submit();
       return;
     }
