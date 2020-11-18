@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents, registrations, verifyCode, getTrainingCourses, getMarketingActivities } = require('../../wxApi/request')
+const { getEvents, getBackgrounds, getFeaturedEvents, getNews, getTrends, getExclusiveEvents, registrations, verifyCode, getTrainingCourses, getMarketingActivities, statisticsAccess } = require('../../wxApi/request')
 Page({
   data: {
     bannerList: [],
@@ -233,6 +233,7 @@ Page({
       if (this.data.exclusiveList.length < 1) {
         this._getMarketingActivities();
       }
+      this._statisticsAccess();
     } else if (index == 2) {
       if (this.data.myEventList.length < 1) {
         this._getMyEvents();
@@ -285,5 +286,20 @@ Page({
         }
       })
     }
-  }
+  },
+
+  _statisticsAccess() {
+    const userInfo = wx.getStorageSync('userInfo');
+    const params = {
+      data: {
+        uid: userInfo.id,
+        entity_type: "marketingActivities",
+        type: "view",
+        entity_id: "1"
+      }
+    }
+    statisticsAccess(params).then(res => {
+      console.log(res)
+    })
+  },
 })

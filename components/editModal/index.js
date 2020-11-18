@@ -129,28 +129,40 @@ Component({
                     duration: 2000
                 })
                 return;
-            } else if (!this.data.company) {
+            }
+            if (!this.data.company) {
                 wx.showToast({
                     title: '请输入公司！',
                     icon: 'none',
                     duration: 2000
                 })
                 return;
-            } else if (!this.data.position) {
+            }
+            if (!this.data.position) {
                 wx.showToast({
                     title: '请输入职位！',
                     icon: 'none',
                     duration: 2000
                 })
                 return;
-            } else if (!this.data.email) {
+            }
+            if (!this.data.email) {
                 wx.showToast({
                     title: '请输入正确的邮箱！',
                     icon: 'none',
                     duration: 2000
                 })
                 return;
-            } else if (!this.data.phone) {
+            }
+            if (!/^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/.test(this.data.email)) {
+                wx.showToast({
+                    title: '请输入正确的邮箱格式！',
+                    icon: 'none',
+                    duration: 2000
+                })
+                return;
+            }
+            if (!this.data.phone) {
                 wx.showToast({
                     title: '请输入正确的手机号！',
                     icon: 'none',
