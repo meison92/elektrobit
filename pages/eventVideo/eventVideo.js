@@ -181,7 +181,7 @@ Page({
         icon: 'success',
         duration: 2000
       })
-      this._statisticsAccess("File download")
+      this._statisticsAccess("file_download")
     })
   },
   bindChange: function (event) {

@@ -267,7 +267,7 @@ Component({
                 data: {
                     uid: userInfo.id,
                     entity_type: "event",
-                    type: "sign up",
+                    type: "sign_up",
                     entity_id: this.data.eventid
                 }
             }

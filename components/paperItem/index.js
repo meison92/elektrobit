@@ -94,7 +94,7 @@ Component({
                                 icon: 'success',
                                 duration: 2000
                             })
-                            that._statisticsAccess(id, "File download");
+                            that._statisticsAccess(id, "file_download");
                         })
                     }
                 },
