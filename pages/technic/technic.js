@@ -18,7 +18,7 @@ Page({
     paperPage: 0,
     paperLoadMore: true,
     paperList: [],
-    scrollH: 0
+    scrollH: 0,
   },
 
   /**
@@ -89,7 +89,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log(111)
   },
 
   /**
@@ -101,6 +101,7 @@ Page({
 
   _getWebinar: function () {
     const { webinarPage, webinarLoadMore, webinarList } = this.data;
+    console.log("webinarLoadMore:",webinarLoadMore)
     if (!webinarLoadMore) {
       return;
     }
@@ -110,7 +111,7 @@ Page({
       this.setData({
         webinarList: webinarList.concat(res.data || []),
         webinarPage: res.current_page + 1,
-        webinarLoadMore: res.current_page + 1 < res.total_page
+        webinarLoadMore: res.current_page + 1 < res.total_pages
       })
     })
   },
@@ -126,7 +127,7 @@ Page({
       this.setData({
         documentList: documentList.concat(res.data || []),
         documentPage: res.current_page + 1,
-        documentLoadMore: res.current_page + 1 < res.total_page
+        documentLoadMore: res.current_page + 1 < res.total_pages
       })
     })
   },
@@ -142,7 +143,7 @@ Page({
       this.setData({
         paperList: paperList.concat(res.data || []),
         paperPage: res.current_page + 1,
-        paperLoadMore: res.current_page + 1 < res.total_page
+        paperLoadMore: res.current_page + 1 < res.total_pages
       })
     })
   },

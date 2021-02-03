@@ -8,13 +8,13 @@
 	<view class="line" />
 </view>
 <scroll-view class="tech-container" scroll-y bindscrolltolower="_loadMore" style="height:{{scrollH}}px">
-	<block wx:if="{{techIndex==0}}" wx:for="{{webinarList}}" wx:for-item="item" wx:key="item.id">
+	<block wx:if="{{techIndex==0}}" wx:for="{{webinarList}}" wx:for-item="item" wx:key="id">
 		<webinar-item data="{{item}}" />
 	</block>
-	<block wx:if="{{techIndex==1}}" wx:for="{{documentList}}" wx:for-item="item" wx:key="item.id">
+	<block wx:if="{{techIndex==1}}" wx:for="{{documentList}}" wx:for-item="item" wx:key="id">
 		<document-item data="{{item}}" />
 	</block>
-	<block wx:if="{{techIndex==2}}" wx:for="{{paperList}}" wx:for-item="item" wx:key="item.id">
+	<block wx:if="{{techIndex==2}}" wx:for="{{paperList}}" wx:for-item="item" wx:key="id">
 		<paper-item data="{{item}}" />
 	</block>
 </scroll-view>
